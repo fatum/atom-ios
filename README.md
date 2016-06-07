@@ -2,7 +2,7 @@
 
 [![License][license-image]][license-url]
 
-atom-ios is the official [ironSource.atom](http://www.ironsrc.com/data-flow-management) SDK for the IOS plat.
+atom-ios is the official [ironSource.atom](http://www.ironsrc.com/data-flow-management) SDK for the IOS platform.
 
 ### License
 MIT
