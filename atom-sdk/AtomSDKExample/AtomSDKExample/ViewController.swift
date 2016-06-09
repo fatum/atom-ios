@@ -7,19 +7,99 @@
 //
 
 import UIKit
+import AtomSDK
 
 class ViewController: UIViewController {
+    var api_: IronSourceAtom?
+    var test = "Data test"
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        func callback(response: Response) {
+            print("From callback 1: \(response)")
+            print("From callback (data): \(response.data)")
+            print("From callback (error): \(response.error)")
+            print("From callback (status): \(response.status)")
+        }
+        
+        
+        //request.get()
+        self.api_ = IronSourceAtom()
+        self.api_!.enableDebug(true)
+        self.api_!.setAuth("yYFxqzZj2AYO2ytya5hsPAwTbyY40b")
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBOutlet var textArea_: UITextView!
+    
+    func posCallback(response: Response) {
+        print("from class method \(self.test)")
+        let errorStr = (response.error == "") ? "nil" : "\"\(response.error)\""
+        let dataStr = (response.data == "") ? "nil" : "\"\(response.data)\""
+        let statusStr = "\(response.status)"
+        
+        let responseStr = "{\n\t\"error\": \(errorStr), " +
+            "\n\t\"data\": \(dataStr), " +
+            "\n\t\"status\": \(statusStr)\n}"
+        
+        dispatch_sync(dispatch_get_main_queue()) {
+            self.textArea_.text = responseStr //Yay!
+        }
 
+    }
+   
+    @IBAction func buttonPostPressed(sender: UIButton) {
+        self.api_!.putEvent("g8y3eironsrc_g8y3e_test.public.g8y3etest12",
+                            data: "{\"test\":\"test\"}",
+                            method: HttpMethod.POST, callback: posCallback)
+    }
+    
+    @IBAction func buttonGetPressed(sender: UIButton) {
+        func callback(response: Response) {
+            let errorStr = (response.error == "") ? "nil" : "\"\(response.error)\""
+            let dataStr = (response.data == "") ? "nil" : "\"\(response.data)\""
+            let statusStr = "\(response.status)"
+            
+            let responseStr = "{\n\t\"error\": \(errorStr), " +
+                "\n\t\"data\": \(dataStr), " +
+                "\n\t\"status\": \(statusStr)\n}"
+            
+            dispatch_sync(dispatch_get_main_queue()) {
+                self.textArea_.text = responseStr //Yay!
+            }
 
+        }
+        
+        self.api_!.putEvent("g8y3eironsrc_g8y3e_test.public.g8y3etest",
+                           data: "{\"test\":\"test\"}",
+                           method: HttpMethod.GET, callback: callback)
+    }
+    
+    
+    @IBAction func buttonBulkPressed(sender: UIButton) {
+        func callback2(response: Response) {
+            let errorStr = (response.error == "") ? "nil" : "\"\(response.error)\""
+            let dataStr = (response.data == "") ? "nil" : "\"\(response.data)\""
+            let statusStr = "\(response.status)"
+            
+            let responseStr = "{\n\t\"error\": \(errorStr), " +
+                    "\n\t\"data\": \(dataStr), " +
+                    "\n\t\"status\": \(statusStr)\n}"
+            
+            dispatch_sync(dispatch_get_main_queue()) {
+                self.textArea_.text = responseStr //Yay!
+            }
+        }
+        
+        self.api_!.health(nil)        
+        self.api_!.putEvents("g8y3eironsrc_g8y3e_test.public.g8y3etest",
+                            data: ["{\"test\":\"test\"}", "{\"test\":\"test 2\"}"],
+                            callback: callback2)
+    }
 }
 

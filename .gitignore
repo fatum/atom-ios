@@ -3,6 +3,7 @@
 # =============== #
 build/
 DerivedData/
+atom-sdk/AtomSDk/docs/
 
 # ================ #
 # Various settings #

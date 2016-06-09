@@ -13,6 +13,8 @@
 		4277164A1D06C59D0056B341 /* IronSourceAtom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427716491D06C59D0056B341 /* IronSourceAtom.swift */; };
 		427716A41D06E9320056B341 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427716A31D06E9320056B341 /* HttpMethod.swift */; };
 		427716A61D06EA260056B341 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427716A51D06EA260056B341 /* Response.swift */; };
+		427716AC1D084B910056B341 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427716AB1D084B910056B341 /* Request.swift */; };
+		427716B01D0859920056B341 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427716AF1D0859920056B341 /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,8 @@
 		427716491D06C59D0056B341 /* IronSourceAtom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IronSourceAtom.swift; sourceTree = "<group>"; };
 		427716A31D06E9320056B341 /* HttpMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
 		427716A51D06EA260056B341 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		427716AB1D084B910056B341 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		427716AF1D0859920056B341 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,11 +81,13 @@
 		427716311D06C5760056B341 /* AtomSDK */ = {
 			isa = PBXGroup;
 			children = (
+				427716AB1D084B910056B341 /* Request.swift */,
 				427716321D06C5760056B341 /* AtomSDK.h */,
 				427716341D06C5760056B341 /* Info.plist */,
 				427716491D06C59D0056B341 /* IronSourceAtom.swift */,
 				427716A31D06E9320056B341 /* HttpMethod.swift */,
 				427716A51D06EA260056B341 /* Response.swift */,
+				427716AF1D0859920056B341 /* Utils.swift */,
 			);
 			path = AtomSDK;
 			sourceTree = "<group>";
@@ -204,8 +210,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				427716A41D06E9320056B341 /* HttpMethod.swift in Sources */,
+				427716AC1D084B910056B341 /* Request.swift in Sources */,
 				427716A61D06EA260056B341 /* Response.swift in Sources */,
 				4277164A1D06C59D0056B341 /* IronSourceAtom.swift in Sources */,
+				427716B01D0859920056B341 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +330,7 @@
 		427716441D06C5760056B341 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -333,6 +342,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ironsrc.atom.AtomSDK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_INCLUDE_PATHS = CommonCrypto;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -340,6 +351,7 @@
 		427716451D06C5760056B341 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -351,6 +363,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ironsrc.atom.AtomSDK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_INCLUDE_PATHS = CommonCrypto;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};
