@@ -6,7 +6,7 @@
 atom-ios is the official [ironSource.atom](http://www.ironsrc.com/data-flow-management) SDK for the IOS platform.
 
 - [Signup](https://atom.ironsrc.com/#/signup)
-- [Documentation](https://ironsource.github.io/atom-unity/)
+- [Documentation](https://ironsource.github.io/atom-ios/)
 - [Sending an event](#Using-the-IronSource-API-to-send-events)
 
 #### Using the IronSource API to send events
