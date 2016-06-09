@@ -37,7 +37,7 @@ class ViewController: UIViewController {
     
     @IBOutlet var textArea_: UITextView!
     
-    func posCallback(response: Response) {
+    func postCallback(response: Response) {
         print("from class method \(self.test)")
         let errorStr = (response.error == "") ? "nil" : "\"\(response.error)\""
         let dataStr = (response.data == "") ? "nil" : "\"\(response.data)\""
@@ -56,7 +56,7 @@ class ViewController: UIViewController {
     @IBAction func buttonPostPressed(sender: UIButton) {
         self.api_!.putEvent("g8y3eironsrc_g8y3e_test.public.g8y3etest12",
                             data: "{\"test\":\"test\"}",
-                            method: HttpMethod.POST, callback: posCallback)
+                            method: HttpMethod.POST, callback: postCallback)
     }
     
     @IBAction func buttonGetPressed(sender: UIButton) {
@@ -96,7 +96,8 @@ class ViewController: UIViewController {
             }
         }
         
-        self.api_!.health(nil)        
+        self.api_!.health(nil)
+        
         self.api_!.putEvents("g8y3eironsrc_g8y3e_test.public.g8y3etest",
                             data: ["{\"test\":\"test\"}", "{\"test\":\"test 2\"}"],
                             callback: callback2)
