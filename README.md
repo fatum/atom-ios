@@ -1,9 +1,7 @@
 # ironSource.atom SDK for IOS
 
 [![License][license-image]][license-url]
-[![License][license-image]][license-url]
 [![Docs][docs-image]][docs-url]
-[![Build status][travis-image]][travis-url]
 
 atom-ios is the official [ironSource.atom](http://www.ironsrc.com/data-flow-management) SDK for the IOS platform.
 
