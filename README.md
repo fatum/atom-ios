@@ -89,4 +89,4 @@ MIT
 [travis-url]: https://travis-ci.org/ironSource/atom-ios
 [license-image]: https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square
 [license-url]: LICENSE
-[example]: https://cloud.githubusercontent.com/assets/1713228/15939176/493d3a40-2e7f-11e6-9568-a16a1b1a383e.png "example"
+[example]: https://cloud.githubusercontent.com/assets/1713228/15939346/00d74902-2e80-11e6-9549-ca9edfef6264.png "example"
