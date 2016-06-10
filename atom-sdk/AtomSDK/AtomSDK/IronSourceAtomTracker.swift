@@ -12,7 +12,7 @@ import Foundation
 public class IronSourceAtomTracker {
     var flushInterval_: Double = 10
     var bulkSize_: Int = 1000
-    var bulkBytesSize_: Int = 2
+    var bulkBytesSize_: Int = 64 * 1024
     
     var timer_:NSTimer?
     
@@ -175,7 +175,7 @@ public class IronSourceAtomTracker {
                 if (response.status >= 500 || response.status < 0) {
                     dispatch_sync(dispatch_get_main_queue()) {
                         let fireDate = timeout + CFAbsoluteTimeGetCurrent()
-                        if (timeout < 10) {
+                        if (timeout < 10 * 60) {
                             timeout = timeout * 2
                             let timer = CFRunLoopTimerCreateWithHandler(kCFAllocatorDefault, fireDate, 0,   0, 0) { _ in
                                 self.sendData(stream, data: bulkDataStr, dataSize: bulkSize,

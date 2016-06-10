@@ -63,11 +63,9 @@ class ViewController: UIViewController {
     }
    
     @IBAction func buttonPostPressed(sender: UIButton) {
-        //self.api_!.putEvent("g8y3eironsrc_g8y3e_test.public.g8y3etest12",
-        //                    data: "{\"test\":\"test\"}",
-        //                    method: HttpMethod.POST, callback: postCallback)
-        self.apiTracker_!.track("g8y3eironsrc_g8y3e_test.public.g8y3etest12",
-                                data: "\(i++)")
+        self.api_!.putEvent("g8y3eironsrc_g8y3e_test.public.g8y3etest12",
+                            data: "{\"test\":\"test\"}",
+                            method: HttpMethod.POST, callback: postCallback)
     }
     
     @IBAction func buttonGetPressed(sender: UIButton) {
@@ -112,6 +110,16 @@ class ViewController: UIViewController {
         self.api_!.putEvents("g8y3eironsrc_g8y3e_test.public.g8y3etest",
                             data: ["{\"test\":\"test\"}", "{\"test\":\"test 2\"}"],
                             callback: callback2)
+    }
+    
+    @IBAction func buttonTackPressed(sender: UIButton) {
+        self.apiTracker_!.track("g8y3eironsrc_g8y3e_test.public.g8y3etest12",
+                                data: "\(i)")
+        i += 1
+    }
+    
+    @IBAction func buttonFlushPressed(sender: UIButton) {
+        self.apiTracker_!.flush()
     }
 }
 
