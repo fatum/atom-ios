@@ -36,6 +36,7 @@ class ViewController: UIViewController {
         self.apiTracker_!.enableDebug(true)
         self.apiTracker_!.setAuth("yYFxqzZj2AYO2ytya5hsPAwTbyY40b")
         self.apiTracker_!.setBulkSize(1)
+        self.apiTracker_!.setBulkBytesSize(10 * 1024)
         self.apiTracker_!.setEndpoint("https://track.atom-data.io1/")
     }
 

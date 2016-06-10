@@ -14,6 +14,7 @@ Example of sending an event in Swift:
 ```swift
 class ViewController: UIViewController {
     var api_: IronSourceAtom?
+    var apiTracker_: IronSourceAtomTracker?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,13 @@ class ViewController: UIViewController {
         // print debug info in console
         self.api_!.enableDebug(true)
         self.api_!.setAuth("<YOUR_AUTH_KEY>")
+
+        self.apiTracker_ = IronSourceAtomTracker()
+        self.apiTracker_!.enableDebug(true)
+        self.apiTracker_!.setAuth("<YOUR_AUTH_KEY>")
+        self.apiTracker_!.setBulkSize(<BULK_COUNT>)
+        self.apiTracker_!.setBulkBytesSize(<MAX_BULK_SIZE_IN_BYTES>)
+        self.apiTracker_!.setEndpoint("https://track.atom-data.io/")
     }
 
     @IBOutlet var textArea_: UITextView!
@@ -74,6 +82,17 @@ class ViewController: UIViewController {
                             callback: callback)
     }
 
+    // track event
+    @IBAction func buttonTackPressed(sender: UIButton) {
+        self.apiTracker_!.track("<YOUR_STREAM_NAME>",
+                                data: "{\"test\":\"test\"}")
+    }
+    
+    // flush all data in tracker
+    @IBAction func buttonFlushPressed(sender: UIButton) {
+        self.apiTracker_!.flush()
+    }
+
 ```
 
 ### Example
@@ -89,4 +108,4 @@ MIT
 [travis-url]: https://travis-ci.org/ironSource/atom-ios
 [license-image]: https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square
 [license-url]: LICENSE
-[example]: https://cloud.githubusercontent.com/assets/1713228/15939346/00d74902-2e80-11e6-9549-ca9edfef6264.png "example"
+[example]: https://cloud.githubusercontent.com/assets/1713228/15971662/08129c62-2f43-11e6-980d-66d36a41f961.png "example"
