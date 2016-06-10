@@ -92,6 +92,21 @@ public class IronSourceAtom {
     }
     
     /**
+     Send multiple events data to Atom server.
+     
+     - parameter stream:   Stream name for saving data in db table
+     - parameter data:     User data to send
+     - parameter callback: Get response data
+     */
+    public func putEvents(stream: String, data: String,
+                          callback: AtomCallback?) {
+        let jsonData = getRequestData(stream, data: data)
+        
+        self.sendRequest(self.endpoint_ + "bulk", data: jsonData,
+                         method: HttpMethod.POST, callback: callback)
+    }
+    
+    /**
      Check health of server
      
      - parameter callback: For receive response from server

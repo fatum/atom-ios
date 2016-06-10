@@ -11,7 +11,10 @@ import AtomSDK
 
 class ViewController: UIViewController {
     var api_: IronSourceAtom?
+    var apiTracker_: IronSourceAtomTracker?
     var test = "Data test"
+    
+    var i: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +31,12 @@ class ViewController: UIViewController {
         self.api_ = IronSourceAtom()
         self.api_!.enableDebug(true)
         self.api_!.setAuth("yYFxqzZj2AYO2ytya5hsPAwTbyY40b")
+        
+        self.apiTracker_ = IronSourceAtomTracker()
+        self.apiTracker_!.enableDebug(true)
+        self.apiTracker_!.setAuth("yYFxqzZj2AYO2ytya5hsPAwTbyY40b")
+        self.apiTracker_!.setBulkSize(1)
+        self.apiTracker_!.setEndpoint("https://track.atom-data.io1/")
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,9 +63,11 @@ class ViewController: UIViewController {
     }
    
     @IBAction func buttonPostPressed(sender: UIButton) {
-        self.api_!.putEvent("g8y3eironsrc_g8y3e_test.public.g8y3etest12",
-                            data: "{\"test\":\"test\"}",
-                            method: HttpMethod.POST, callback: postCallback)
+        //self.api_!.putEvent("g8y3eironsrc_g8y3e_test.public.g8y3etest12",
+        //                    data: "{\"test\":\"test\"}",
+        //                    method: HttpMethod.POST, callback: postCallback)
+        self.apiTracker_!.track("g8y3eironsrc_g8y3e_test.public.g8y3etest12",
+                                data: "\(i++)")
     }
     
     @IBAction func buttonGetPressed(sender: UIButton) {

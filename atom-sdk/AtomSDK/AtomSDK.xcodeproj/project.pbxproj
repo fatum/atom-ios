@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42391D0C1D0AD1BF00408E7B /* IronSourceAtomTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42391D0B1D0AD1BF00408E7B /* IronSourceAtomTracker.swift */; };
+		42391D0E1D0AD2AF00408E7B /* BulkData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42391D0D1D0AD2AF00408E7B /* BulkData.swift */; };
 		427716331D06C5760056B341 /* AtomSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 427716321D06C5760056B341 /* AtomSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4277163A1D06C5760056B341 /* AtomSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4277162F1D06C5760056B341 /* AtomSDK.framework */; };
 		4277163F1D06C5760056B341 /* AtomSDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4277163E1D06C5760056B341 /* AtomSDKTests.swift */; };
@@ -28,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		42391D0B1D0AD1BF00408E7B /* IronSourceAtomTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IronSourceAtomTracker.swift; sourceTree = "<group>"; };
+		42391D0D1D0AD2AF00408E7B /* BulkData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BulkData.swift; sourceTree = "<group>"; };
 		4277162F1D06C5760056B341 /* AtomSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AtomSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		427716321D06C5760056B341 /* AtomSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AtomSDK.h; sourceTree = "<group>"; };
 		427716341D06C5760056B341 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -88,6 +92,8 @@
 				427716A31D06E9320056B341 /* HttpMethod.swift */,
 				427716A51D06EA260056B341 /* Response.swift */,
 				427716AF1D0859920056B341 /* Utils.swift */,
+				42391D0B1D0AD1BF00408E7B /* IronSourceAtomTracker.swift */,
+				42391D0D1D0AD2AF00408E7B /* BulkData.swift */,
 			);
 			path = AtomSDK;
 			sourceTree = "<group>";
@@ -211,7 +217,9 @@
 			files = (
 				427716A41D06E9320056B341 /* HttpMethod.swift in Sources */,
 				427716AC1D084B910056B341 /* Request.swift in Sources */,
+				42391D0C1D0AD1BF00408E7B /* IronSourceAtomTracker.swift in Sources */,
 				427716A61D06EA260056B341 /* Response.swift in Sources */,
+				42391D0E1D0AD2AF00408E7B /* BulkData.swift in Sources */,
 				4277164A1D06C59D0056B341 /* IronSourceAtom.swift in Sources */,
 				427716B01D0859920056B341 /* Utils.swift in Sources */,
 			);
