@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04D7F154C0D60EEF48B9B6D1 /* Pods_AtomSDKExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D069E129D213634DC9A3100 /* Pods_AtomSDKExample.framework */; };
 		427716581D06C7220056B341 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427716571D06C7220056B341 /* AppDelegate.swift */; };
 		4277165A1D06C7220056B341 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427716591D06C7220056B341 /* ViewController.swift */; };
 		4277165D1D06C7220056B341 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4277165B1D06C7220056B341 /* Main.storyboard */; };
@@ -14,12 +15,15 @@
 		427716621D06C7220056B341 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 427716601D06C7220056B341 /* LaunchScreen.storyboard */; };
 		427716A01D06CCED0056B341 /* AtomSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4277169F1D06CCED0056B341 /* AtomSDK.framework */; };
 		427716A11D06CCED0056B341 /* AtomSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4277169F1D06CCED0056B341 /* AtomSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		42ECBCF91D116DB100CD9A3C /* DBAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42ECBCF81D116DB100CD9A3C /* DBAdapter.swift */; };
+		42ECBCFB1D11856700CD9A3C /* StreamData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42ECBCFA1D11856700CD9A3C /* StreamData.swift */; };
+		42ECBCFF1D11A30800CD9A3C /* SQLiteHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42ECBCFE1D11A30800CD9A3C /* SQLiteHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		427716A21D06CCED0056B341 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
@@ -31,6 +35,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2D069E129D213634DC9A3100 /* Pods_AtomSDKExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AtomSDKExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		427716541D06C7220056B341 /* AtomSDKExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AtomSDKExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		427716571D06C7220056B341 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		427716591D06C7220056B341 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -39,6 +44,11 @@
 		427716611D06C7220056B341 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		427716631D06C7220056B341 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4277169F1D06CCED0056B341 /* AtomSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AtomSDK.framework; path = Vendor/AtomSDK.framework; sourceTree = "<group>"; };
+		42ECBCF81D116DB100CD9A3C /* DBAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBAdapter.swift; sourceTree = "<group>"; };
+		42ECBCFA1D11856700CD9A3C /* StreamData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamData.swift; sourceTree = "<group>"; };
+		42ECBCFE1D11A30800CD9A3C /* SQLiteHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteHandler.swift; sourceTree = "<group>"; };
+		A64231D1792E109D92A4DD2A /* Pods-AtomSDKExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AtomSDKExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-AtomSDKExample/Pods-AtomSDKExample.release.xcconfig"; sourceTree = "<group>"; };
+		A6E1CD547C4ED1BF5B092978 /* Pods-AtomSDKExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AtomSDKExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AtomSDKExample/Pods-AtomSDKExample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +57,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				427716A01D06CCED0056B341 /* AtomSDK.framework in Frameworks */,
+				04D7F154C0D60EEF48B9B6D1 /* Pods_AtomSDKExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +70,8 @@
 				4277169F1D06CCED0056B341 /* AtomSDK.framework */,
 				427716561D06C7220056B341 /* AtomSDKExample */,
 				427716551D06C7220056B341 /* Products */,
+				A4B362701A0F5300F5E8681B /* Pods */,
+				AAFACC839DBBCFA01D7F9D75 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,8 +92,28 @@
 				4277165E1D06C7220056B341 /* Assets.xcassets */,
 				427716601D06C7220056B341 /* LaunchScreen.storyboard */,
 				427716631D06C7220056B341 /* Info.plist */,
+				42ECBCF81D116DB100CD9A3C /* DBAdapter.swift */,
+				42ECBCFA1D11856700CD9A3C /* StreamData.swift */,
+				42ECBCFE1D11A30800CD9A3C /* SQLiteHandler.swift */,
 			);
 			path = AtomSDKExample;
+			sourceTree = "<group>";
+		};
+		A4B362701A0F5300F5E8681B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A6E1CD547C4ED1BF5B092978 /* Pods-AtomSDKExample.debug.xcconfig */,
+				A64231D1792E109D92A4DD2A /* Pods-AtomSDKExample.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AAFACC839DBBCFA01D7F9D75 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2D069E129D213634DC9A3100 /* Pods_AtomSDKExample.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -90,10 +123,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 427716661D06C7220056B341 /* Build configuration list for PBXNativeTarget "AtomSDKExample" */;
 			buildPhases = (
+				C1B71F0243368C3BE12D7FDD /* [CP] Check Pods Manifest.lock */,
 				427716501D06C7220056B341 /* Sources */,
 				427716511D06C7220056B341 /* Frameworks */,
 				427716521D06C7220056B341 /* Resources */,
 				427716A21D06CCED0056B341 /* Embed Frameworks */,
+				96CFEC2F2A8836ECC2068383 /* [CP] Embed Pods Frameworks */,
+				361EACDECCE461C4A2790EB0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -150,13 +186,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		361EACDECCE461C4A2790EB0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AtomSDKExample/Pods-AtomSDKExample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		96CFEC2F2A8836ECC2068383 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AtomSDKExample/Pods-AtomSDKExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C1B71F0243368C3BE12D7FDD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		427716501D06C7220056B341 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				4277165A1D06C7220056B341 /* ViewController.swift in Sources */,
+				42ECBCFB1D11856700CD9A3C /* StreamData.swift in Sources */,
+				42ECBCF91D116DB100CD9A3C /* DBAdapter.swift in Sources */,
 				427716581D06C7220056B341 /* AppDelegate.swift in Sources */,
+				42ECBCFF1D11A30800CD9A3C /* SQLiteHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,8 +356,10 @@
 		};
 		427716671D06C7220056B341 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A6E1CD547C4ED1BF5B092978 /* Pods-AtomSDKExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Vendor",
@@ -279,13 +368,17 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ironsrc.atom.AtomSDKExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = Sqlite3;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Debug;
 		};
 		427716681D06C7220056B341 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A64231D1792E109D92A4DD2A /* Pods-AtomSDKExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Vendor",
@@ -294,6 +387,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ironsrc.atom.AtomSDKExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = Sqlite3;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};

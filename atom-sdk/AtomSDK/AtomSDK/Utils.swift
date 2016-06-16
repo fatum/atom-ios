@@ -20,7 +20,7 @@ func ObjectToJsonStr(data: NSObject) -> String {
     var jsonData: NSData
     var jsonStr: String = ""
     do {
-        jsonData = try NSJSONSerialization.dataWithJSONObject(data, options: NSJSONWritingOptions.PrettyPrinted)
+        jsonData = try NSJSONSerialization.dataWithJSONObject(data, options:  NSJSONWritingOptions(rawValue: 0))
         jsonStr = NSString(data: jsonData, encoding: NSUTF8StringEncoding) as! String
         
     } catch let error as NSError {
@@ -28,6 +28,17 @@ func ObjectToJsonStr(data: NSObject) -> String {
     }
     
     return jsonStr
+}
+
+/**
+ Convert List to Json Str
+ 
+ - parameter data: List of json data str
+ 
+ - returns: json string data
+ */
+func ListToJsonStr(data: [String]) -> String {
+    return "[" + data.joinWithSeparator(",") + "]"
 }
 
 /**

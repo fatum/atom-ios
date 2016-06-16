@@ -52,7 +52,7 @@ public class BulkData {
      - returns: Json string from bulk data
      */
     public func getStringData() -> String {
-        return ObjectToJsonStr(self.data_)
+        return ListToJsonStr(self.data_)
     }
     
     /**

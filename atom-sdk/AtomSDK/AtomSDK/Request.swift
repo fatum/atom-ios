@@ -47,7 +47,7 @@ public class Request {
         
         let urlWithGet = self.url_ + "?data=" + encodedUri
         
-        printLog("URL: \(urlWithGet)")
+        //printLog("URL: \(urlWithGet)")
         
         let request = NSMutableURLRequest(URL: NSURL(string: urlWithGet)!)
         request.HTTPMethod = "GET"
@@ -59,7 +59,7 @@ public class Request {
      POST request to server
      */
     public func post() {
-        printLog("URL: \(self.url_)")
+        //printLog("URL: \(self.url_)")
         
         let request = NSMutableURLRequest(URL: NSURL(string: self.url_)!)
         request.HTTPMethod = "POST"
@@ -90,10 +90,12 @@ public class Request {
                 errorStr = error!.localizedDescription
             } else {
                 dataStr = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
-                self.printLog("Body: \(dataStr)")
+                //self.printLog("Body: \(dataStr)")
                 
                 status = (response as! NSHTTPURLResponse).statusCode
             }
+            
+            self.printLog("Response: \(status) - from: \(self.data_)")
             
             self.callback_?(Response(error: errorStr, data: dataStr, status: status))
         })
@@ -108,7 +110,7 @@ public class Request {
      */
     func printLog(logData: String) {
         if (self.isDebug_) {
-            print(logData)
+            print(logData + "\n")
         }
     }
 }

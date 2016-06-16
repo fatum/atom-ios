@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import sqlite3
 
 /// Atom callback type definition
 public typealias AtomCallback = (Response) -> Void
@@ -15,7 +16,7 @@ public typealias AtomCallback = (Response) -> Void
 public class IronSourceAtom {
     let API_VERSION_ = "V1.0.0"
     
-    var endpoint_ = "https://track.atom-data.io/"
+    var endpoint_ = "http://track.atom-data.io/"
     var authKey_ = ""
     
     var isDebug_ = false
@@ -29,6 +30,31 @@ public class IronSourceAtom {
         headers_ = Dictionary<String, String>()
         headers_["x-ironsource-atom-sdk-type"] = "ios"
         headers_["x-ironsource-atom-sdk-version"] = self.API_VERSION_
+        
+        
+        let documents = try! NSFileManager.defaultManager().URLForDirectory(.DocumentDirectory, inDomain: .UserDomainMask, appropriateForURL: nil, create: false)
+        let fileURL = documents.URLByAppendingPathComponent("test.sqlite")
+        print("db path: \(fileURL)")
+        // open database
+        
+        var db: COpaquePointer = nil
+        if sqlite3_open(fileURL.path!, &db) != SQLITE_OK {
+            print("error opening database")
+        } else {
+            print("success")
+        }
+        
+        if sqlite3_exec(db, "create table if not exists test (id integer primary key autoincrement, name text)", nil, nil, nil) != SQLITE_OK {
+            let errmsg = String.fromCString(sqlite3_errmsg(db))
+            print("error creating table: \(errmsg)")
+        }
+        
+        if sqlite3_close(db) != SQLITE_OK {
+            print("error closing database")
+        }
+        
+        db = nil
+
     }
     
     /**
@@ -82,9 +108,9 @@ public class IronSourceAtom {
      */
     public func putEvents(stream: String, data: [String],
                           callback: AtomCallback?) {
-        let listJson = ObjectToJsonStr(data)
+        let listJson = ListToJsonStr(data)
         
-        printLog ("List to json: \(listJson)")
+        //printLog ("List to json: \(listJson)")
         let jsonData = getRequestData(stream, data: listJson)
         
         self.sendRequest(self.endpoint_ + "bulk", data: jsonData,
@@ -144,19 +170,22 @@ public class IronSourceAtom {
      
      - returns: Json string
      */
-    func getRequestData(stream: String, data: String) -> String {
+    func getRequestData(stream: String, data: String, bulk: Bool = false) -> String {
         let hash = (self.authKey_ == "") ? "" : EncodeHmac(data, key: self.authKey_)
         
-        var eventObject = Dictionary<String, String>()
+        var eventObject = Dictionary<String, NSObject>()
         eventObject["table"] = stream
         eventObject["data"] = data
         if (hash != "") {
             eventObject["auth"] = hash
-        }        
+        }
+        if (bulk) {
+            eventObject["bulk"] = true
+        }
         
         let jsonStr = ObjectToJsonStr(eventObject)
         
-        printLog("Request json: \(jsonStr)")
+        //printLog("Request json: \(jsonStr)")
         
         return jsonStr
     }
@@ -168,7 +197,7 @@ public class IronSourceAtom {
      */
     func printLog(logData: String) {
         if (self.isDebug_) {
-            print(logData)
+            print(logData + "\n")
         }
     }
 }

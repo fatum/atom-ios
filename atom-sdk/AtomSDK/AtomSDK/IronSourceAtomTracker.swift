@@ -11,23 +11,23 @@ import Foundation
 /// API Tracker class - for flush data in intervals
 public class IronSourceAtomTracker {
     var flushInterval_: Double = 10
-    var bulkSize_: Int = 1000
-    var bulkBytesSize_: Int = 64 * 1024
+    var bulkSize_: Int32 = 1000
+    var bulkBytesSize_: Int32 = 64 * 1024
     
     var timer_:NSTimer?
     
     var api_: IronSourceAtom
     
     var isDebug_: Bool = false
-    
-    var bulkDataMap_: Dictionary<String, BulkData>
+    var database_: DBAdapter
     
     /**
      API Tracker constructor
      */
     public init() {
         self.api_ = IronSourceAtom()
-        bulkDataMap_ = Dictionary<String, BulkData>()
+        
+        database_ = DBAdapter(isDebug: false)
     }
     
     /**
@@ -72,7 +72,7 @@ public class IronSourceAtomTracker {
      
      - parameter bulkSize: Count of event for flush
      */
-    public func setBulkSize(bulkSize: Int) {
+    public func setBulkSize(bulkSize: Int32) {
         self.bulkSize_ = bulkSize
     }
     
@@ -81,7 +81,7 @@ public class IronSourceAtomTracker {
      
      - parameter bulkBytesSize: Size in bytes
      */
-    public func setBulkBytesSize(bulkBytesSize: Int) {
+    public func setBulkBytesSize(bulkBytesSize: Int32) {
         self.bulkBytesSize_ = bulkBytesSize
     }
     
@@ -100,19 +100,21 @@ public class IronSourceAtomTracker {
      - parameter stream: Name of the stream
      - parameter data:   Info for sending
      */
-    public func track(stream: String, data: String) {
-        if (self.bulkDataMap_[stream] == nil) {
-            self.bulkDataMap_[stream] = BulkData()
+    public func track(stream: String, data: String, token: String = "") {
+        var tokenStr = token
+        if (tokenStr == "") {
+            tokenStr = self.api_.authKey_
         }
         
-        let bulkData = self.bulkDataMap_[stream]
-        bulkData!.addData(data)
-        let bulkStr = bulkData!.getStringData()
-        let bulkBytesSize = bulkStr.characters.count * sizeof(Character)
+        let nRows = database_.addEvent(StreamData(name: stream, token: tokenStr),
+                                       data: data)
         
-        self.printLog("Bulk bytes size: \(bulkBytesSize)")
+        //let bulkStr = bulkData!.getStringData()
+        //let bulkBytesSize = bulkStr.characters.count * sizeof(Character)
         
-        if (bulkData?.getSize() >= self.bulkSize_ || bulkBytesSize >= self.bulkBytesSize_) {
+        //self.printLog("Bulk bytes size: \(bulkBytesSize)")
+        
+        if (nRows >= self.bulkSize_) {
             flush(stream)
         }
         
@@ -141,13 +143,14 @@ public class IronSourceAtomTracker {
      - parameter method:   Http method (POST or GET)
      - parameter callback: callback for retry
      */
-    func sendData(stream: String, data: String, dataSize: Int = 1,
+    func sendData(streamData: StreamData, data: String, dataSize: Int = 1,
                   method: HttpMethod = HttpMethod.POST, callback: AtomCallback?) {
+        self.api_.setAuth(streamData.token)
         if (dataSize == 1) {
-            self.api_.putEvent(stream, data: data, method: method,
+            self.api_.putEvent(streamData.name, data: data, method: method,
                                callback: callback)
         } else if (dataSize > 1) {
-            self.api_.putEvents(stream, data: data, callback: callback)
+            self.api_.putEvents(streamData.name, data: data, callback: callback)
         }
     }
     
@@ -157,7 +160,7 @@ public class IronSourceAtomTracker {
      - parameter stream:   Name of stream to flush
      - parameter bulkData: Bulk data object
      */
-    func flushData(stream: String, bulkData: BulkData) {
+    func flushData(streamData: StreamData, batch: Batch) {
         var bulkDataStr:String = ""
         var bulkSize: Int = 0
             
@@ -187,14 +190,14 @@ public class IronSourceAtomTracker {
                         }
                     }
                 } else {
-                self.printLog("Server error: \(response.error)")
+                    self.printLog("Server error: \(response.error)")
                 }
             } else {
                 self.printLog("Server response: \(response.data)")
             }
         }
         
-        sendData(stream, data: bulkDataStr, dataSize: bulkSize,
+        sendData(streamData, data: bulkDataStr, dataSize: bulkSize,
                  method: HttpMethod.POST, callback: callback)
     }
     
@@ -203,12 +206,11 @@ public class IronSourceAtomTracker {
      
      - parameter stream: Name of the stream
      */
-    public func flush(stream: String) {
+    public func flush(stream: String, token: String) {
         if (stream.characters.count > 0) {
-            if (self.bulkDataMap_[stream] != nil) {
-                let bulkData = self.bulkDataMap_[stream]
-                flushData(stream, bulkData: bulkData!)
-            }
+            let batch: Batch
+            
+            //flushData(stream, bulkData: bulkData!)
         } else {
             printLog("Wrong stream name '\(stream)'!")
         }
@@ -218,8 +220,9 @@ public class IronSourceAtomTracker {
      Flush all data to server
      */
     public func flush() {
-        for (stream, bulkData) in self.bulkDataMap_ {
-            flushData(stream, bulkData: bulkData)
+        let streamsList: [StreamData] = database_.getStreams()
+        for stream in streamsList {
+            flush(stream.name, token: stream.token)
         }
     }
     
@@ -230,7 +233,7 @@ public class IronSourceAtomTracker {
      */
     func printLog(logData: String) {
         if (self.isDebug_) {
-            print(logData)
+            print(logData + "\n")
         }
     }
 }

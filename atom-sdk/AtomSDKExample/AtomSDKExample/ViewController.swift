@@ -8,6 +8,7 @@
 
 import UIKit
 import AtomSDK
+import Foundation
 
 class ViewController: UIViewController {
     var api_: IronSourceAtom?
@@ -15,9 +16,39 @@ class ViewController: UIViewController {
     var test = "Data test"
     
     var i: Int = 0
+    var j: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let db = DBAdapter(isDebug: true)
+        db.upgrade(1, newVersion: 2)
+        
+        db.addEvent(StreamData(name: "wwww", token: "1"), data: "test 1")
+        db.addEvent(StreamData(name: "wwww", token: "1"), data: "test 1 2")
+        db.addEvent(StreamData(name: "rrrr", token: "1"), data: "test 1333")
+        let count = db.addEvent(StreamData(name: "wwww", token: "1"), data: "test 2")
+        
+        print("Count: \(count)")
+        
+        print("Count from method: \(db.count())")        
+        db.vacuum()
+        
+        print("Count from method: \(db.count())")
+        
+        let events = db.getEvents(StreamData(name: "wwww", token: "1"), limit: 10)
+        
+        let countDels = db.deleteEvents(StreamData(name: "wwww", token: "1"), lastId: 4)
+        
+        print("Count from method: \(db.count())")
+        
+        db.getEvents(StreamData(name: "rrrr", token: "1"), limit: 10)
+        
+        print("Events: \(events)")
+        
+        print("Streams: \(db.getStreams()[0])")
+        
+        
         // Do any additional setup after loading the view, typically from a nib.
         func callback(response: Response) {
             print("From callback 1: \(response)")
@@ -26,18 +57,18 @@ class ViewController: UIViewController {
             print("From callback (status): \(response.status)")
         }
         
-        
         //request.get()
-        self.api_ = IronSourceAtom()
+        /*self.api_ = IronSourceAtom()
         self.api_!.enableDebug(true)
-        self.api_!.setAuth("yYFxqzZj2AYO2ytya5hsPAwTbyY40b")
+        self.api_!.setAuth("I40iwPPOsG3dfWX30labriCg9HqMfL")
         
         self.apiTracker_ = IronSourceAtomTracker()
         self.apiTracker_!.enableDebug(true)
-        self.apiTracker_!.setAuth("yYFxqzZj2AYO2ytya5hsPAwTbyY40b")
-        self.apiTracker_!.setBulkSize(1)
+        self.apiTracker_!.setAuth("I40iwPPOsG3dfWX30labriCg9HqMfL")
+        self.apiTracker_!.setBulkSize(2)
+        self.apiTracker_!.setFlushInterval(1)
         self.apiTracker_!.setBulkBytesSize(10 * 1024)
-        self.apiTracker_!.setEndpoint("https://track.atom-data.io1/")
+        self.apiTracker_!.setEndpoint("http://track.atom-data.io/")*/
     }
 
     override func didReceiveMemoryWarning() {
@@ -64,8 +95,9 @@ class ViewController: UIViewController {
     }
    
     @IBAction func buttonPostPressed(sender: UIButton) {
-        self.api_!.putEvent("g8y3eironsrc_g8y3e_test.public.g8y3etest12",
-                            data: "{\"test\":\"test\"}",
+        j += 1
+        self.api_!.putEvent("sdkdev_sdkdev.public.g8y3etest",
+                            data: "{\"strings\":\"wwwwww \(j)\"}",
                             method: HttpMethod.POST, callback: postCallback)
     }
     
@@ -85,7 +117,7 @@ class ViewController: UIViewController {
 
         }
         
-        self.api_!.putEvent("g8y3eironsrc_g8y3e_test.public.g8y3etest",
+        self.api_!.putEvent("sdkdev_sdkdev.public.g8y3etest",
                            data: "{\"test\":\"test\"}",
                            method: HttpMethod.GET, callback: callback)
     }
@@ -108,14 +140,14 @@ class ViewController: UIViewController {
         
         self.api_!.health(nil)
         
-        self.api_!.putEvents("g8y3eironsrc_g8y3e_test.public.g8y3etest",
+        self.api_!.putEvents("sdkdev_sdkdev.public.g8y3etest",
                             data: ["{\"test\":\"test\"}", "{\"test\":\"test 2\"}"],
                             callback: callback2)
     }
     
     @IBAction func buttonTackPressed(sender: UIButton) {
-        self.apiTracker_!.track("g8y3eironsrc_g8y3e_test.public.g8y3etest12",
-                                data: "\(i)")
+        self.apiTracker_!.track("sdkdev_sdkdev.public.g8y3etest",
+                                data: "{\"strings\": \"rrr \(i)\"}")
         i += 1
     }
     
