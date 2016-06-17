@@ -15,7 +15,7 @@ public class SQLiteHandler {
     var isDebug_: Bool = false
     var database_: COpaquePointer = nil
     var sqlStatement_: COpaquePointer = nil
-    
+        
     /**
      SQL Handler contructor
      
@@ -164,6 +164,15 @@ public class SQLiteHandler {
         
         return returnStatus
 
+    }
+    
+    /**
+     Get column count from response
+     
+     - returns: Count of column
+     */
+    public func getColumnCount() -> Int32 {
+        return sqlite3_column_count(sqlStatement_)
     }
     
     /**

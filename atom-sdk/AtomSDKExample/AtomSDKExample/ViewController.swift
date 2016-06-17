@@ -68,7 +68,7 @@ class ViewController: UIViewController {
         self.apiTracker_!.setBulkSize(2)
         self.apiTracker_!.setFlushInterval(2)
         self.apiTracker_!.setBulkBytesSize(10 * 1024)
-        self.apiTracker_!.setEndpoint("http://track.atom-data.io1/")
+        self.apiTracker_!.setEndpoint("http://track.atom-data.io/")
     }
 
     override func didReceiveMemoryWarning() {

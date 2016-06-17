@@ -33,7 +33,6 @@ public class IronSourceAtomTracker {
      */
     public init() {
         self.api_ = IronSourceAtom()
-        
         database_ = DBAdapter()
         database_.create()
         
@@ -42,6 +41,8 @@ public class IronSourceAtomTracker {
                         target: self,
                         selector: #selector(IronSourceAtomTracker.timerFlush),
                         userInfo: nil, repeats: true)
+        
+        self.dispatchSemapthore()
     }
     
     /**
@@ -133,8 +134,8 @@ public class IronSourceAtomTracker {
      Wrapper for flush method in timer
      */
     @objc func timerFlush() {
+        self.printLog("Flush from timer.")
         if (self.isRunTimeFlush_) {
-            self.printLog("Flush from timer.")
             self.flush()
         }
     }
@@ -188,6 +189,7 @@ public class IronSourceAtomTracker {
                             }
                             CFRunLoopAddTimer(CFRunLoopGetCurrent(), timer, kCFRunLoopCommonModes)
                         } else {
+                            self.isRunTimeFlush_ = true
                             self.dispatchSemapthore()
                             self.printLog("Server not response more then 10min.")
                         }
@@ -226,15 +228,10 @@ public class IronSourceAtomTracker {
      */
     func flushAsync(streamName: String, checkSize: Bool = false) {
         dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)){
-            if (!self.isFirst_) {
-                self.printLog("Dispatch start")
-                dispatch_semaphore_wait(self.semaphore_, DISPATCH_TIME_FOREVER)
-                NSThread.sleepForTimeInterval(0.2)
-                self.printLog("Dispatch end")
-            } else {
-                self.isFirst_ = false
-                self.printLog("Dispatch first")
-            }
+            self.printLog("Dispatch start")
+            dispatch_semaphore_wait(self.semaphore_, DISPATCH_TIME_FOREVER)
+            NSThread.sleepForTimeInterval(0.2)
+            self.printLog("Dispatch end")
             
             if (checkSize) {
                 let eventCount = self.database_.count(streamName)

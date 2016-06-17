@@ -23,11 +23,15 @@ public class DBAdapter {
     var isDebug_: Bool = false
     let dbHandler_: SQLiteHandler
     
+    let streamSemaphore_ = dispatch_semaphore_create(0)
+        
     /**
      Database Adatapter constructor
      */
     public init() {
         dbHandler_ = SQLiteHandler(name: DATABASE_NAME)
+        
+        dispatch_semaphore_signal(self.streamSemaphore_)
     }
     
     /**
@@ -113,20 +117,30 @@ public class DBAdapter {
         
         let rowsCount = dbHandler_.getColumnInt(0)
         if rowsCount == 1 {
-            let sqlInsertToken = "INSERT INTO \(STREAMS_TABLE) (\(KEY_STREAM), " +
-                "\(KEY_TOKEN)) VALUES (?, ?);"
-            dbHandler_.prepareSQL(sqlInsertToken)
-            
-            dbHandler_.bindText(1, strData: streamData.name)
-            dbHandler_.bindText(2, strData: streamData.token)
-            
-            let status = dbHandler_.execStatement()
-            if (!status) {
-                
-            }
+            addStream(streamData)
         }
         
         return rowsCount
+    }
+    
+    /**
+     Add stream to Streams table
+     
+     - parameter streamData: Data of the stream
+     */
+    public func addStream(streamData: StreamData) {
+        dispatch_semaphore_wait(self.streamSemaphore_, DISPATCH_TIME_FOREVER)
+        
+        let sqlInsertToken = "INSERT INTO \(STREAMS_TABLE) (\(KEY_STREAM), " +
+            "\(KEY_TOKEN)) VALUES (?, ?);"
+        dbHandler_.prepareSQL(sqlInsertToken)
+        
+        dbHandler_.bindText(1, strData: streamData.name)
+        dbHandler_.bindText(2, strData: streamData.token)
+        
+        dbHandler_.execStatement()
+        
+        dispatch_semaphore_signal(self.streamSemaphore_)
     }
     
     /**
@@ -165,6 +179,8 @@ public class DBAdapter {
      - returns: Data of the stream
      */
     public func getStream(streamName: String) -> StreamData {
+        dispatch_semaphore_wait(self.streamSemaphore_, DISPATCH_TIME_FOREVER)
+        
         let streamData = StreamData()
         
         let sqlSelectStreams = "SELECT * FROM \(STREAMS_TABLE) WHERE " +
@@ -174,9 +190,14 @@ public class DBAdapter {
         dbHandler_.bindText(1, strData: streamName)
         
         while(dbHandler_.execNextStatement()) {
+            if (dbHandler_.getColumnCount() < 3) {
+                break
+            }
+            
             streamData.name = dbHandler_.getColumnStr(1)
             streamData.token = dbHandler_.getColumnStr(2)
         }
+        dispatch_semaphore_signal(self.streamSemaphore_)
         
         return streamData
     }
@@ -187,16 +208,23 @@ public class DBAdapter {
      - returns: List data of streams
      */
     public func getStreams() -> [StreamData] {
+        dispatch_semaphore_wait(self.streamSemaphore_, DISPATCH_TIME_FOREVER)
+        
         var streamsList = [StreamData]()
         
         let sqlSelectStreams = "SELECT * FROM \(STREAMS_TABLE)"
         dbHandler_.prepareSQL(sqlSelectStreams)
         
         while(dbHandler_.execNextStatement()) {
+            if (dbHandler_.getColumnCount() < 3) {
+                break
+            }
+            
             streamsList.append(StreamData(name: dbHandler_.getColumnStr(1),
                 token: dbHandler_.getColumnStr(2)))
         }
         
+        dispatch_semaphore_signal(self.streamSemaphore_)
         return streamsList
     }
     
@@ -231,6 +259,8 @@ public class DBAdapter {
      - parameter streamData: Data of the stream
      */
     public func deleteStream(streamData: StreamData) {
+        dispatch_semaphore_wait(self.streamSemaphore_, DISPATCH_TIME_FOREVER)
+        
         let sqlDeleteStreams = "DELETE FROM \(STREAMS_TABLE) WHERE " +
             "\(KEY_STREAM) = ?"
         dbHandler_.prepareSQL(sqlDeleteStreams)
@@ -238,6 +268,8 @@ public class DBAdapter {
         dbHandler_.bindText(1, strData: streamData.name)
         
         dbHandler_.execStatement()
+        
+        dispatch_semaphore_signal(self.streamSemaphore_)
     }
     
     /**
