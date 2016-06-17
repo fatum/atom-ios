@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>HttpMethod Enum Reference</title>
+    <title>Batch Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Enum/HttpMethod" class="dashAnchor"></a>
-    <a title="HttpMethod Enum Reference"></a>
+    <a name="//apple_ref/swift/Class/Batch" class="dashAnchor"></a>
+    <a title="Batch Class Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html"> Docs</a> (92% documented)</p>
@@ -21,7 +21,7 @@
       <p id="breadcrumbs">
         <a href="../index.html"> Reference</a>
         <img id="carat" src="../img/carat.png" />
-        HttpMethod Enum Reference
+        Batch Class Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -77,14 +77,14 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>HttpMethod</h1>
+            <h1>Batch</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">HttpMethod</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Batch</span></code></pre>
 
                 </div>
               </div>
-            <p>Types of HTTP methods</p>
+            <p>Holder of events data</p>
 
           </section>
           <section class="section task-group-section">
@@ -93,9 +93,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FO7AtomSDK10HttpMethod3GETFMS0_S0_"></a>
-                    <a name="//apple_ref/swift/Element/GET" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FO7AtomSDK10HttpMethod3GETFMS0_S0_">GET</a>
+                    <a name="/s:vC7AtomSDK5Batch6eventsGSaSS_"></a>
+                    <a name="//apple_ref/swift/Property/events" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC7AtomSDK5Batch6eventsGSaSS_">events</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -103,30 +103,26 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Get request</p>
+                        <p>List of events</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="kt">GET</span> <span class="o">=</span> <span class="s">"GET"</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">events</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FO7AtomSDK10HttpMethod4POSTFMS0_S0_"></a>
-                    <a name="//apple_ref/swift/Element/POST" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FO7AtomSDK10HttpMethod4POSTFMS0_S0_">POST</a>
+                    <a name="/s:vC7AtomSDK5Batch6lastIdVs5Int32"></a>
+                    <a name="//apple_ref/swift/Property/lastId" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC7AtomSDK5Batch6lastIdVs5Int32">lastId</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -134,16 +130,76 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Post request with body content</p>
+                        <p>Undocumented</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="kt">POST</span> <span class="o">=</span> <span class="s">"POST"</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Batch</span></code></pre>
 
                         </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC7AtomSDK5BatchcFT6eventsGSaSS_6lastIdVs5Int32_S0_"></a>
+                    <a name="//apple_ref/swift/Method/init(events:lastId:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7AtomSDK5BatchcFT6eventsGSaSS_6lastIdVs5Int32_S0_">init(events:lastId:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Batch contructor</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">events</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">],</span> <span class="nv">lastId</span><span class="p">:</span> <span class="kt">Int32</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>events</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>List of events</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>lastId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Last Id getted from DB</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>

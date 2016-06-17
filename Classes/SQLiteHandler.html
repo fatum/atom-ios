@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>IronSourceAtom Class Reference</title>
+    <title>SQLiteHandler Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Class/IronSourceAtom" class="dashAnchor"></a>
-    <a title="IronSourceAtom Class Reference"></a>
+    <a name="//apple_ref/swift/Class/SQLiteHandler" class="dashAnchor"></a>
+    <a title="SQLiteHandler Class Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html"> Docs</a> (92% documented)</p>
@@ -21,7 +21,7 @@
       <p id="breadcrumbs">
         <a href="../index.html"> Reference</a>
         <img id="carat" src="../img/carat.png" />
-        IronSourceAtom Class Reference
+        SQLiteHandler Class Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -77,14 +77,8 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>IronSourceAtom</h1>
-              <div class="declaration">
-                <div class="language">
-                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">IronSourceAtom</span></code></pre>
-
-                </div>
-              </div>
-            <p>Atom simple SDK</p>
+            <h1>SQLiteHandler</h1>
+            <p>Undocumented</p>
 
           </section>
           <section class="section task-group-section">
@@ -93,9 +87,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC7AtomSDK14IronSourceAtomcFT_S0_"></a>
-                    <a name="//apple_ref/swift/Method/init()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC7AtomSDK14IronSourceAtomcFT_S0_">init()</a>
+                    <a name="/s:FC7AtomSDK13SQLiteHandlercFT4nameSS_S0_"></a>
+                    <a name="//apple_ref/swift/Method/init(name:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7AtomSDK13SQLiteHandlercFT4nameSS_S0_">init(name:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -103,16 +97,49 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>API Constructor</p>
+                        <p>SQL Handler contructor</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">()</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>database name</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>isDebug</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>is print debug in console</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -120,9 +147,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC7AtomSDK14IronSourceAtom11enableDebugFSbT_"></a>
+                    <a name="/s:FC7AtomSDK13SQLiteHandler11enableDebugFSbT_"></a>
                     <a name="//apple_ref/swift/Method/enableDebug(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC7AtomSDK14IronSourceAtom11enableDebugFSbT_">enableDebug(_:)</a>
+                    <a class="token" href="#/s:FC7AtomSDK13SQLiteHandler11enableDebugFSbT_">enableDebug(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -130,7 +157,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Enabling print debug information</p>
+                        <p>Enable print logs</p>
 
                       </div>
                       <div class="declaration">
@@ -153,7 +180,7 @@
                               </td>
                               <td>
                                 <div>
-                                  <p>if set to <c>true</c> is debug.</p>
+                                  <p>Is print log to console</p>
 
                                 </div>
                               </td>
@@ -167,9 +194,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC7AtomSDK14IronSourceAtom7setAuthFSST_"></a>
-                    <a name="//apple_ref/swift/Method/setAuth(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC7AtomSDK14IronSourceAtom7setAuthFSST_">setAuth(_:)</a>
+                    <a name="/s:FC7AtomSDK13SQLiteHandler10prepareSQLFSSSb"></a>
+                    <a name="//apple_ref/swift/Method/prepareSQL(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7AtomSDK13SQLiteHandler10prepareSQLFSSSb">prepareSQL(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -177,14 +204,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Set Auth Key for stream</p>
+                        <p>Prepare sql string for request</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">setAuth</span><span class="p">(</span><span class="nv">authKey</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">prepareSQL</span><span class="p">(</span><span class="nv">sql</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
                       </div>
@@ -195,12 +222,77 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>authKey</em>
+                                <em>sql</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>Secret key of stream.</p>
+                                  <p>Request in string</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Execute status</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC7AtomSDK13SQLiteHandler9bindInt64FTVs5Int327intDataVs5Int64_T_"></a>
+                    <a name="//apple_ref/swift/Method/bindInt64(_:intData:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7AtomSDK13SQLiteHandler9bindInt64FTVs5Int327intDataVs5Int64_T_">bindInt64(_:intData:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Bind Int64 to SQL statement</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">bindInt64</span><span class="p">(</span><span class="nv">index</span><span class="p">:</span> <span class="kt">Int32</span><span class="p">,</span> <span class="nv">intData</span><span class="p">:</span> <span class="kt">Int64</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>index</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Position in binding</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>intData</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Data for binding</p>
 
                                 </div>
                               </td>
@@ -214,9 +306,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC7AtomSDK14IronSourceAtom11setEndpointFSST_"></a>
-                    <a name="//apple_ref/swift/Method/setEndpoint(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC7AtomSDK14IronSourceAtom11setEndpointFSST_">setEndpoint(_:)</a>
+                    <a name="/s:FC7AtomSDK13SQLiteHandler9bindInt32FTVs5Int327intDataS1__T_"></a>
+                    <a name="//apple_ref/swift/Method/bindInt32(_:intData:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7AtomSDK13SQLiteHandler9bindInt32FTVs5Int327intDataS1__T_">bindInt32(_:intData:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -224,14 +316,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Set endpoint for send data</p>
+                        <p>Bind Int32 to SQL statement</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">setEndpoint</span><span class="p">(</span><span class="nv">endpoint</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">bindInt32</span><span class="p">(</span><span class="nv">index</span><span class="p">:</span> <span class="kt">Int32</span><span class="p">,</span> <span class="nv">intData</span><span class="p">:</span> <span class="kt">Int32</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -242,12 +334,25 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>endpoint</em>
+                                <em>index</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>Address of server</p>
+                                  <p>Position in binding</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>intData</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Data for binding</p>
 
                                 </div>
                               </td>
@@ -261,9 +366,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC7AtomSDK14IronSourceAtom8putEventFTSS4dataSS6methodOS_10HttpMethod8callbackGSqFCS_8ResponseT___T_"></a>
-                    <a name="//apple_ref/swift/Method/putEvent(_:data:method:callback:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC7AtomSDK14IronSourceAtom8putEventFTSS4dataSS6methodOS_10HttpMethod8callbackGSqFCS_8ResponseT___T_">putEvent(_:data:method:callback:)</a>
+                    <a name="/s:FC7AtomSDK13SQLiteHandler8bindTextFTVs5Int327strDataSS_T_"></a>
+                    <a name="//apple_ref/swift/Method/bindText(_:strData:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7AtomSDK13SQLiteHandler8bindTextFTVs5Int327strDataSS_T_">bindText(_:strData:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -271,15 +376,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Send single data to Atom server.</p>
+                        <p>Bind string to SQL statement</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">putEvent</span><span class="p">(</span><span class="nv">stream</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">data</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">method</span><span class="p">:</span> <span class="kt">HttpMethod</span><span class="p">,</span>
-                         <span class="nv">callback</span><span class="p">:</span> <span class="kt">AtomCallback</span><span class="p">?)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">bindText</span><span class="p">(</span><span class="nv">index</span><span class="p">:</span> <span class="kt">Int32</span><span class="p">,</span> <span class="nv">strData</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -290,12 +394,12 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>stream</em>
+                                <em>index</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>Stream name for saving data in db table</p>
+                                  <p>Position in binding</p>
 
                                 </div>
                               </td>
@@ -303,38 +407,12 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>data</em>
+                                <em>strData</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>User data to send</p>
-
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>method</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>POST or GET method for do request</p>
-
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>callback</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Get response data</p>
+                                  <p>Data for binding</p>
 
                                 </div>
                               </td>
@@ -348,9 +426,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC7AtomSDK14IronSourceAtom9putEventsFTSS4dataGSaSS_8callbackGSqFCS_8ResponseT___T_"></a>
-                    <a name="//apple_ref/swift/Method/putEvents(_:data:callback:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC7AtomSDK14IronSourceAtom9putEventsFTSS4dataGSaSS_8callbackGSqFCS_8ResponseT___T_">putEvents(_:data:callback:)</a>
+                    <a name="/s:FC7AtomSDK13SQLiteHandler13execStatementFT_Sb"></a>
+                    <a name="//apple_ref/swift/Method/execStatement()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7AtomSDK13SQLiteHandler13execStatementFT_Sb">execStatement()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -358,63 +436,21 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Send multiple events data to Atom server.</p>
+                        <p>Execute SQL statement</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">putEvents</span><span class="p">(</span><span class="nv">stream</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">data</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">],</span>
-                          <span class="nv">callback</span><span class="p">:</span> <span class="kt">AtomCallback</span><span class="p">?)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">execStatement</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
                       </div>
                       <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>stream</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Stream name for saving data in db table</p>
+                        <h4>Return Value</h4>
+                        <p>Execute status</p>
 
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>data</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>User data to send</p>
-
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>callback</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Get response data</p>
-
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
                       </div>
                     </section>
                   </div>
@@ -422,9 +458,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC7AtomSDK14IronSourceAtom9putEventsFTSS4dataSS8callbackGSqFCS_8ResponseT___T_"></a>
-                    <a name="//apple_ref/swift/Method/putEvents(_:data:callback:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC7AtomSDK14IronSourceAtom9putEventsFTSS4dataSS8callbackGSqFCS_8ResponseT___T_">putEvents(_:data:callback:)</a>
+                    <a name="/s:FC7AtomSDK13SQLiteHandler17execNextStatementFT_Sb"></a>
+                    <a name="//apple_ref/swift/Method/execNextStatement()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7AtomSDK13SQLiteHandler17execNextStatementFT_Sb">execNextStatement()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -432,63 +468,21 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Send multiple events data to Atom server.</p>
+                        <p>Execute next SQL statement</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">putEvents</span><span class="p">(</span><span class="nv">stream</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">data</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
-                          <span class="nv">callback</span><span class="p">:</span> <span class="kt">AtomCallback</span><span class="p">?)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">execNextStatement</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
                       </div>
                       <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>stream</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Stream name for saving data in db table</p>
+                        <h4>Return Value</h4>
+                        <p>Execute status</p>
 
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>data</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>User data to send</p>
-
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>callback</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Get response data</p>
-
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
                       </div>
                     </section>
                   </div>
@@ -496,9 +490,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC7AtomSDK14IronSourceAtom6healthFGSqFCS_8ResponseT__T_"></a>
-                    <a name="//apple_ref/swift/Method/health(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC7AtomSDK14IronSourceAtom6healthFGSqFCS_8ResponseT__T_">health(_:)</a>
+                    <a name="/s:FC7AtomSDK13SQLiteHandler14getColumnCountFT_Vs5Int32"></a>
+                    <a name="//apple_ref/swift/Method/getColumnCount()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7AtomSDK13SQLiteHandler14getColumnCountFT_Vs5Int32">getColumnCount()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -506,14 +500,46 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Check health of server</p>
+                        <p>Get column count from response</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">health</span><span class="p">(</span><span class="nv">callback</span><span class="p">:</span> <span class="kt">AtomCallback</span><span class="p">?)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getColumnCount</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Int32</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Count of column</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC7AtomSDK13SQLiteHandler12getColumnIntFVs5Int32S1_"></a>
+                    <a name="//apple_ref/swift/Method/getColumnInt(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7AtomSDK13SQLiteHandler12getColumnIntFVs5Int32S1_">getColumnInt(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Get column Int32 value</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getColumnInt</span><span class="p">(</span><span class="nv">index</span><span class="p">:</span> <span class="kt">Int32</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int32</span></code></pre>
 
                         </div>
                       </div>
@@ -524,18 +550,75 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>callback</em>
+                                <em>index</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>For receive response from server</p>
+                                  <p>position of column</p>
 
                                 </div>
                               </td>
                             </tr>
                           </tbody>
                         </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Int32 column value</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC7AtomSDK13SQLiteHandler12getColumnStrFVs5Int32SS"></a>
+                    <a name="//apple_ref/swift/Method/getColumnStr(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7AtomSDK13SQLiteHandler12getColumnStrFVs5Int32SS">getColumnStr(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Get column String value</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getColumnStr</span><span class="p">(</span><span class="nv">index</span><span class="p">:</span> <span class="kt">Int32</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>index</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>position of column</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>String column value</p>
+
                       </div>
                     </section>
                   </div>
