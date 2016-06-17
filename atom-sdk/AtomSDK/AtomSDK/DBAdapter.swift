@@ -98,6 +98,12 @@ public class DBAdapter {
      - returns: Inserted rows count
      */
     public func addEvent(streamData: StreamData, data: String) -> Int32 {
+        printLog("Make vacuum, current DB size: \(dbHandler_.getDBSize())")
+        if (dbHandler_.getDBSize() > 33000) {
+            
+            vacuum()
+        }
+        
         let sqlInsertReport = "INSERT INTO \(REPORTS_TABLE) (\(KEY_DATA), " +
             "\(KEY_STREAM), \(KEY_CREATED_AT)) VALUES (?, ?, ?);"
         dbHandler_.prepareSQL(sqlInsertReport)

@@ -16,21 +16,23 @@ public class SQLiteHandler {
     var isDebug_: Bool = false
     var database_: COpaquePointer = nil
     var sqlStatement_: COpaquePointer = nil
+    
+    let databasePath_: String
         
     /**
      SQL Handler contructor
      
      - parameter name:    database name
-     - parameter isDebug: is print debug in console
      */
     public init(name: String) {
         self.isDebug_ = true
         
         let documents = try! NSFileManager.defaultManager().URLForDirectory(.DocumentDirectory, inDomain: .UserDomainMask, appropriateForURL: nil, create: false)
         let fileURL = documents.URLByAppendingPathComponent(name)
-        printLog("DB path: \(fileURL)")
+        databasePath_ = fileURL.path!
+        printLog("DB path: \(databasePath_)")
         
-        if sqlite3_open(fileURL.path!, &database_) != SQLITE_OK {
+        if sqlite3_open(databasePath_, &database_) != SQLITE_OK {
             printLog("Error opening database.")
         }
         
@@ -50,6 +52,19 @@ public class SQLiteHandler {
             
             database_ = nil
         }
+    }
+    
+    public func getDBSize() -> UInt64 {
+        do {
+            let attr : NSDictionary! = try
+                NSFileManager.defaultManager().attributesOfItemAtPath(databasePath_)
+            
+            return attr.fileSize()
+        } catch {
+            printLog("Get DB size error: \(error)")
+        }
+        
+        return 0
     }
     
     /**

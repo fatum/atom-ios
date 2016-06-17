@@ -36,12 +36,7 @@ public class IronSourceAtomTracker {
         database_ = DBAdapter()
         database_.create()
         
-        self.printLog("Create flush timer!")
-        self.timer_ = NSTimer.scheduledTimerWithTimeInterval(self.flushInterval_,
-                        target: self,
-                        selector: #selector(IronSourceAtomTracker.timerFlush),
-                        userInfo: nil, repeats: true)
-        
+        initTimerFlush()
         self.dispatchSemapthore()
     }
     
@@ -49,8 +44,28 @@ public class IronSourceAtomTracker {
      API Tracker destructor
      */
     deinit {
+        self.invalidateTimerFlush()
+    }
+    
+    /**
+     <#Description#>
+     */
+    func invalidateTimerFlush() {
         self.timer_?.invalidate()
         self.timer_ = nil
+    }
+    
+    /**
+     <#Description#>
+     */
+    func initTimerFlush() {
+        self.invalidateTimerFlush()
+        
+        self.printLog("Create flush timer with intervals: \(self.flushInterval_)!")
+        self.timer_ = NSTimer.scheduledTimerWithTimeInterval(self.flushInterval_,
+                            target: self,
+                            selector: #selector(IronSourceAtomTracker.timerFlush),
+                            userInfo: nil, repeats: true)
     }
     
     /**
@@ -108,6 +123,8 @@ public class IronSourceAtomTracker {
      */
     public func setFlushInterval(flushInterval: Double) {
         self.flushInterval_ = flushInterval
+        
+        initTimerFlush()
     }
     
     /**
