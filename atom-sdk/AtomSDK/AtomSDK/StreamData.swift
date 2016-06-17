@@ -8,11 +8,20 @@
 
 import Foundation
 
+/// Holder of stream data
 public class StreamData {
-    public let name: String
-    public let token: String
+    // Stream name
+    public var name: String
+    // Stream Auth key
+    public var token: String
     
-    public init(name: String, token: String) {
+    /**
+     Stream Data contructor
+     
+     - parameter name:  Stream name
+     - parameter token: Stream Auth key
+     */
+    public init(name: String = "", token: String = "") {
         self.name = name
         self.token = token
     }

@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -196,23 +197,23 @@
                                 <exclude reference="Dll-7z-oYh"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="L1b-ER-gl5"/>
                                 <exclude reference="S0I-AL-uNt"/>
                                 <exclude reference="lIm-CU-2zK"/>
+                                <exclude reference="Q14-yv-OFk"/>
+                                <exclude reference="zOQ-Yn-abO"/>
                                 <exclude reference="KD0-9I-ULX"/>
                                 <exclude reference="nm2-Ue-1cn"/>
                                 <exclude reference="L0a-gU-KSR"/>
                                 <exclude reference="cvY-dU-2B9"/>
-                                <exclude reference="Dly-Z0-HXG"/>
-                                <exclude reference="rI7-MR-vdF"/>
+                                <exclude reference="CPJ-su-tBk"/>
+                                <exclude reference="zQ5-BZ-Mvc"/>
+                                <exclude reference="L1b-ER-gl5"/>
                                 <exclude reference="6fA-Qk-hXm"/>
                                 <exclude reference="B6s-a2-Oxa"/>
                                 <exclude reference="Thh-De-KOP"/>
                                 <exclude reference="Vrd-Ld-89S"/>
-                                <exclude reference="CPJ-su-tBk"/>
-                                <exclude reference="zQ5-BZ-Mvc"/>
-                                <exclude reference="Q14-yv-OFk"/>
-                                <exclude reference="zOQ-Yn-abO"/>
+                                <exclude reference="Dly-Z0-HXG"/>
+                                <exclude reference="rI7-MR-vdF"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -227,23 +228,23 @@
                                 <include reference="Dll-7z-oYh"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="L1b-ER-gl5"/>
                                 <include reference="S0I-AL-uNt"/>
                                 <include reference="lIm-CU-2zK"/>
+                                <include reference="Q14-yv-OFk"/>
+                                <include reference="zOQ-Yn-abO"/>
                                 <include reference="KD0-9I-ULX"/>
                                 <include reference="nm2-Ue-1cn"/>
                                 <include reference="L0a-gU-KSR"/>
                                 <include reference="cvY-dU-2B9"/>
-                                <include reference="Dly-Z0-HXG"/>
-                                <include reference="rI7-MR-vdF"/>
+                                <include reference="CPJ-su-tBk"/>
+                                <include reference="zQ5-BZ-Mvc"/>
+                                <include reference="L1b-ER-gl5"/>
                                 <include reference="6fA-Qk-hXm"/>
                                 <include reference="B6s-a2-Oxa"/>
                                 <include reference="Thh-De-KOP"/>
                                 <include reference="Vrd-Ld-89S"/>
-                                <include reference="CPJ-su-tBk"/>
-                                <include reference="zQ5-BZ-Mvc"/>
-                                <include reference="Q14-yv-OFk"/>
-                                <include reference="zOQ-Yn-abO"/>
+                                <include reference="Dly-Z0-HXG"/>
+                                <include reference="rI7-MR-vdF"/>
                             </mask>
                         </variation>
                     </view>

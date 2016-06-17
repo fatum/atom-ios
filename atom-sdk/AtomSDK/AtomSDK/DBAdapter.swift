@@ -8,12 +8,6 @@
 
 import Foundation
 
-// utils
-func CurrentTimeMillis() -> Int64 {
-    let nowDouble = NSDate().timeIntervalSince1970
-    return Int64(nowDouble * 1000)
-}
-
 public class DBAdapter {
     let DATABASE_NAME = "ironsource.atom.sqlite"
     let KEY_STREAM = "stream_name"
@@ -29,18 +23,30 @@ public class DBAdapter {
     var isDebug_: Bool = false
     let dbHandler_: SQLiteHandler
     
-    public init(isDebug: Bool) {
-        self.isDebug_ = isDebug
-        
-        dbHandler_ = SQLiteHandler(name: DATABASE_NAME, isDebug: isDebug)
+    /**
+     Database Adatapter constructor
+     */
+    public init() {
+        dbHandler_ = SQLiteHandler(name: DATABASE_NAME)
     }
     
+    /**
+     Enable print debug
+     
+     - parameter isDebug: Is print debug info in console
+     */
     public func enableDebug(isDebug: Bool) {
         isDebug_ = isDebug
         
         dbHandler_.enableDebug(isDebug)
     }
     
+    /**
+     Upgrade databese
+     
+     - parameter oldVersion: Previous version od DB
+     - parameter newVersion: New version of DB
+     */
     public func upgrade(oldVersion: Int, newVersion: Int) {
         if (oldVersion != newVersion) {
             printLog("Upgrading the IronSource.Atom database");
@@ -54,6 +60,9 @@ public class DBAdapter {
         }
     }
     
+    /**
+     Create tables in Database
+     */
     public func create() {
         printLog("Creating IronSource.Atom database.")
         
@@ -76,6 +85,14 @@ public class DBAdapter {
         dbHandler_.execStatement()
     }
     
+    /**
+     Adding event to database
+     
+     - parameter streamData: Data of the stream
+     - parameter data:       String data for inserting to DB
+     
+     - returns: Inserted rows count
+     */
     public func addEvent(streamData: StreamData, data: String) -> Int32 {
         let sqlInsertReport = "INSERT INTO \(REPORTS_TABLE) (\(KEY_DATA), " +
             "\(KEY_STREAM), \(KEY_CREATED_AT)) VALUES (?, ?, ?);"
@@ -112,6 +129,14 @@ public class DBAdapter {
         return rowsCount
     }
     
+    /**
+     Get events from Database
+     
+     - parameter streamData: Data of the stream
+     - parameter limit:      Max event count
+     
+     - returns: Batch with event information
+     */
     public func getEvents(streamData: StreamData, limit: Int32) -> Batch {
         var eventsList = [String]()
         var lastId: Int32 = -1
@@ -124,7 +149,6 @@ public class DBAdapter {
         dbHandler_.bindText(2, strData: KEY_CREATED_AT)
         dbHandler_.bindText(3, strData: "\(limit)")
         
-        
         while (dbHandler_.execNextStatement()) {
             lastId = dbHandler_.getColumnInt(0)
             eventsList.append(dbHandler_.getColumnStr(1))
@@ -133,6 +157,35 @@ public class DBAdapter {
         return Batch(events: eventsList, lastId: lastId)
     }
     
+    /**
+     Get stream information by name
+     
+     - parameter streamName: String stream name
+     
+     - returns: Data of the stream
+     */
+    public func getStream(streamName: String) -> StreamData {
+        let streamData = StreamData()
+        
+        let sqlSelectStreams = "SELECT * FROM \(STREAMS_TABLE) WHERE " +
+            "\(KEY_STREAM)=?"
+        dbHandler_.prepareSQL(sqlSelectStreams)
+        
+        dbHandler_.bindText(1, strData: streamName)
+        
+        while(dbHandler_.execNextStatement()) {
+            streamData.name = dbHandler_.getColumnStr(1)
+            streamData.token = dbHandler_.getColumnStr(2)
+        }
+        
+        return streamData
+    }
+    
+    /**
+     Get all stream information
+     
+     - returns: List data of streams
+     */
     public func getStreams() -> [StreamData] {
         var streamsList = [StreamData]()
         
@@ -147,7 +200,15 @@ public class DBAdapter {
         return streamsList
     }
     
-    public func deleteEvents(streamData: StreamData, lastId: Int32) {
+    /**
+     Deleting events from Database
+     
+     - parameter streamData: Data of the stream
+     - parameter lastId:     Id of last event from DB
+     
+     - returns: Count of removed elements
+     */
+    public func deleteEvents(streamData: StreamData, lastId: Int32) -> Int32 {
         let sqlDeleteEvents = "DELETE FROM \(REPORTS_TABLE) WHERE " +
             "\(KEY_STREAM) = ? AND \(REPORTS_TABLE)_id <= ?"
         dbHandler_.prepareSQL(sqlDeleteEvents)
@@ -156,8 +217,19 @@ public class DBAdapter {
         dbHandler_.bindInt32(2, intData: lastId)
         
         dbHandler_.execStatement()
+        
+        let sqlSelectChanges = "SELECT changes() FROM \(REPORTS_TABLE)"
+        dbHandler_.prepareSQL(sqlSelectChanges)
+        dbHandler_.execNextStatement()
+        
+        return dbHandler_.getColumnInt(0)
     }
     
+    /**
+     Delete stream from Streams table
+     
+     - parameter streamData: Data of the stream
+     */
     public func deleteStream(streamData: StreamData) {
         let sqlDeleteStreams = "DELETE FROM \(STREAMS_TABLE) WHERE " +
             "\(KEY_STREAM) = ?"
@@ -168,6 +240,9 @@ public class DBAdapter {
         dbHandler_.execStatement()
     }
     
+    /**
+     Vacuum SQl tables
+     */
     public func vacuum() {
         let nRows = count()
         let limit: Int32 = Int32(Double(nRows) * 0.3)
@@ -183,6 +258,13 @@ public class DBAdapter {
         dbHandler_.execStatement()
     }
     
+    /**
+     Get count of events from specific stream
+     
+     - parameter streamName: Data of the stream
+     
+     - returns: Count of events
+     */
     public func count(streamName: String = "") -> Int32 {
         var sqlSelectCount = "SELECT COUNT(*) FROM \(REPORTS_TABLE)"
         if streamName != "" {
@@ -194,9 +276,14 @@ public class DBAdapter {
         return dbHandler_.getColumnInt(0)
     }
     
+    /**
+     Prints the log.
+     
+     - parameter logData: Log data.
+     */
     func printLog(logData: String) {
         if (isDebug_) {
-            print(TAG + ": \(logData)")
+            print(TAG + ": \(logData)\n")
         }
     }
 }

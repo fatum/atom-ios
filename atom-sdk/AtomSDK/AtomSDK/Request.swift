@@ -10,6 +10,8 @@ import Foundation
 
 /// For make async HTTP requests to server
 public class Request {
+    let TAG = "Request"
+    
     var url_: String
     var data_: String
     var isDebug_: Bool
@@ -31,10 +33,10 @@ public class Request {
         self.url_ = url
         self.data_ = data
         
-        self.callback_ = callback
         self.isDebug_ = isDebug
         
         self.headers_ = headers
+        self.callback_ = callback
     }
     
     /**
@@ -90,11 +92,10 @@ public class Request {
                 errorStr = error!.localizedDescription
             } else {
                 dataStr = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
-                //self.printLog("Body: \(dataStr)")
+                self.printLog("Body: \(dataStr)")
                 
                 status = (response as! NSHTTPURLResponse).statusCode
             }
-            
             self.printLog("Response: \(status) - from: \(self.data_)")
             
             self.callback_?(Response(error: errorStr, data: dataStr, status: status))
@@ -110,7 +111,7 @@ public class Request {
      */
     func printLog(logData: String) {
         if (self.isDebug_) {
-            print(logData + "\n")
+            print(TAG + ": \(logData)\n")
         }
     }
 }

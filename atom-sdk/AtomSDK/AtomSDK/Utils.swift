@@ -74,3 +74,13 @@ func EncodeHmac(input: String, key: String) -> String {
     return digest as String
 }
 
+/**
+ Get current milliseconds
+ 
+ - returns: current time in int64
+ */
+func CurrentTimeMillis() -> Int64 {
+    let nowDouble = NSDate().timeIntervalSince1970
+    return Int64(nowDouble * 1000)
+}
+

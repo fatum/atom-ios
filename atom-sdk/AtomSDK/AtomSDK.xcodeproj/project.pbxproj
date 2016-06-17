@@ -8,10 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		42391D0C1D0AD1BF00408E7B /* IronSourceAtomTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42391D0B1D0AD1BF00408E7B /* IronSourceAtomTracker.swift */; };
-		42391D0E1D0AD2AF00408E7B /* BulkData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42391D0D1D0AD2AF00408E7B /* BulkData.swift */; };
 		427716331D06C5760056B341 /* AtomSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 427716321D06C5760056B341 /* AtomSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4277163A1D06C5760056B341 /* AtomSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4277162F1D06C5760056B341 /* AtomSDK.framework */; };
-		4277163F1D06C5760056B341 /* AtomSDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4277163E1D06C5760056B341 /* AtomSDKTests.swift */; };
 		4277164A1D06C59D0056B341 /* IronSourceAtom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427716491D06C59D0056B341 /* IronSourceAtom.swift */; };
 		427716A41D06E9320056B341 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427716A31D06E9320056B341 /* HttpMethod.swift */; };
 		427716A61D06EA260056B341 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427716A51D06EA260056B341 /* Response.swift */; };
@@ -20,32 +17,17 @@
 		42ECBD031D12C3E200CD9A3C /* DBAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42ECBD001D12C3E200CD9A3C /* DBAdapter.swift */; };
 		42ECBD041D12C3E200CD9A3C /* SQLiteHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42ECBD011D12C3E200CD9A3C /* SQLiteHandler.swift */; };
 		42ECBD051D12C3E200CD9A3C /* StreamData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42ECBD021D12C3E200CD9A3C /* StreamData.swift */; };
-		42ECBD071D12E66E00CD9A3C /* Batch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42ECBD061D12E66E00CD9A3C /* Batch.swift */; };
+		42ECBD3E1D14333200CD9A3C /* Batch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42ECBD061D12E66E00CD9A3C /* Batch.swift */; };
 		9488D6BE7B99FD5A6903E147 /* Pods_AtomSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E93AF4FBE99723602D69F7BB /* Pods_AtomSDK.framework */; };
-		FE1FB2BEA55C0D93A1E5282D /* Pods_AtomSDKTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23C46301BE056DB50C49DC4D /* Pods_AtomSDKTests.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		4277163B1D06C5760056B341 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 427716261D06C5760056B341 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4277162E1D06C5760056B341;
-			remoteInfo = AtomSDK;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		23C46301BE056DB50C49DC4D /* Pods_AtomSDKTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AtomSDKTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4052D994ABDD96E3FBE99632 /* Pods-AtomSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AtomSDK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AtomSDK/Pods-AtomSDK.debug.xcconfig"; sourceTree = "<group>"; };
 		42391D0B1D0AD1BF00408E7B /* IronSourceAtomTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IronSourceAtomTracker.swift; sourceTree = "<group>"; };
-		42391D0D1D0AD2AF00408E7B /* BulkData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BulkData.swift; sourceTree = "<group>"; };
 		4277162F1D06C5760056B341 /* AtomSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AtomSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		427716321D06C5760056B341 /* AtomSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AtomSDK.h; sourceTree = "<group>"; };
 		427716341D06C5760056B341 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		427716391D06C5760056B341 /* AtomSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AtomSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4277163E1D06C5760056B341 /* AtomSDKTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomSDKTests.swift; sourceTree = "<group>"; };
-		427716401D06C5760056B341 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		427716491D06C59D0056B341 /* IronSourceAtom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IronSourceAtom.swift; sourceTree = "<group>"; };
 		427716A31D06E9320056B341 /* HttpMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
 		427716A51D06EA260056B341 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
@@ -55,6 +37,9 @@
 		42ECBD011D12C3E200CD9A3C /* SQLiteHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteHandler.swift; sourceTree = "<group>"; };
 		42ECBD021D12C3E200CD9A3C /* StreamData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamData.swift; sourceTree = "<group>"; };
 		42ECBD061D12E66E00CD9A3C /* Batch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Batch.swift; sourceTree = "<group>"; };
+		42ECBD261D142D7800CD9A3C /* AtomSDKTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomSDKTests.swift; sourceTree = "<group>"; };
+		42ECBD281D142D7800CD9A3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42ECBD311D142FDD00CD9A3C /* BatchTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BatchTests.swift; path = AtomSDKTests/BatchTests.swift; sourceTree = SOURCE_ROOT; };
 		51D439FA664890A02AEF94D3 /* Pods-AtomSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AtomSDK.release.xcconfig"; path = "Pods/Target Support Files/Pods-AtomSDK/Pods-AtomSDK.release.xcconfig"; sourceTree = "<group>"; };
 		6FDC0AECDE75390D7E5A5DFF /* Pods-AtomSDKTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AtomSDKTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AtomSDKTests/Pods-AtomSDKTests.release.xcconfig"; sourceTree = "<group>"; };
 		E93AF4FBE99723602D69F7BB /* Pods_AtomSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AtomSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,15 +52,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9488D6BE7B99FD5A6903E147 /* Pods_AtomSDK.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		427716361D06C5760056B341 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4277163A1D06C5760056B341 /* AtomSDK.framework in Frameworks */,
-				FE1FB2BEA55C0D93A1E5282D /* Pods_AtomSDKTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,7 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				427716311D06C5760056B341 /* AtomSDK */,
-				4277163D1D06C5760056B341 /* AtomSDKTests */,
+				42ECBD251D142D7800CD9A3C /* AtomSDKTests */,
 				427716301D06C5760056B341 /* Products */,
 				059A1F8C99776002B9D0AFA7 /* Pods */,
 				B0CA95CB4066F72DEBEA02ED /* Frameworks */,
@@ -108,7 +84,6 @@
 			isa = PBXGroup;
 			children = (
 				4277162F1D06C5760056B341 /* AtomSDK.framework */,
-				427716391D06C5760056B341 /* AtomSDKTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -127,17 +102,17 @@
 				427716A51D06EA260056B341 /* Response.swift */,
 				427716AF1D0859920056B341 /* Utils.swift */,
 				42391D0B1D0AD1BF00408E7B /* IronSourceAtomTracker.swift */,
-				42391D0D1D0AD2AF00408E7B /* BulkData.swift */,
 				42ECBD061D12E66E00CD9A3C /* Batch.swift */,
 			);
 			path = AtomSDK;
 			sourceTree = "<group>";
 		};
-		4277163D1D06C5760056B341 /* AtomSDKTests */ = {
+		42ECBD251D142D7800CD9A3C /* AtomSDKTests */ = {
 			isa = PBXGroup;
 			children = (
-				4277163E1D06C5760056B341 /* AtomSDKTests.swift */,
-				427716401D06C5760056B341 /* Info.plist */,
+				42ECBD311D142FDD00CD9A3C /* BatchTests.swift */,
+				42ECBD261D142D7800CD9A3C /* AtomSDKTests.swift */,
+				42ECBD281D142D7800CD9A3C /* Info.plist */,
 			);
 			path = AtomSDKTests;
 			sourceTree = "<group>";
@@ -185,27 +160,6 @@
 			productReference = 4277162F1D06C5760056B341 /* AtomSDK.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		427716381D06C5760056B341 /* AtomSDKTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 427716461D06C5760056B341 /* Build configuration list for PBXNativeTarget "AtomSDKTests" */;
-			buildPhases = (
-				D289977C157798E9193E5EE1 /* [CP] Check Pods Manifest.lock */,
-				427716351D06C5760056B341 /* Sources */,
-				427716361D06C5760056B341 /* Frameworks */,
-				427716371D06C5760056B341 /* Resources */,
-				1659DCD4D6273C2F0146EC82 /* [CP] Embed Pods Frameworks */,
-				214AC15B4EE3CCDCACE8ED6D /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4277163C1D06C5760056B341 /* PBXTargetDependency */,
-			);
-			name = AtomSDKTests;
-			productName = AtomSDKTests;
-			productReference = 427716391D06C5760056B341 /* AtomSDKTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -217,9 +171,6 @@
 				ORGANIZATIONNAME = IronSource;
 				TargetAttributes = {
 					4277162E1D06C5760056B341 = {
-						CreatedOnToolsVersion = 7.3.1;
-					};
-					427716381D06C5760056B341 = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
 				};
@@ -237,7 +188,6 @@
 			projectRoot = "";
 			targets = (
 				4277162E1D06C5760056B341 /* AtomSDK */,
-				427716381D06C5760056B341 /* AtomSDKTests */,
 			);
 		};
 /* End PBXProject section */
@@ -250,46 +200,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		427716371D06C5760056B341 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1659DCD4D6273C2F0146EC82 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AtomSDKTests/Pods-AtomSDKTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		214AC15B4EE3CCDCACE8ED6D /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AtomSDKTests/Pods-AtomSDKTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		5D86DF62A37C6DCD816C39E6 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -303,21 +216,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AtomSDK/Pods-AtomSDK-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D289977C157798E9193E5EE1 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		FE2AD7489E5FA6728E93CE39 /* [CP] Check Pods Manifest.lock */ = {
@@ -347,32 +245,15 @@
 				42ECBD031D12C3E200CD9A3C /* DBAdapter.swift in Sources */,
 				427716AC1D084B910056B341 /* Request.swift in Sources */,
 				42391D0C1D0AD1BF00408E7B /* IronSourceAtomTracker.swift in Sources */,
-				42ECBD071D12E66E00CD9A3C /* Batch.swift in Sources */,
 				427716A61D06EA260056B341 /* Response.swift in Sources */,
+				42ECBD3E1D14333200CD9A3C /* Batch.swift in Sources */,
 				42ECBD041D12C3E200CD9A3C /* SQLiteHandler.swift in Sources */,
-				42391D0E1D0AD2AF00408E7B /* BulkData.swift in Sources */,
 				4277164A1D06C59D0056B341 /* IronSourceAtom.swift in Sources */,
 				427716B01D0859920056B341 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		427716351D06C5760056B341 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4277163F1D06C5760056B341 /* AtomSDKTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		4277163C1D06C5760056B341 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4277162E1D06C5760056B341 /* AtomSDK */;
-			targetProxy = 4277163B1D06C5760056B341 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		427716411D06C5760056B341 /* Debug */ = {
@@ -509,28 +390,6 @@
 			};
 			name = Release;
 		};
-		427716471D06C5760056B341 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F9975F7FF3E804748F1707BA /* Pods-AtomSDKTests.debug.xcconfig */;
-			buildSettings = {
-				INFOPLIST_FILE = AtomSDKTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ironsrc.atom.AtomSDKTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		427716481D06C5760056B341 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6FDC0AECDE75390D7E5A5DFF /* Pods-AtomSDKTests.release.xcconfig */;
-			buildSettings = {
-				INFOPLIST_FILE = AtomSDKTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ironsrc.atom.AtomSDKTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -548,15 +407,6 @@
 			buildConfigurations = (
 				427716441D06C5760056B341 /* Debug */,
 				427716451D06C5760056B341 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		427716461D06C5760056B341 /* Build configuration list for PBXNativeTarget "AtomSDKTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				427716471D06C5760056B341 /* Debug */,
-				427716481D06C5760056B341 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

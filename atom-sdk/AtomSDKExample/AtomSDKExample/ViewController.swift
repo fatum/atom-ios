@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let db = DBAdapter(isDebug: true)
+       /* let db = DBAdapter(isDebug: true)
         db.upgrade(1, newVersion: 2)
         
         db.addEvent(StreamData(name: "wwww", token: "1"), data: "test 1")
@@ -31,10 +31,10 @@ class ViewController: UIViewController {
         
         print("Count: \(count)")
         
-        print("Count from method: \(db.count())")        
-        db.vacuum()
+        //print("Count from method: \(db.count())")
+       // db.vacuum()
         
-        print("Count from method: \(db.count())")
+        //print("Count from method: \(db.count())")
         
         let events = db.getEvents(StreamData(name: "wwww", token: "1"), limit: 10)
         
@@ -47,7 +47,7 @@ class ViewController: UIViewController {
         print("Events: \(events)")
         
         print("Streams: \(db.getStreams()[0])")
-        
+        */
         
         // Do any additional setup after loading the view, typically from a nib.
         func callback(response: Response) {
@@ -58,7 +58,7 @@ class ViewController: UIViewController {
         }
         
         //request.get()
-        /*self.api_ = IronSourceAtom()
+        self.api_ = IronSourceAtom()
         self.api_!.enableDebug(true)
         self.api_!.setAuth("I40iwPPOsG3dfWX30labriCg9HqMfL")
         
@@ -66,9 +66,9 @@ class ViewController: UIViewController {
         self.apiTracker_!.enableDebug(true)
         self.apiTracker_!.setAuth("I40iwPPOsG3dfWX30labriCg9HqMfL")
         self.apiTracker_!.setBulkSize(2)
-        self.apiTracker_!.setFlushInterval(1)
+        self.apiTracker_!.setFlushInterval(2)
         self.apiTracker_!.setBulkBytesSize(10 * 1024)
-        self.apiTracker_!.setEndpoint("http://track.atom-data.io/")*/
+        self.apiTracker_!.setEndpoint("http://track.atom-data.io1/")
     }
 
     override func didReceiveMemoryWarning() {
@@ -147,7 +147,7 @@ class ViewController: UIViewController {
     
     @IBAction func buttonTackPressed(sender: UIButton) {
         self.apiTracker_!.track("sdkdev_sdkdev.public.g8y3etest",
-                                data: "{\"strings\": \"rrr \(i)\"}")
+                                data: "{\"strings\": \"eee \(i)\"}")
         i += 1
     }
     

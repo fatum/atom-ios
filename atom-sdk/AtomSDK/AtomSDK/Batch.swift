@@ -8,10 +8,19 @@
 
 import Foundation
 
+/// Holder of events data
 public class Batch {
+    /// List of events
     public let events: [String]
+    // Last Id getted from DB
     public let lastId: Int32
     
+    /**
+     Batch contructor
+     
+     - parameter events: List of events
+     - parameter lastId: Last Id getted from DB
+     */
     public init(events: [String], lastId: Int32) {
         self.events = events
         self.lastId = lastId

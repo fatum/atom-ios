@@ -10,6 +10,8 @@ import Foundation
 
 /// API Tracker class - for flush data in intervals
 public class IronSourceAtomTracker {
+    let TAG = "IronSourceAtomTracker"
+    
     var flushInterval_: Double = 10
     var bulkSize_: Int32 = 1000
     var bulkBytesSize_: Int32 = 64 * 1024
@@ -19,7 +21,12 @@ public class IronSourceAtomTracker {
     var api_: IronSourceAtom
     
     var isDebug_: Bool = false
+    var isFirst_: Bool = true
+    var isRunTimeFlush_: Bool = true
+    
     var database_: DBAdapter
+    
+    let semaphore_ = dispatch_semaphore_create(0)
     
     /**
      API Tracker constructor
@@ -27,7 +34,14 @@ public class IronSourceAtomTracker {
     public init() {
         self.api_ = IronSourceAtom()
         
-        database_ = DBAdapter(isDebug: false)
+        database_ = DBAdapter()
+        database_.create()
+        
+        self.printLog("Create flush timer!")
+        self.timer_ = NSTimer.scheduledTimerWithTimeInterval(self.flushInterval_,
+                        target: self,
+                        selector: #selector(IronSourceAtomTracker.timerFlush),
+                        userInfo: nil, repeats: true)
     }
     
     /**
@@ -47,6 +61,7 @@ public class IronSourceAtomTracker {
         self.isDebug_ = isDebug
         
         self.api_.enableDebug(isDebug)
+        self.database_.enableDebug(isDebug)
     }
     
     /**
@@ -109,20 +124,8 @@ public class IronSourceAtomTracker {
         let nRows = database_.addEvent(StreamData(name: stream, token: tokenStr),
                                        data: data)
         
-        //let bulkStr = bulkData!.getStringData()
-        //let bulkBytesSize = bulkStr.characters.count * sizeof(Character)
-        
-        //self.printLog("Bulk bytes size: \(bulkBytesSize)")
-        
         if (nRows >= self.bulkSize_) {
-            flush(stream)
-        }
-        
-        if (self.timer_ == nil) {
-            self.printLog("Create flush timer!")
-            self.timer_ = NSTimer.scheduledTimerWithTimeInterval(self.flushInterval_,
-                            target: self, selector: #selector(IronSourceAtomTracker.timerFlush),
-                            userInfo: nil, repeats: true)
+            flushAsync(stream, checkSize: true)
         }
     }
     
@@ -130,14 +133,17 @@ public class IronSourceAtomTracker {
      Wrapper for flush method in timer
      */
     @objc func timerFlush() {
-        self.flush()
+        if (self.isRunTimeFlush_) {
+            self.printLog("Flush from timer.")
+            self.flush()
+        }
     }
     
     
     /**
      Send data to atom server
      
-     - parameter stream:   Name of the stream
+     - parameter streamData:   Stream data: name, token
      - parameter data:     Info for sending
      - parameter dataSize: Size of info's
      - parameter method:   Http method (POST or GET)
@@ -153,52 +159,135 @@ public class IronSourceAtomTracker {
             self.api_.putEvents(streamData.name, data: data, callback: callback)
         }
     }
-    
+
     /**
-     Flush bulk data object
+     Flush batch data object
      
-     - parameter stream:   Name of stream to flush
-     - parameter bulkData: Bulk data object
+     - parameter streamData: Name of stream to flush
+     - parameter batch:      Data object
      */
     func flushData(streamData: StreamData, batch: Batch) {
-        var bulkDataStr:String = ""
-        var bulkSize: Int = 0
-            
-        objc_sync_enter(self)
-            bulkDataStr = bulkData.getStringData()
-            bulkSize = bulkData.getSize()
-            bulkData.clearData()
-        objc_sync_exit(self)
+        let batchDataStr:String = ListToJsonStr(batch.events)
+        let batchSize: Int = batch.events.count
         
         var callback: AtomCallback?
         var timeout:Double = 1
         
         callback = {response -> Void in
+            var isOk = false
             if (response.error != "") {
                 if (response.status >= 500 || response.status < 0) {
+                    self.isRunTimeFlush_ = false
                     dispatch_sync(dispatch_get_main_queue()) {
                         let fireDate = timeout + CFAbsoluteTimeGetCurrent()
                         if (timeout < 10 * 60) {
                             timeout = timeout * 2
                             let timer = CFRunLoopTimerCreateWithHandler(kCFAllocatorDefault, fireDate, 0,   0, 0) { _ in
-                                self.sendData(stream, data: bulkDataStr, dataSize: bulkSize,
+                                self.sendData(streamData, data: batchDataStr, dataSize: batchSize,
                                               method: HttpMethod.POST, callback: callback)
                             }
                             CFRunLoopAddTimer(CFRunLoopGetCurrent(), timer, kCFRunLoopCommonModes)
                         } else {
+                            self.dispatchSemapthore()
                             self.printLog("Server not response more then 10min.")
                         }
                     }
                 } else {
                     self.printLog("Server error: \(response.error)")
+                    isOk = true
                 }
             } else {
                 self.printLog("Server response: \(response.data)")
+                isOk = true
+            }
+            
+            if (isOk) {
+                self.isRunTimeFlush_ = true
+                self.database_.deleteEvents(streamData,
+                                            lastId: batch.lastId)
+                
+                if (self.database_.count(streamData.name) == 0) {
+                    self.database_.deleteStream(streamData)
+                }
+                
+                self.dispatchSemapthore()
             }
         }
         
-        sendData(streamData, data: bulkDataStr, dataSize: bulkSize,
+        sendData(streamData, data: batchDataStr, dataSize: batchSize,
                  method: HttpMethod.POST, callback: callback)
+    }
+    
+    /**
+     Flush data async
+     
+     - parameter streamName: Name of the stream
+     - parameter checkSize:  If check size events
+     */
+    func flushAsync(streamName: String, checkSize: Bool = false) {
+        dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)){
+            if (!self.isFirst_) {
+                self.printLog("Dispatch start")
+                dispatch_semaphore_wait(self.semaphore_, DISPATCH_TIME_FOREVER)
+                NSThread.sleepForTimeInterval(0.2)
+                self.printLog("Dispatch end")
+            } else {
+                self.isFirst_ = false
+                self.printLog("Dispatch first")
+            }
+            
+            if (checkSize) {
+                let eventCount = self.database_.count(streamName)
+                if (eventCount < self.bulkSize_) {
+                    self.dispatchSemapthore()
+                    return
+                }
+            }
+            
+            if (streamName.characters.count > 0) {
+                var batch: Batch?
+                var bulkSize = self.bulkSize_
+                let streamData = self.database_.getStream(streamName)
+                
+                while (true) {
+                    batch = self.database_.getEvents(streamData,
+                                                     limit: bulkSize)
+                    
+                    if (batch!.events.count > 1) {
+                        let batchStr = ListToJsonStr(batch!.events)
+                        let batchBytesSize = Int32(batchStr.characters.count *
+                            sizeof(Character))
+                        
+                        if (batchBytesSize <= self.bulkBytesSize_) {
+                            break
+                        }
+                        
+                        let ceilValue = ceil(Float(batchBytesSize) /
+                            Float(self.bulkBytesSize_))
+                        bulkSize = Int32(Float(bulkSize) / ceilValue);
+                    } else {
+                        break
+                    }
+                }
+                
+                if (batch!.events.count != 0) {
+                    self.flushData(streamData, batch: batch!)
+                } else {
+                    self.dispatchSemapthore()
+                }
+                
+            } else {
+                self.printLog("Wrong stream name '\(streamName)'!")
+                self.dispatchSemapthore()
+            }
+        }
+    }
+    
+    /**
+     Dispatch semaphore wrapper
+     */
+    func dispatchSemapthore() {
+        dispatch_semaphore_signal(self.semaphore_)
     }
     
     /**
@@ -206,14 +295,8 @@ public class IronSourceAtomTracker {
      
      - parameter stream: Name of the stream
      */
-    public func flush(stream: String, token: String) {
-        if (stream.characters.count > 0) {
-            let batch: Batch
-            
-            //flushData(stream, bulkData: bulkData!)
-        } else {
-            printLog("Wrong stream name '\(stream)'!")
-        }
+    public func flush(streamName: String) {
+        flushAsync(streamName, checkSize: false)
     }
     
     /**
@@ -222,7 +305,7 @@ public class IronSourceAtomTracker {
     public func flush() {
         let streamsList: [StreamData] = database_.getStreams()
         for stream in streamsList {
-            flush(stream.name, token: stream.token)
+            flush(stream.name)
         }
     }
     
@@ -233,7 +316,7 @@ public class IronSourceAtomTracker {
      */
     func printLog(logData: String) {
         if (self.isDebug_) {
-            print(logData + "\n")
+             print(TAG + ": \(logData)\n")
         }
     }
 }

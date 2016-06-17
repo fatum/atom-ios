@@ -15,9 +15,6 @@
 		427716621D06C7220056B341 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 427716601D06C7220056B341 /* LaunchScreen.storyboard */; };
 		427716A01D06CCED0056B341 /* AtomSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4277169F1D06CCED0056B341 /* AtomSDK.framework */; };
 		427716A11D06CCED0056B341 /* AtomSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4277169F1D06CCED0056B341 /* AtomSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		42ECBCF91D116DB100CD9A3C /* DBAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42ECBCF81D116DB100CD9A3C /* DBAdapter.swift */; };
-		42ECBCFB1D11856700CD9A3C /* StreamData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42ECBCFA1D11856700CD9A3C /* StreamData.swift */; };
-		42ECBCFF1D11A30800CD9A3C /* SQLiteHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42ECBCFE1D11A30800CD9A3C /* SQLiteHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -44,9 +41,6 @@
 		427716611D06C7220056B341 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		427716631D06C7220056B341 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4277169F1D06CCED0056B341 /* AtomSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AtomSDK.framework; path = Vendor/AtomSDK.framework; sourceTree = "<group>"; };
-		42ECBCF81D116DB100CD9A3C /* DBAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBAdapter.swift; sourceTree = "<group>"; };
-		42ECBCFA1D11856700CD9A3C /* StreamData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamData.swift; sourceTree = "<group>"; };
-		42ECBCFE1D11A30800CD9A3C /* SQLiteHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteHandler.swift; sourceTree = "<group>"; };
 		A64231D1792E109D92A4DD2A /* Pods-AtomSDKExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AtomSDKExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-AtomSDKExample/Pods-AtomSDKExample.release.xcconfig"; sourceTree = "<group>"; };
 		A6E1CD547C4ED1BF5B092978 /* Pods-AtomSDKExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AtomSDKExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AtomSDKExample/Pods-AtomSDKExample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,9 +86,6 @@
 				4277165E1D06C7220056B341 /* Assets.xcassets */,
 				427716601D06C7220056B341 /* LaunchScreen.storyboard */,
 				427716631D06C7220056B341 /* Info.plist */,
-				42ECBCF81D116DB100CD9A3C /* DBAdapter.swift */,
-				42ECBCFA1D11856700CD9A3C /* StreamData.swift */,
-				42ECBCFE1D11A30800CD9A3C /* SQLiteHandler.swift */,
 			);
 			path = AtomSDKExample;
 			sourceTree = "<group>";
@@ -240,10 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4277165A1D06C7220056B341 /* ViewController.swift in Sources */,
-				42ECBCFB1D11856700CD9A3C /* StreamData.swift in Sources */,
-				42ECBCF91D116DB100CD9A3C /* DBAdapter.swift in Sources */,
 				427716581D06C7220056B341 /* AppDelegate.swift in Sources */,
-				42ECBCFF1D11A30800CD9A3C /* SQLiteHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

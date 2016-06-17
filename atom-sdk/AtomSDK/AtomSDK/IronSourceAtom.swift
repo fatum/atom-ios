@@ -14,6 +14,7 @@ public typealias AtomCallback = (Response) -> Void
 
 /// Atom simple SDK
 public class IronSourceAtom {
+    let TAG = "IronSourceAtom"
     let API_VERSION_ = "V1.0.0"
     
     var endpoint_ = "http://track.atom-data.io/"
@@ -30,31 +31,6 @@ public class IronSourceAtom {
         headers_ = Dictionary<String, String>()
         headers_["x-ironsource-atom-sdk-type"] = "ios"
         headers_["x-ironsource-atom-sdk-version"] = self.API_VERSION_
-        
-        
-        let documents = try! NSFileManager.defaultManager().URLForDirectory(.DocumentDirectory, inDomain: .UserDomainMask, appropriateForURL: nil, create: false)
-        let fileURL = documents.URLByAppendingPathComponent("test.sqlite")
-        print("db path: \(fileURL)")
-        // open database
-        
-        var db: COpaquePointer = nil
-        if sqlite3_open(fileURL.path!, &db) != SQLITE_OK {
-            print("error opening database")
-        } else {
-            print("success")
-        }
-        
-        if sqlite3_exec(db, "create table if not exists test (id integer primary key autoincrement, name text)", nil, nil, nil) != SQLITE_OK {
-            let errmsg = String.fromCString(sqlite3_errmsg(db))
-            print("error creating table: \(errmsg)")
-        }
-        
-        if sqlite3_close(db) != SQLITE_OK {
-            print("error closing database")
-        }
-        
-        db = nil
-
     }
     
     /**
@@ -94,8 +70,9 @@ public class IronSourceAtom {
      */
     public func putEvent(stream: String, data: String, method: HttpMethod,
                          callback: AtomCallback?) {
+        
         let jsonData = getRequestData(stream, data: data)
-        self.sendRequest(self.endpoint_, data: jsonData, method: method,
+        sendRequest(self.endpoint_, data: jsonData, method: method,
                          callback: callback)
     }
     
@@ -110,10 +87,10 @@ public class IronSourceAtom {
                           callback: AtomCallback?) {
         let listJson = ListToJsonStr(data)
         
-        //printLog ("List to json: \(listJson)")
+        printLog ("List to json: \(listJson)")
         let jsonData = getRequestData(stream, data: listJson)
         
-        self.sendRequest(self.endpoint_ + "bulk", data: jsonData,
+        sendRequest(self.endpoint_ + "bulk", data: jsonData,
                          method: HttpMethod.POST, callback: callback)
     }
     
@@ -185,7 +162,7 @@ public class IronSourceAtom {
         
         let jsonStr = ObjectToJsonStr(eventObject)
         
-        //printLog("Request json: \(jsonStr)")
+        printLog("Request json: \(jsonStr)")
         
         return jsonStr
     }
@@ -197,7 +174,7 @@ public class IronSourceAtom {
      */
     func printLog(logData: String) {
         if (self.isDebug_) {
-            print(logData + "\n")
+            print(TAG + ": \(logData)\n")
         }
     }
 }

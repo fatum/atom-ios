@@ -1,14 +1,16 @@
 //
-//  AtomSDKTests.swift
-//  AtomSDKTests
+//  BatchTests.swift
+//  AtomSDK
 //
-//  Created by Valentine.Pavchuk on 6/17/16.
+//  Created by g8y3e on 6/17/16.
 //  Copyright © 2016 IronSource. All rights reserved.
 //
 
 import XCTest
 
-class AtomSDKTests: XCTestCase {
+import AtomSDK
+
+class BatchTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -20,9 +22,14 @@ class AtomSDKTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testCreation() {
+        let expectedList = ["1", "2", "3"]
+        let expectedId: Int32 = 42
+        
+        let batch = Batch(events: expectedList, lastId: expectedId)
+        
+        XCTAssert(expectedList == batch.events)
+        XCTAssert(expectedId == batch.lastId)
     }
     
     func testPerformanceExample() {
