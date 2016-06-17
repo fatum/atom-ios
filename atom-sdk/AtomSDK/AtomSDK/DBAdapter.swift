@@ -273,7 +273,7 @@ public class DBAdapter {
     }
     
     /**
-     Vacuum SQl tables
+     Vacuum SQL tables
      */
     public func vacuum() {
         let nRows = count()

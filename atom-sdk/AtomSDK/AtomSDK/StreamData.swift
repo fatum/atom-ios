@@ -10,9 +10,9 @@ import Foundation
 
 /// Holder of stream data
 public class StreamData {
-    // Stream name
+    /// Stream name
     public var name: String
-    // Stream Auth key
+    /// Stream Auth key
     public var token: String
     
     /**

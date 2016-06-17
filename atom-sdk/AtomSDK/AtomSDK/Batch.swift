@@ -12,7 +12,7 @@ import Foundation
 public class Batch {
     /// List of events
     public let events: [String]
-    // Last Id getted from DB
+    /// Last Id getted from DB
     public let lastId: Int32
     
     /**

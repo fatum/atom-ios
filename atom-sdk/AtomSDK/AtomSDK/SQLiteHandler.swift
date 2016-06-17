@@ -9,6 +9,7 @@
 import Foundation
 import sqlite3
 
+/// SQL helper class
 public class SQLiteHandler {
     let TAG = "SQLiteHandler"
     
