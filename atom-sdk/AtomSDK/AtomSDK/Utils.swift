@@ -19,14 +19,15 @@ import CommonCrypto
 func ObjectToJsonStr(data: NSObject) -> String {
     var jsonData: NSData
     var jsonStr: String = ""
+    
     do {
-        jsonData = try NSJSONSerialization.dataWithJSONObject(data, options:  NSJSONWritingOptions(rawValue: 0))
-        jsonStr = NSString(data: jsonData, encoding: NSUTF8StringEncoding) as! String
-        
-    } catch let error as NSError {
-        print(error)
+        jsonData = try NSJSONSerialization.dataWithJSONObject(data, options:  NSJSONWritingOptions(rawValue: 0))        
+    } catch let error {
+        print("Convert error: \(error)")
+        return jsonStr
     }
     
+    jsonStr = NSString(data: jsonData, encoding: NSUTF8StringEncoding) as! String
     return jsonStr
 }
 

@@ -18,8 +18,11 @@
 		42ECBD041D12C3E200CD9A3C /* SQLiteHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42ECBD011D12C3E200CD9A3C /* SQLiteHandler.swift */; };
 		42ECBD051D12C3E200CD9A3C /* StreamData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42ECBD021D12C3E200CD9A3C /* StreamData.swift */; };
 		42ECBD3E1D14333200CD9A3C /* Batch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42ECBD061D12E66E00CD9A3C /* Batch.swift */; };
-		42ECBD771D1AB9B200CD9A3C /* AtomSDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42ECBD761D1AB9B200CD9A3C /* AtomSDKTests.swift */; };
 		42ECBD791D1AB9B200CD9A3C /* AtomSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4277162F1D06C5760056B341 /* AtomSDK.framework */; };
+		42ECBD811D1AD39500CD9A3C /* UtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42ECBD801D1AD39500CD9A3C /* UtilsTests.swift */; };
+		42ECBD831D1AE4BA00CD9A3C /* BatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42ECBD821D1AE4BA00CD9A3C /* BatchTests.swift */; };
+		42ECBD851D1AE6A000CD9A3C /* StreamDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42ECBD841D1AE6A000CD9A3C /* StreamDataTests.swift */; };
+		42ECBD871D1AE78600CD9A3C /* ResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42ECBD861D1AE78600CD9A3C /* ResponseTests.swift */; };
 		9488D6BE7B99FD5A6903E147 /* Pods_AtomSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E93AF4FBE99723602D69F7BB /* Pods_AtomSDK.framework */; };
 		C3AEBBCB9E9F9B86D903A1D2 /* Pods_AtomSDKTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23C46301BE056DB50C49DC4D /* Pods_AtomSDKTests.framework */; };
 /* End PBXBuildFile section */
@@ -51,8 +54,11 @@
 		42ECBD021D12C3E200CD9A3C /* StreamData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamData.swift; sourceTree = "<group>"; };
 		42ECBD061D12E66E00CD9A3C /* Batch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Batch.swift; sourceTree = "<group>"; };
 		42ECBD741D1AB9B200CD9A3C /* AtomSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AtomSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		42ECBD761D1AB9B200CD9A3C /* AtomSDKTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomSDKTests.swift; sourceTree = "<group>"; };
 		42ECBD781D1AB9B200CD9A3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42ECBD801D1AD39500CD9A3C /* UtilsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilsTests.swift; sourceTree = "<group>"; };
+		42ECBD821D1AE4BA00CD9A3C /* BatchTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatchTests.swift; sourceTree = "<group>"; };
+		42ECBD841D1AE6A000CD9A3C /* StreamDataTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamDataTests.swift; sourceTree = "<group>"; };
+		42ECBD861D1AE78600CD9A3C /* ResponseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseTests.swift; sourceTree = "<group>"; };
 		51D439FA664890A02AEF94D3 /* Pods-AtomSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AtomSDK.release.xcconfig"; path = "Pods/Target Support Files/Pods-AtomSDK/Pods-AtomSDK.release.xcconfig"; sourceTree = "<group>"; };
 		6FDC0AECDE75390D7E5A5DFF /* Pods-AtomSDKTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AtomSDKTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AtomSDKTests/Pods-AtomSDKTests.release.xcconfig"; sourceTree = "<group>"; };
 		E93AF4FBE99723602D69F7BB /* Pods_AtomSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AtomSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,8 +139,11 @@
 		42ECBD751D1AB9B200CD9A3C /* AtomSDKTests */ = {
 			isa = PBXGroup;
 			children = (
-				42ECBD761D1AB9B200CD9A3C /* AtomSDKTests.swift */,
 				42ECBD781D1AB9B200CD9A3C /* Info.plist */,
+				42ECBD801D1AD39500CD9A3C /* UtilsTests.swift */,
+				42ECBD821D1AE4BA00CD9A3C /* BatchTests.swift */,
+				42ECBD841D1AE6A000CD9A3C /* StreamDataTests.swift */,
+				42ECBD861D1AE78600CD9A3C /* ResponseTests.swift */,
 			);
 			path = AtomSDKTests;
 			sourceTree = "<group>";
@@ -356,7 +365,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42ECBD771D1AB9B200CD9A3C /* AtomSDKTests.swift in Sources */,
+				42ECBD871D1AE78600CD9A3C /* ResponseTests.swift in Sources */,
+				42ECBD851D1AE6A000CD9A3C /* StreamDataTests.swift in Sources */,
+				42ECBD811D1AD39500CD9A3C /* UtilsTests.swift in Sources */,
+				42ECBD831D1AE4BA00CD9A3C /* BatchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
