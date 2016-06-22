@@ -22,7 +22,7 @@ public class SQLiteHandler {
     /**
      SQL Handler contructor
      
-     - parameter name:    database name
+     - parameter name: Database name
      */
     public init(name: String) {
         self.isDebug_ = true

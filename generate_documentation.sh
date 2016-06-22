@@ -1,5 +1,7 @@
 cd atom-sdk/AtomSDK 
-jazzy
+jazzy \
+	--author IronSource.Atom \
+	--author_url http://www.ironsrc.com/data-flow-management/ \
 
 TARGET_BRANCH="gh-pages"
 mkdir $TARGET_BRANCH

@@ -48,7 +48,7 @@ public class IronSourceAtomTracker {
     }
     
     /**
-     <#Description#>
+     Remove timer for flush task
      */
     func invalidateTimerFlush() {
         self.timer_?.invalidate()
@@ -56,16 +56,17 @@ public class IronSourceAtomTracker {
     }
     
     /**
-     <#Description#>
+     Init timer for flush data
      */
     func initTimerFlush() {
         self.invalidateTimerFlush()
         
         self.printLog("Create 1flush timer with intervals: \(self.flushInterval_)!")
-        self.timer_ = NSTimer.scheduledTimerWithTimeInterval(self.flushInterval_,
-                                                             target: self,
-                                                             selector: #selector(IronSourceAtomTracker.timerFlush),
-                                                             userInfo: nil, repeats: true)
+        self.timer_ = NSTimer
+            .scheduledTimerWithTimeInterval(self.flushInterval_,
+                                            target: self,
+                                            selector: #selector(IronSourceAtomTracker.timerFlush),
+                                            userInfo: nil, repeats: true)
     }
     
     /**
@@ -139,7 +140,6 @@ public class IronSourceAtomTracker {
             tokenStr = self.api_.authKey_
         }
         
-        
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)){
             let rowsCount = self.database_.addEvent(StreamData(name: stream, token: tokenStr),
                                                     data: data)
@@ -148,8 +148,6 @@ public class IronSourceAtomTracker {
                 self.flushAsync(stream, checkSize: true)
             }
         }
-        
-        
     }
     
     /**
@@ -161,7 +159,6 @@ public class IronSourceAtomTracker {
             self.flush()
         }
     }
-    
     
     /**
      Send data to atom server
@@ -196,6 +193,7 @@ public class IronSourceAtomTracker {
         } else {
             batchDataStr = ListToJsonStr(batch.events)
         }
+        
         let batchSize: Int = batch.events.count
         
         var callback: AtomCallback?
