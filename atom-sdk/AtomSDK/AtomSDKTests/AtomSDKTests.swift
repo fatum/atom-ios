@@ -2,11 +2,14 @@
 //  AtomSDKTests.swift
 //  AtomSDKTests
 //
-//  Created by Valentine.Pavchuk on 6/17/16.
+//  Created by Valentine.Pavchuk on 6/22/16.
 //  Copyright © 2016 IronSource. All rights reserved.
 //
 
 import XCTest
+
+import CommonCrypto
+@testable import AtomSDK
 
 class AtomSDKTests: XCTestCase {
     
@@ -23,6 +26,12 @@ class AtomSDKTests: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        let testStr = ["fffff"]
+        
+        let result = ListToJsonStr(testStr)
+        
+        XCTAssertEqual(testStr[0], result)
     }
     
     func testPerformanceExample() {

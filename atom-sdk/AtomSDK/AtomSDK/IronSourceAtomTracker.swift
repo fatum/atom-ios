@@ -34,7 +34,7 @@ public class IronSourceAtomTracker {
     public init() {
         self.api_ = IronSourceAtom()
         database_ = DBAdapter()
-        database_.create()
+        database_.upgrade(1, newVersion: 2)
         
         initTimerFlush()
         self.dispatchSemapthore()
@@ -61,11 +61,11 @@ public class IronSourceAtomTracker {
     func initTimerFlush() {
         self.invalidateTimerFlush()
         
-        self.printLog("Create flush timer with intervals: \(self.flushInterval_)!")
+        self.printLog("Create 1flush timer with intervals: \(self.flushInterval_)!")
         self.timer_ = NSTimer.scheduledTimerWithTimeInterval(self.flushInterval_,
-                            target: self,
-                            selector: #selector(IronSourceAtomTracker.timerFlush),
-                            userInfo: nil, repeats: true)
+                                                             target: self,
+                                                             selector: #selector(IronSourceAtomTracker.timerFlush),
+                                                             userInfo: nil, repeats: true)
     }
     
     /**
@@ -139,12 +139,17 @@ public class IronSourceAtomTracker {
             tokenStr = self.api_.authKey_
         }
         
-        let nRows = database_.addEvent(StreamData(name: stream, token: tokenStr),
-                                       data: data)
         
-        if (nRows >= self.bulkSize_) {
-            flushAsync(stream, checkSize: true)
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)){
+            let rowsCount = self.database_.addEvent(StreamData(name: stream, token: tokenStr),
+                                                    data: data)
+            
+            if (rowsCount >= self.bulkSize_) {
+                self.flushAsync(stream, checkSize: true)
+            }
         }
+        
+        
     }
     
     /**
@@ -177,7 +182,7 @@ public class IronSourceAtomTracker {
             self.api_.putEvents(streamData.name, data: data, callback: callback)
         }
     }
-
+    
     /**
      Flush batch data object
      
@@ -185,7 +190,12 @@ public class IronSourceAtomTracker {
      - parameter batch:      Data object
      */
     func flushData(streamData: StreamData, batch: Batch) {
-        let batchDataStr:String = ListToJsonStr(batch.events)
+        let batchDataStr:String
+        if (batch.events.count == 1) {
+            batchDataStr = batch.events[0]
+        } else {
+            batchDataStr = ListToJsonStr(batch.events)
+        }
         let batchSize: Int = batch.events.count
         
         var callback: AtomCallback?
@@ -284,6 +294,10 @@ public class IronSourceAtomTracker {
                     }
                 }
                 
+                self.printLog("bulkSize: \(bulkSize)")
+                self.printLog("batch count: \(batch!.events.count)")
+                self.printLog("batch evetns: \(batch!.events)")
+                
                 if (batch!.events.count != 0) {
                     self.flushData(streamData, batch: batch!)
                 } else {
@@ -330,7 +344,7 @@ public class IronSourceAtomTracker {
      */
     func printLog(logData: String) {
         if (self.isDebug_) {
-             print(TAG + ": \(logData)\n")
+            print(TAG + ": \(logData)\n")
         }
     }
 }

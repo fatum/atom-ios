@@ -7,10 +7,10 @@ target 'AtomSDK' do
 
   # Pods for AtomSDK
   pod 'sqlite3'
+end
 
-  target 'AtomSDKTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
+target 'AtomSDKTests' do
+    use_frameworks!
+    
+    pod 'sqlite3'
 end

@@ -65,8 +65,8 @@ class ViewController: UIViewController {
         self.apiTracker_ = IronSourceAtomTracker()
         self.apiTracker_!.enableDebug(true)
         self.apiTracker_!.setAuth("I40iwPPOsG3dfWX30labriCg9HqMfL")
-        self.apiTracker_!.setBulkSize(1000)
-        self.apiTracker_!.setFlushInterval(100)
+        self.apiTracker_!.setBulkSize(2000)
+        self.apiTracker_!.setFlushInterval(1000)
         self.apiTracker_!.setBulkBytesSize(10 * 1024)
         self.apiTracker_!.setEndpoint("http://track.atom-data.io/")
     }
@@ -147,7 +147,7 @@ class ViewController: UIViewController {
     
     @IBAction func buttonTackPressed(sender: UIButton) {
         self.apiTracker_!.track("sdkdev_sdkdev.public.g8y3etest",
-                                data: "{\"strings\": \"eee \(i)\"}")
+                                data: "{\"strings\": \"QQQQ \(i)\"}")
         i += 1
     }
     

@@ -18,7 +18,7 @@ public class SQLiteHandler {
     var sqlStatement_: COpaquePointer = nil
     
     let databasePath_: String
-        
+    
     /**
      SQL Handler contructor
      
@@ -26,11 +26,11 @@ public class SQLiteHandler {
      */
     public init(name: String) {
         self.isDebug_ = true
-        
         let documents = try! NSFileManager.defaultManager().URLForDirectory(.DocumentDirectory, inDomain: .UserDomainMask, appropriateForURL: nil, create: false)
         let fileURL = documents.URLByAppendingPathComponent(name)
         databasePath_ = fileURL.path!
-        printLog("DB path: \(databasePath_)")
+        
+        printLog("DB path: \(self.databasePath_)")
         
         if sqlite3_open(databasePath_, &database_) != SQLITE_OK {
             printLog("Error opening database.")
@@ -54,17 +54,25 @@ public class SQLiteHandler {
         }
     }
     
+    /**
+     Get Database size
+     
+     - returns: Database size
+     */
     public func getDBSize() -> UInt64 {
+        var fileSize: UInt64 = 0
         do {
-            let attr : NSDictionary! = try
-                NSFileManager.defaultManager().attributesOfItemAtPath(databasePath_)
+            let attr : NSDictionary? = try NSFileManager.defaultManager()
+                .attributesOfItemAtPath(self.databasePath_)
             
-            return attr.fileSize()
+            if let _attr = attr {
+                fileSize = _attr.fileSize();
+            }
         } catch {
-            printLog("Get DB size error: \(error)")
+            print("Error: \(error)")
         }
         
-        return 0
+        return fileSize
     }
     
     /**
@@ -85,7 +93,7 @@ public class SQLiteHandler {
      */
     public func prepareSQL(sql: String) -> Bool {
         objc_sync_enter(self)
-            finalizeStatement()
+        finalizeStatement()
         objc_sync_exit(self)
         
         var returnStatus = true
@@ -134,7 +142,7 @@ public class SQLiteHandler {
      - parameter strData: Data for binding
      */
     public func bindText(index: Int32, strData: String) {
-        let data = strData as NSString 
+        let data = strData as NSString
         
         if (sqlite3_bind_text(sqlStatement_, index, data.UTF8String, -1, nil) !=
             SQLITE_OK) {
@@ -174,12 +182,13 @@ public class SQLiteHandler {
             if status != SQLITE_DONE {
                 let errorMsg = String.fromCString(sqlite3_errmsg(sqlStatement_))
                 printLog("Error execute next: \(errorMsg)")
+                
             }
             returnStatus = false
         }
         
         return returnStatus
-
+        
     }
     
     /**
@@ -232,8 +241,8 @@ public class SQLiteHandler {
      - parameter logData: Log data.
      */
     func printLog(logData: String) {
-        if (isDebug_) {
+        if (self.isDebug_) {
             print(TAG + ": \(logData)\n")
         }
-     }
+    }
 }

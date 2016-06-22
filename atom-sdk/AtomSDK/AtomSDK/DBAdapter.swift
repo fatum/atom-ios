@@ -8,7 +8,10 @@
 
 import Foundation
 
+/// Adapter class for SQLite Database
 public class DBAdapter {
+    let TAG = "DBAdapter"
+    
     let DATABASE_NAME = "ironsource.atom.sqlite"
     let KEY_STREAM = "stream_name"
     let KEY_DATA = "data"
@@ -18,20 +21,20 @@ public class DBAdapter {
     let STREAMS_TABLE = "streams"
     let REPORTS_TABLE = "reports"
     
-    let TAG = "DBAdapter"
+    let MAX_DATABASE_SIZE: UInt64 = 1024 * 1024 * 10
     
     var isDebug_: Bool = false
     let dbHandler_: SQLiteHandler
     
-    let streamSemaphore_ = dispatch_semaphore_create(0)
-        
+    let databaseSemaphore_ = dispatch_semaphore_create(0)
+    
     /**
      Database Adatapter constructor
      */
     public init() {
         dbHandler_ = SQLiteHandler(name: DATABASE_NAME)
         
-        dispatch_semaphore_signal(self.streamSemaphore_)
+        dispatch_semaphore_signal(self.databaseSemaphore_)
     }
     
     /**
@@ -53,12 +56,14 @@ public class DBAdapter {
      */
     public func upgrade(oldVersion: Int, newVersion: Int) {
         if (oldVersion != newVersion) {
+            dispatch_semaphore_wait(self.databaseSemaphore_, DISPATCH_TIME_FOREVER)
             printLog("Upgrading the IronSource.Atom database");
             dbHandler_.prepareSQL("DROP TABLE IF EXISTS \(STREAMS_TABLE)")
             dbHandler_.execStatement()
             
             dbHandler_.prepareSQL("DROP TABLE IF EXISTS \(REPORTS_TABLE)")
             dbHandler_.execStatement()
+            dispatch_semaphore_signal(self.databaseSemaphore_)
             
             create()
         }
@@ -68,6 +73,7 @@ public class DBAdapter {
      Create tables in Database
      */
     public func create() {
+        dispatch_semaphore_wait(self.databaseSemaphore_, DISPATCH_TIME_FOREVER)
         printLog("Creating IronSource.Atom database.")
         
         let sqlReportsCreate = "CREATE TABLE IF NOT EXISTS \(REPORTS_TABLE)" +
@@ -87,6 +93,7 @@ public class DBAdapter {
             "\(REPORTS_TABLE) (\(KEY_CREATED_AT));"
         dbHandler_.prepareSQL(sqlIndexCreate)
         dbHandler_.execStatement()
+        dispatch_semaphore_signal(self.databaseSemaphore_)
     }
     
     /**
@@ -98,12 +105,14 @@ public class DBAdapter {
      - returns: Inserted rows count
      */
     public func addEvent(streamData: StreamData, data: String) -> Int32 {
-        printLog("Make vacuum, current DB size: \(dbHandler_.getDBSize())")
-        if (dbHandler_.getDBSize() > 33000) {
-            
+        printLog("Current DB size: \(dbHandler_.getDBSize())")
+        
+        if (dbHandler_.getDBSize() > MAX_DATABASE_SIZE) {
+            printLog("Make vacuum, current DB size: \(dbHandler_.getDBSize())")
             vacuum()
         }
         
+        dispatch_semaphore_wait(self.databaseSemaphore_, DISPATCH_TIME_FOREVER)
         let sqlInsertReport = "INSERT INTO \(REPORTS_TABLE) (\(KEY_DATA), " +
             "\(KEY_STREAM), \(KEY_CREATED_AT)) VALUES (?, ?, ?);"
         dbHandler_.prepareSQL(sqlInsertReport)
@@ -115,14 +124,16 @@ public class DBAdapter {
         dbHandler_.execStatement()
         
         // get report count
-        let sqlSelectCount = "SELECT COUNT(*) FROM \(REPORTS_TABLE) " +
+        let sqlSelectCount = "SELECT COUNT(*) FROM \(STREAMS_TABLE) " +
             "WHERE \(KEY_STREAM)=?;"
         dbHandler_.prepareSQL(sqlSelectCount)
         dbHandler_.bindText(1, strData: streamData.name)
         dbHandler_.execNextStatement()
         
         let rowsCount = dbHandler_.getColumnInt(0)
-        if rowsCount == 1 {
+        dispatch_semaphore_signal(self.databaseSemaphore_)
+        
+        if rowsCount == 0 {
             addStream(streamData)
         }
         
@@ -135,8 +146,7 @@ public class DBAdapter {
      - parameter streamData: Data of the stream
      */
     public func addStream(streamData: StreamData) {
-        dispatch_semaphore_wait(self.streamSemaphore_, DISPATCH_TIME_FOREVER)
-        
+        dispatch_semaphore_wait(self.databaseSemaphore_, DISPATCH_TIME_FOREVER)
         let sqlInsertToken = "INSERT INTO \(STREAMS_TABLE) (\(KEY_STREAM), " +
             "\(KEY_TOKEN)) VALUES (?, ?);"
         dbHandler_.prepareSQL(sqlInsertToken)
@@ -146,7 +156,7 @@ public class DBAdapter {
         
         dbHandler_.execStatement()
         
-        dispatch_semaphore_signal(self.streamSemaphore_)
+        dispatch_semaphore_signal(self.databaseSemaphore_)
     }
     
     /**
@@ -161,6 +171,7 @@ public class DBAdapter {
         var eventsList = [String]()
         var lastId: Int32 = -1
         
+        dispatch_semaphore_wait(self.databaseSemaphore_, DISPATCH_TIME_FOREVER)
         let sqlSelectEvents = "SELECT * FROM \(REPORTS_TABLE) " +
             "WHERE \(KEY_STREAM)=? ORDER BY ? ASC LIMIT ?"
         dbHandler_.prepareSQL(sqlSelectEvents)
@@ -170,9 +181,15 @@ public class DBAdapter {
         dbHandler_.bindText(3, strData: "\(limit)")
         
         while (dbHandler_.execNextStatement()) {
+            if (dbHandler_.getColumnCount() < 2) {
+                break
+            }
+            
             lastId = dbHandler_.getColumnInt(0)
             eventsList.append(dbHandler_.getColumnStr(1))
         }
+        
+        dispatch_semaphore_signal(self.databaseSemaphore_)
         
         return Batch(events: eventsList, lastId: lastId)
     }
@@ -185,8 +202,7 @@ public class DBAdapter {
      - returns: Data of the stream
      */
     public func getStream(streamName: String) -> StreamData {
-        dispatch_semaphore_wait(self.streamSemaphore_, DISPATCH_TIME_FOREVER)
-        
+        dispatch_semaphore_wait(self.databaseSemaphore_, DISPATCH_TIME_FOREVER)
         let streamData = StreamData()
         
         let sqlSelectStreams = "SELECT * FROM \(STREAMS_TABLE) WHERE " +
@@ -203,7 +219,8 @@ public class DBAdapter {
             streamData.name = dbHandler_.getColumnStr(1)
             streamData.token = dbHandler_.getColumnStr(2)
         }
-        dispatch_semaphore_signal(self.streamSemaphore_)
+        
+        dispatch_semaphore_signal(self.databaseSemaphore_)
         
         return streamData
     }
@@ -214,8 +231,7 @@ public class DBAdapter {
      - returns: List data of streams
      */
     public func getStreams() -> [StreamData] {
-        dispatch_semaphore_wait(self.streamSemaphore_, DISPATCH_TIME_FOREVER)
-        
+        dispatch_semaphore_wait(self.databaseSemaphore_, DISPATCH_TIME_FOREVER)
         var streamsList = [StreamData]()
         
         let sqlSelectStreams = "SELECT * FROM \(STREAMS_TABLE)"
@@ -230,7 +246,8 @@ public class DBAdapter {
                 token: dbHandler_.getColumnStr(2)))
         }
         
-        dispatch_semaphore_signal(self.streamSemaphore_)
+        dispatch_semaphore_signal(self.databaseSemaphore_)
+        
         return streamsList
     }
     
@@ -243,6 +260,7 @@ public class DBAdapter {
      - returns: Count of removed elements
      */
     public func deleteEvents(streamData: StreamData, lastId: Int32) -> Int32 {
+        dispatch_semaphore_wait(self.databaseSemaphore_, DISPATCH_TIME_FOREVER)
         let sqlDeleteEvents = "DELETE FROM \(REPORTS_TABLE) WHERE " +
             "\(KEY_STREAM) = ? AND \(REPORTS_TABLE)_id <= ?"
         dbHandler_.prepareSQL(sqlDeleteEvents)
@@ -256,7 +274,11 @@ public class DBAdapter {
         dbHandler_.prepareSQL(sqlSelectChanges)
         dbHandler_.execNextStatement()
         
-        return dbHandler_.getColumnInt(0)
+        let deletedRows = dbHandler_.getColumnInt(0)
+        
+        dispatch_semaphore_signal(self.databaseSemaphore_)
+        
+        return deletedRows
     }
     
     /**
@@ -265,8 +287,7 @@ public class DBAdapter {
      - parameter streamData: Data of the stream
      */
     public func deleteStream(streamData: StreamData) {
-        dispatch_semaphore_wait(self.streamSemaphore_, DISPATCH_TIME_FOREVER)
-        
+        dispatch_semaphore_wait(self.databaseSemaphore_, DISPATCH_TIME_FOREVER)
         let sqlDeleteStreams = "DELETE FROM \(STREAMS_TABLE) WHERE " +
             "\(KEY_STREAM) = ?"
         dbHandler_.prepareSQL(sqlDeleteStreams)
@@ -275,14 +296,18 @@ public class DBAdapter {
         
         dbHandler_.execStatement()
         
-        dispatch_semaphore_signal(self.streamSemaphore_)
+        dispatch_semaphore_signal(self.databaseSemaphore_)
     }
     
     /**
-     Vacuum SQL tables
+     Delete old rows and make Vacuum
+     
+     - returns: Count of deleted rows
      */
-    public func vacuum() {
+    public func vacuum() -> Int32 {
         let nRows = count()
+        
+        dispatch_semaphore_wait(self.databaseSemaphore_, DISPATCH_TIME_FOREVER)
         let limit: Int32 = Int32(Double(nRows) * 0.3)
         
         let sqlDeleteOld = "DELETE FROM \(REPORTS_TABLE) WHERE " +
@@ -294,6 +319,10 @@ public class DBAdapter {
         
         dbHandler_.prepareSQL("VACUUM")
         dbHandler_.execStatement()
+        
+        dispatch_semaphore_signal(self.databaseSemaphore_)
+        
+        return limit
     }
     
     /**
@@ -304,6 +333,7 @@ public class DBAdapter {
      - returns: Count of events
      */
     public func count(streamName: String = "") -> Int32 {
+        dispatch_semaphore_wait(self.databaseSemaphore_, DISPATCH_TIME_FOREVER)
         var sqlSelectCount = "SELECT COUNT(*) FROM \(REPORTS_TABLE)"
         if streamName != "" {
             sqlSelectCount += " WHERE \(KEY_STREAM) = '\(streamName)'"
@@ -311,7 +341,10 @@ public class DBAdapter {
         dbHandler_.prepareSQL(sqlSelectCount)
         dbHandler_.execNextStatement()
         
-        return dbHandler_.getColumnInt(0)
+        let rowsCount = dbHandler_.getColumnInt(0)
+        dispatch_semaphore_signal(self.databaseSemaphore_)
+        
+        return rowsCount
     }
     
     /**
