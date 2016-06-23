@@ -26,7 +26,9 @@ public class SQLiteHandler {
      */
     public init(name: String) {
         self.isDebug_ = true
-        let documents = try! NSFileManager.defaultManager().URLForDirectory(.DocumentDirectory, inDomain: .UserDomainMask, appropriateForURL: nil, create: false)
+        let documents = try! NSFileManager.defaultManager().URLForDirectory(
+            .DocumentDirectory, inDomain: .UserDomainMask,
+            appropriateForURL: nil, create: false)
         let fileURL = documents.URLByAppendingPathComponent(name)
         databasePath_ = fileURL.path!
         

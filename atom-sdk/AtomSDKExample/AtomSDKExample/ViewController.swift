@@ -62,10 +62,6 @@ class ViewController: UIViewController {
         self.api_!.enableDebug(true)
         self.api_!.setAuth("I40iwPPOsG3dfWX30labriCg9HqMfL")
         
-        var testOErrorbject = Dictionary<Int, String>()
-        testOErrorbject[1] = "test 42"
-        let resultErrorStr = ObjectToJsonStr(testOErrorbject)
-        
         self.apiTracker_ = IronSourceAtomTracker()
         self.apiTracker_!.enableDebug(true)
         self.apiTracker_!.setAuth("I40iwPPOsG3dfWX30labriCg9HqMfL")
