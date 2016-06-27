@@ -3,5 +3,5 @@ xcodeproj: atom-sdk/AtomSDK/AtomSDK.xcodeproj
 workspace: atom-sdk/AtomSDK/AtomSDK.xcworkspace
 scheme: AtomSDK
 source_directory: atom-sdk/AtomSDK/AtomSDK
-ignore:
+ignore: 
   - atom-sdk/AtomSDK/AtomSDK/Request.swift
