@@ -2,6 +2,8 @@
 
 [![License][license-image]][license-url]
 [![Docs][docs-image]][docs-url]
+[![Build status][travis-image]][travis-url]
+[![Coverage Status][coverage-image]][coverage-url]
 
 atom-ios is the official [ironSource.atom](http://www.ironsrc.com/data-flow-management) SDK for the IOS platform.
 
@@ -106,6 +108,8 @@ MIT
 [docs-url]: https://ironsource.github.io/atom-ios/
 [travis-image]: https://travis-ci.org/ironSource/atom-ios.svg?branch=master
 [travis-url]: https://travis-ci.org/ironSource/atom-ios
+[coverage-image]: https://coveralls.io/repos/github/ironSource/atom-ios/badge.svg?branch=master
+[coverage-url]: https://coveralls.io/github/ironSource/atom-ios?branch=master
 [license-image]: https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square
 [license-url]: LICENSE
 [example]: https://cloud.githubusercontent.com/assets/1713228/15971662/08129c62-2f43-11e6-980d-66d36a41f961.png "example"
