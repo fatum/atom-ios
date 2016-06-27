@@ -1,5 +1,5 @@
 coverage_service: coveralls
-xcodeproj: AtomSDK.xcodeproj
+xcodeproj: atom-sdk/AtomSDK/AtomSDK.xcodeproj
 scheme: AtomSDK
 source_directory: atom-sdk/AtomSDK/AtomSDK
 ignore:
