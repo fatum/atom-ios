@@ -4,6 +4,4 @@ workspace: atom-sdk/AtomSDK/AtomSDK.xcworkspace
 scheme: AtomSDK
 source_directory: atom-sdk/AtomSDK/AtomSDK
 ignore:
-  - Batch.swift
-  - Request.swift
-  - */Request.swift
+  - atom-sdk/AtomSDK/AtomSDK/Request.swift
