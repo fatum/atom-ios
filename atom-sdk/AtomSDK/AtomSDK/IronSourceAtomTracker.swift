@@ -66,14 +66,14 @@ public class IronSourceAtomTracker {
      Init timer for flush data
      */
     func initTimerFlush() {
-        /*self.invalidateTimerFlush()
+        self.invalidateTimerFlush()
         
         self.printLog("Create flush timer with intervals: \(self.flushInterval_)!")
         self.timer_ = NSTimer
             .scheduledTimerWithTimeInterval(self.flushInterval_,
                                             target: self,
                                             selector: #selector(IronSourceAtomTracker.timerFlush),
-                                            userInfo: nil, repeats: true)*/
+                                            userInfo: nil, repeats: true)
     }
     
     /**
