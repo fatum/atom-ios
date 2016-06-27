@@ -14,7 +14,7 @@ before_install:
   - gem install slather --no-ri --no-rdoc
 
 script:
-  - set -o pipefail
+  - set -o pipefail 
   - xcodebuild -version
   - xcodebuild -showsdks
 
