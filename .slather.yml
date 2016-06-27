@@ -5,3 +5,5 @@ scheme: AtomSDK
 source_directory: atom-sdk/AtomSDK/AtomSDK
 ignore:
   - Batch.swift
+  - Request.swift
+  - */Request.swift
