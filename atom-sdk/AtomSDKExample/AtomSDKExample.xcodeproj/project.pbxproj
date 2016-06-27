@@ -40,6 +40,7 @@
 		427716631D06C7220056B341 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42ECBD561D196ACE00CD9A3C /* AtomSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AtomSDK.framework; path = Vendor/AtomSDK.framework; sourceTree = "<group>"; };
 		42ECBD6E1D1AB24700CD9A3C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../../../../../../../../.Trash/AppDelegate.swift; sourceTree = "<group>"; };
+		42ECBD9D1D215BA300CD9A3C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		A64231D1792E109D92A4DD2A /* Pods-AtomSDKExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AtomSDKExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-AtomSDKExample/Pods-AtomSDKExample.release.xcconfig"; sourceTree = "<group>"; };
 		A6E1CD547C4ED1BF5B092978 /* Pods-AtomSDKExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AtomSDKExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AtomSDKExample/Pods-AtomSDKExample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -240,6 +241,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				4277165C1D06C7220056B341 /* Base */,
+				42ECBD9D1D215BA300CD9A3C /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

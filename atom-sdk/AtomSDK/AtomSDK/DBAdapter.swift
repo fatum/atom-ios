@@ -124,7 +124,15 @@ public class DBAdapter {
         dbHandler_.execStatement()
         
         // get report count
-        let sqlSelectCount = "SELECT COUNT(*) FROM \(STREAMS_TABLE) " +
+        let sqlSelectStreamCount = "SELECT COUNT(*) FROM \(STREAMS_TABLE) " +
+            "WHERE \(KEY_STREAM)=?;"
+        dbHandler_.prepareSQL(sqlSelectStreamCount)
+        dbHandler_.bindText(1, strData: streamData.name)
+        dbHandler_.execNextStatement()
+        
+        let rowsStreamCount = dbHandler_.getColumnInt(0)
+        
+        let sqlSelectCount = "SELECT COUNT(*) FROM \(REPORTS_TABLE) " +
             "WHERE \(KEY_STREAM)=?;"
         dbHandler_.prepareSQL(sqlSelectCount)
         dbHandler_.bindText(1, strData: streamData.name)
@@ -133,7 +141,7 @@ public class DBAdapter {
         let rowsCount = dbHandler_.getColumnInt(0)
         dispatch_semaphore_signal(self.databaseSemaphore_)
         
-        if rowsCount == 0 {
+        if rowsStreamCount == 0 {
             addStream(streamData)
         }
         

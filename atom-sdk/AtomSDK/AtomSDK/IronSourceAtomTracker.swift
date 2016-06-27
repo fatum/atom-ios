@@ -24,6 +24,11 @@ public class IronSourceAtomTracker {
     var isFirst_: Bool = true
     var isRunTimeFlush_: Bool = true
     
+    var flushSizedLock = 1
+    var flushLock = 1
+    var isFlushSizedRunned: Bool = false
+    var isFlushRunned: Dictionary<String, Bool>
+    
     var database_: DBAdapter
     
     let semaphore_ = dispatch_semaphore_create(0)
@@ -35,6 +40,8 @@ public class IronSourceAtomTracker {
         self.api_ = IronSourceAtom()
         database_ = DBAdapter()
         database_.upgrade(1, newVersion: 2)
+        
+        isFlushRunned = Dictionary<String, Bool>()
         
         initTimerFlush()
         self.dispatchSemapthore()
@@ -59,14 +66,14 @@ public class IronSourceAtomTracker {
      Init timer for flush data
      */
     func initTimerFlush() {
-        self.invalidateTimerFlush()
+        /*self.invalidateTimerFlush()
         
-        self.printLog("Create 1flush timer with intervals: \(self.flushInterval_)!")
+        self.printLog("Create flush timer with intervals: \(self.flushInterval_)!")
         self.timer_ = NSTimer
             .scheduledTimerWithTimeInterval(self.flushInterval_,
                                             target: self,
                                             selector: #selector(IronSourceAtomTracker.timerFlush),
-                                            userInfo: nil, repeats: true)
+                                            userInfo: nil, repeats: true)*/
     }
     
     /**
@@ -124,8 +131,6 @@ public class IronSourceAtomTracker {
      */
     public func setFlushInterval(flushInterval: Double) {
         self.flushInterval_ = flushInterval
-        
-        initTimerFlush()
     }
     
     /**
@@ -237,6 +242,8 @@ public class IronSourceAtomTracker {
                     self.database_.deleteStream(streamData)
                 }
                 
+                self.initTimerFlush()
+                
                 self.dispatchSemapthore()
             }
         }
@@ -252,6 +259,19 @@ public class IronSourceAtomTracker {
      - parameter checkSize:  If check size events
      */
     func flushAsync(streamName: String, checkSize: Bool = false) {
+        // check if flush runned
+        if (checkSize) {
+            objc_sync_enter(flushSizedLock)
+            if (isFlushSizedRunned) {
+                printLog("Flush sized runned")
+                objc_sync_exit(flushSizedLock)
+                return
+            }
+            
+            isFlushSizedRunned = true
+            objc_sync_exit(flushSizedLock)
+        }
+        
         dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)){
             self.printLog("Dispatch start")
             dispatch_semaphore_wait(self.semaphore_, DISPATCH_TIME_FOREVER)
@@ -259,11 +279,19 @@ public class IronSourceAtomTracker {
             self.printLog("Dispatch end")
             
             if (checkSize) {
+                objc_sync_enter(self.flushSizedLock)
+                self.isFlushSizedRunned = false
+                objc_sync_exit(self.flushSizedLock)
+                
                 let eventCount = self.database_.count(streamName)
                 if (eventCount < self.bulkSize_) {
                     self.dispatchSemapthore()
                     return
                 }
+            } else {
+                objc_sync_enter(self.flushLock)
+                self.isFlushRunned[streamName] = false
+                objc_sync_exit(self.flushLock)
             }
             
             if (streamName.characters.count > 0) {
@@ -329,9 +357,23 @@ public class IronSourceAtomTracker {
      Flush all data to server
      */
     public func flush() {
-        let streamsList: [StreamData] = database_.getStreams()
-        for stream in streamsList {
-            flush(stream.name)
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)){
+            let streamsList: [StreamData] = self.database_.getStreams()
+            for stream in streamsList {
+            
+                objc_sync_enter(self.flushLock)
+                if self.isFlushRunned[stream.name] != nil &&
+                    self.isFlushRunned[stream.name] == true {
+                    self.printLog("Flush runned \(stream.name)")
+                    objc_sync_exit(self.flushSizedLock)
+                    continue
+                }
+            
+                self.isFlushRunned[stream.name] = true
+                objc_sync_exit(self.flushLock)
+
+                self.flush(stream.name)
+            }
         }
     }
     
