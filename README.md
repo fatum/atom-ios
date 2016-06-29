@@ -110,7 +110,7 @@ class ViewController: UIViewController {
     }
 ```
 
-### Example
+### Example 
 
 ![alt text][example]
 
