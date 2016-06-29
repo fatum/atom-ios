@@ -12,11 +12,43 @@ atom-ios is the official [ironSource.atom](http://www.ironsrc.com/data-flow-mana
 - [Sending an event](#Using-the-IronSource-API-to-send-events)
 
 #### Using the IronSource API to send events 
+##### Tracker usage
+Example of sending an event in Swift:
+```swift
+class ViewController: UIViewController {
+    var apiTracker_: IronSourceAtomTracker?
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // initialize atom-sdk api object
+        self.apiTracker_ = IronSourceAtomTracker()
+        self.apiTracker_!.enableDebug(true)
+        self.apiTracker_!.setAuth("<YOUR_AUTH_KEY>")
+        self.apiTracker_!.setBulkSize(<BULK_COUNT>)
+        self.apiTracker_!.setBulkBytesSize(<MAX_BULK_SIZE_IN_BYTES>)
+        self.apiTracker_!.setEndpoint("https://track.atom-data.io/")
+    }
+
+    @IBOutlet var textArea_: UITextView!
+
+    // track event
+    @IBAction func buttonTackPressed(sender: UIButton) {
+        self.apiTracker_!.track("<YOUR_STREAM_NAME>",
+                                data: "{\"test\":\"test\"}")
+    }
+    
+    // flush all data in tracker
+    @IBAction func buttonFlushPressed(sender: UIButton) {
+        self.apiTracker_!.flush()
+    }
+
+```
+##### Low level API usage
 Example of sending an event in Swift:
 ```swift
 class ViewController: UIViewController {
     var api_: IronSourceAtom?
-    var apiTracker_: IronSourceAtomTracker?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,13 +58,6 @@ class ViewController: UIViewController {
         // print debug info in console
         self.api_!.enableDebug(true)
         self.api_!.setAuth("<YOUR_AUTH_KEY>")
-
-        self.apiTracker_ = IronSourceAtomTracker()
-        self.apiTracker_!.enableDebug(true)
-        self.apiTracker_!.setAuth("<YOUR_AUTH_KEY>")
-        self.apiTracker_!.setBulkSize(<BULK_COUNT>)
-        self.apiTracker_!.setBulkBytesSize(<MAX_BULK_SIZE_IN_BYTES>)
-        self.apiTracker_!.setEndpoint("https://track.atom-data.io/")
     }
 
     @IBOutlet var textArea_: UITextView!
@@ -52,8 +77,8 @@ class ViewController: UIViewController {
         }
 
     }
-   	
-   	// send single POST request
+    
+    // send single POST request
     @IBAction func buttonPostPressed(sender: UIButton) {
         self.api_!.putEvent("<YOUR_STREAM_NAME>",
                             data: "{\"test\":\"test\"}",
@@ -83,18 +108,6 @@ class ViewController: UIViewController {
                             data: ["{\"test\":\"test\"}", "{\"test\":\"test\"}"],
                             callback: callback)
     }
-
-    // track event
-    @IBAction func buttonTackPressed(sender: UIButton) {
-        self.apiTracker_!.track("<YOUR_STREAM_NAME>",
-                                data: "{\"test\":\"test\"}")
-    }
-    
-    // flush all data in tracker
-    @IBAction func buttonFlushPressed(sender: UIButton) {
-        self.apiTracker_!.flush()
-    }
-
 ```
 
 ### Example
