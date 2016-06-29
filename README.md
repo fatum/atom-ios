@@ -11,7 +11,7 @@ atom-ios is the official [ironSource.atom](http://www.ironsrc.com/data-flow-mana
 - [Documentation](https://ironsource.github.io/atom-ios/)
 - [Sending an event](#Using-the-IronSource-API-to-send-events)
 
-#### Using the IronSource API to send events
+#### Using the IronSource API to send events 
 Example of sending an event in Swift:
 ```swift
 class ViewController: UIViewController {
