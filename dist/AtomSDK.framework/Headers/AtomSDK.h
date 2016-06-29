@@ -2,7 +2,7 @@
 //  AtomSDK.h
 //  AtomSDK
 //
-//  Created by Valentine.Pavchuk on 6/7/16.
+//  Created by g8y3e on 6/7/16.
 //  Copyright © 2016 IronSource. All rights reserved.
 //
 

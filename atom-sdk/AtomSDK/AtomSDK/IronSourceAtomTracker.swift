@@ -43,7 +43,7 @@ public class IronSourceAtomTracker {
         
         isFlushRunned = Dictionary<String, Bool>()
         
-        initTimerFlush()
+       // initTimerFlush()
         self.dispatchSemapthore()
     }
     
@@ -242,7 +242,9 @@ public class IronSourceAtomTracker {
                     self.database_.deleteStream(streamData)
                 }
                 
-                self.initTimerFlush()
+                dispatch_sync(dispatch_get_main_queue()) {
+                    self.initTimerFlush()
+                }
                 
                 self.dispatchSemapthore()
             }

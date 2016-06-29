@@ -71,7 +71,7 @@ public class SQLiteHandler {
                 fileSize = _attr.fileSize();
             }
         } catch {
-            print("Error: \(error)")
+            printLog("Error: \(error)")
         }
         
         return fileSize

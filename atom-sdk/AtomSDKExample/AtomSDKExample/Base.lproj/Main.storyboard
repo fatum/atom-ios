@@ -130,6 +130,18 @@
                                     <action selector="buttonTackPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="f2U-UG-sne"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="API Tracker:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HuW-a1-3hm">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Simple API:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dll-7z-oYh">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Shu-G5-ogO">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <color key="backgroundColor" red="0.88235294119999996" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
@@ -151,58 +163,13 @@
                                     <action selector="buttonFlushPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CSJ-ih-nAu"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="API Tracker:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HuW-a1-3hm">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Simple API:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dll-7z-oYh">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R0u-qY-CuK">
-                                <rect key="frame" x="192" y="69" width="200" height="70"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jma-zJ-S6p">
-                                        <rect key="frame" x="20" y="20" width="160" height="30"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dp5-rd-6ga">
-                                                <rect key="frame" x="20" y="20" width="160" height="30"/>
-                                                <color key="backgroundColor" red="0.88235294119999996" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="160" id="LQ9-2z-gcq"/>
-                                                </constraints>
-                                                <state key="normal" title="Track 2"/>
-                                                <variation key="default">
-                                                    <mask key="constraints">
-                                                        <exclude reference="LQ9-2z-gcq"/>
-                                                    </mask>
-                                                </variation>
-                                                <variation key="widthClass=compact">
-                                                    <mask key="constraints">
-                                                        <include reference="LQ9-2z-gcq"/>
-                                                    </mask>
-                                                </variation>
-                                                <connections>
-                                                    <action selector="buttonTrack2Pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kZB-1R-KqK"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <variation key="widthClass=compact" axis="vertical"/>
-                                    </stackView>
-                                </subviews>
-                                <variation key="widthClass=compact" axis="vertical"/>
-                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Shu-G5-ogO" firstAttribute="top" secondItem="zcD-Uy-hjP" secondAttribute="bottom" constant="10" id="3m9-Hm-yvr"/>
                             <constraint firstItem="HuW-a1-3hm" firstAttribute="leading" secondItem="Dll-7z-oYh" secondAttribute="trailing" constant="95" id="6fA-Qk-hXm"/>
                             <constraint firstItem="HuW-a1-3hm" firstAttribute="leading" secondItem="MsD-BX-Y7P" secondAttribute="trailing" constant="22" id="B6s-a2-Oxa"/>
                             <constraint firstItem="zcD-Uy-hjP" firstAttribute="leading" secondItem="MsD-BX-Y7P" secondAttribute="trailing" constant="22" id="CPJ-su-tBk"/>
-                            <constraint firstItem="R0u-qY-CuK" firstAttribute="top" secondItem="zcD-Uy-hjP" secondAttribute="bottom" constant="2" id="DQw-fg-rIW"/>
                             <constraint firstItem="3eW-vr-jUO" firstAttribute="top" secondItem="e1x-XI-YIG" secondAttribute="bottom" constant="50" id="Dly-Z0-HXG"/>
                             <constraint firstItem="ZOK-ph-jgQ" firstAttribute="top" secondItem="MsD-BX-Y7P" secondAttribute="bottom" constant="9" id="KD0-9I-ULX"/>
                             <constraint firstItem="e1x-XI-YIG" firstAttribute="top" secondItem="ZOK-ph-jgQ" secondAttribute="bottom" constant="7" id="L0a-gU-KSR"/>
@@ -212,20 +179,18 @@
                             <constraint firstItem="HuW-a1-3hm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="Thh-De-KOP"/>
                             <constraint firstItem="HuW-a1-3hm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="Vrd-Ld-89S"/>
                             <constraint firstItem="e1x-XI-YIG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="cvY-dU-2B9"/>
-                            <constraint firstItem="R0u-qY-CuK" firstAttribute="leading" secondItem="ZOK-ph-jgQ" secondAttribute="trailing" constant="22" id="jZu-DA-X62"/>
                             <constraint firstItem="MsD-BX-Y7P" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="lIm-CU-2zK"/>
                             <constraint firstItem="ZOK-ph-jgQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="nm2-Ue-1cn"/>
                             <constraint firstItem="3eW-vr-jUO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="rI7-MR-vdF"/>
-                            <constraint firstItem="Shu-G5-ogO" firstAttribute="top" secondItem="R0u-qY-CuK" secondAttribute="bottom" constant="8" id="xzH-g8-BAx"/>
                             <constraint firstItem="zcD-Uy-hjP" firstAttribute="top" secondItem="HuW-a1-3hm" secondAttribute="bottom" constant="8" id="zQ5-BZ-Mvc"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="e1x-XI-YIG"/>
                                 <exclude reference="zcD-Uy-hjP"/>
-                                <exclude reference="Shu-G5-ogO"/>
                                 <exclude reference="HuW-a1-3hm"/>
                                 <exclude reference="Dll-7z-oYh"/>
+                                <exclude reference="Shu-G5-ogO"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="L1b-ER-gl5"/>
@@ -243,10 +208,8 @@
                                 <exclude reference="zQ5-BZ-Mvc"/>
                                 <exclude reference="Dly-Z0-HXG"/>
                                 <exclude reference="rI7-MR-vdF"/>
-                                <exclude reference="DQw-fg-rIW"/>
-                                <exclude reference="jZu-DA-X62"/>
+                                <exclude reference="3m9-Hm-yvr"/>
                                 <exclude reference="QA3-mV-9kG"/>
-                                <exclude reference="xzH-g8-BAx"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -256,9 +219,9 @@
                                 <include reference="3eW-vr-jUO"/>
                                 <include reference="e1x-XI-YIG"/>
                                 <include reference="zcD-Uy-hjP"/>
-                                <include reference="Shu-G5-ogO"/>
                                 <include reference="HuW-a1-3hm"/>
                                 <include reference="Dll-7z-oYh"/>
+                                <include reference="Shu-G5-ogO"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="L1b-ER-gl5"/>
@@ -276,10 +239,8 @@
                                 <include reference="zQ5-BZ-Mvc"/>
                                 <include reference="Dly-Z0-HXG"/>
                                 <include reference="rI7-MR-vdF"/>
-                                <include reference="DQw-fg-rIW"/>
-                                <include reference="jZu-DA-X62"/>
+                                <include reference="3m9-Hm-yvr"/>
                                 <include reference="QA3-mV-9kG"/>
-                                <include reference="xzH-g8-BAx"/>
                             </mask>
                         </variation>
                     </view>

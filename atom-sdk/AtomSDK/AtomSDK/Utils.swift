@@ -22,8 +22,8 @@ func ObjectToJsonStr(data: NSObject) -> String {
     
     do {
         jsonData = try NSJSONSerialization.dataWithJSONObject(data, options:  NSJSONWritingOptions(rawValue: 0))        
-    } catch let error {
-        print("Convert error: \(error)")
+    } catch _ {
+        //print("Convert error: \(error)")
         return jsonStr
     }
     

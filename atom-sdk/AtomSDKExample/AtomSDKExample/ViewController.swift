@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  AtomSDKExample
 //
-//  Created by Valentine.Pavchuk on 6/7/16.
+//  Created by g8y3e on 6/7/16.
 //  Copyright © 2016 IronSource. All rights reserved.
 //
 
@@ -14,40 +14,9 @@ class ViewController: UIViewController {
     var api_: IronSourceAtom?
     var apiTracker_: IronSourceAtomTracker?
     var test = "Data test"
-    
-    var i: Int = 0
-    var j: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-       /* let db = DBAdapter(isDebug: true)
-        db.upgrade(1, newVersion: 2)
-        
-        db.addEvent(StreamData(name: "wwww", token: "1"), data: "test 1")
-        db.addEvent(StreamData(name: "wwww", token: "1"), data: "test 1 2")
-        db.addEvent(StreamData(name: "rrrr", token: "1"), data: "test 1333")
-        let count = db.addEvent(StreamData(name: "wwww", token: "1"), data: "test 2")
-        
-        print("Count: \(count)")
-        
-        //print("Count from method: \(db.count())")
-       // db.vacuum()
-        
-        //print("Count from method: \(db.count())")
-        
-        let events = db.getEvents(StreamData(name: "wwww", token: "1"), limit: 10)
-        
-        let countDels = db.deleteEvents(StreamData(name: "wwww", token: "1"), lastId: 4)
-        
-        print("Count from method: \(db.count())")
-        
-        db.getEvents(StreamData(name: "rrrr", token: "1"), limit: 10)
-        
-        print("Events: \(events)")
-        
-        print("Streams: \(db.getStreams()[0])")
-        */
         
         // Do any additional setup after loading the view, typically from a nib.
         func callback(response: Response) {
@@ -57,23 +26,23 @@ class ViewController: UIViewController {
             print("From callback (status): \(response.status)")
         }
         
-        //request.get()
+        //Simple Atom SDK
         self.api_ = IronSourceAtom()
         self.api_!.enableDebug(true)
-        self.api_!.setAuth("I40iwPPOsG3dfWX30labriCg9HqMfL")
+        self.api_!.setAuth("<YOUR_AUTH_KEY>")
         
+        // Atom Tracker SDK
         self.apiTracker_ = IronSourceAtomTracker()
         self.apiTracker_!.enableDebug(true)
-        self.apiTracker_!.setAuth("I40iwPPOsG3dfWX30labriCg9HqMfL")
+        self.apiTracker_!.setAuth("<YOUR_AUTH_KEY>")
         self.apiTracker_!.setBulkSize(3)
-        self.apiTracker_!.setFlushInterval(100)
+        self.apiTracker_!.setFlushInterval(2)
         self.apiTracker_!.setBulkBytesSize(10 * 1024)
         self.apiTracker_!.setEndpoint("http://track.atom-data.io/")
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBOutlet var textArea_: UITextView!
@@ -89,15 +58,14 @@ class ViewController: UIViewController {
             "\n\t\"status\": \(statusStr)\n}"
         
         dispatch_sync(dispatch_get_main_queue()) {
-            self.textArea_.text = responseStr //Yay!
+            self.textArea_.text = responseStr
         }
 
     }
    
     @IBAction func buttonPostPressed(sender: UIButton) {
-        j += 1
-        self.api_!.putEvent("sdkdev_sdkdev.public.g8y3etest",
-                            data: "{\"strings\":\"wwwwww \(j)\"}",
+        self.api_!.putEvent("ibtest",
+                            data: "{\"strings\":\"data 42\"}",
                             method: HttpMethod.POST, callback: postCallback)
     }
     
@@ -112,12 +80,11 @@ class ViewController: UIViewController {
                 "\n\t\"status\": \(statusStr)\n}"
             
             dispatch_sync(dispatch_get_main_queue()) {
-                self.textArea_.text = responseStr //Yay!
+                self.textArea_.text = responseStr
             }
-
         }
         
-        self.api_!.putEvent("sdkdev_sdkdev.public.g8y3etest",
+        self.api_!.putEvent("ibtest",
                            data: "{\"test\":\"test\"}",
                            method: HttpMethod.GET, callback: callback)
     }
@@ -140,23 +107,14 @@ class ViewController: UIViewController {
         
         self.api_!.health(nil)
         
-        self.api_!.putEvents("sdkdev_sdkdev.public.g8y3etest",
+        self.api_!.putEvents("ibtest",
                             data: ["{\"test\":\"test\"}", "{\"test\":\"test 2\"}"],
                             callback: callback2)
     }
     
     @IBAction func buttonTackPressed(sender: UIButton) {
-        self.apiTracker_!.track("sdkdev_sdkdev.public.g8y3etest",
-                                data: "{\"strings\": \"XXXX \(i) XXXX\"}")
-        i += 1
-    }
-    
-    @IBAction func buttonTrack2Pressed(sender: UIButton) {
-        self.apiTracker_!.track("sdkdev_sdkdev.public.atomtestkeyone",
-                                data: "{\"message\": \"wwww \(i) wwwww\"}",
-                                token: "I40iwPPOsG3dfWX30labriCg9HqMfL")
-        
-        i += 2
+        self.apiTracker_!.track("ibtest",
+                                data: "{\"strings\": \"data 42\"}")
     }
     
     @IBAction func buttonFlushPressed(sender: UIButton) {
