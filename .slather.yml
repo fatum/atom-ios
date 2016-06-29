@@ -1,0 +1,11 @@
+coverage_service: coveralls
+xcodeproj: atom-sdk/AtomSDK/AtomSDK.xcodeproj
+workspace: atom-sdk/AtomSDK/AtomSDK.xcworkspace
+scheme: AtomSDK
+source_directory: atom-sdk/AtomSDK/AtomSDK
+ignore: 
+  - atom-sdk/AtomSDK/AtomSDK/DBAdapter.swift
+  - atom-sdk/AtomSDK/AtomSDK/IronSourceAtom.swift
+  - atom-sdk/AtomSDK/AtomSDK/IronSourceAtomTracker.swift
+  - atom-sdk/AtomSDK/AtomSDK/Request.swift
+  - atom-sdk/AtomSDK/AtomSDK/SQLiteHandler.swift
