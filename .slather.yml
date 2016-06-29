@@ -8,4 +8,3 @@ ignore:
   - atom-sdk/AtomSDK/AtomSDK/IronSourceAtom.swift
   - atom-sdk/AtomSDK/AtomSDK/IronSourceAtomTracker.swift
   - atom-sdk/AtomSDK/AtomSDK/Request.swift
-  - atom-sdk/AtomSDK/AtomSDK/SQLiteHandler.swift
