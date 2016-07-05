@@ -193,23 +193,23 @@
                                 <exclude reference="Shu-G5-ogO"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="L1b-ER-gl5"/>
-                                <exclude reference="S0I-AL-uNt"/>
-                                <exclude reference="lIm-CU-2zK"/>
-                                <exclude reference="KD0-9I-ULX"/>
-                                <exclude reference="nm2-Ue-1cn"/>
+                                <exclude reference="3m9-Hm-yvr"/>
+                                <exclude reference="QA3-mV-9kG"/>
                                 <exclude reference="L0a-gU-KSR"/>
                                 <exclude reference="cvY-dU-2B9"/>
+                                <exclude reference="CPJ-su-tBk"/>
+                                <exclude reference="zQ5-BZ-Mvc"/>
+                                <exclude reference="L1b-ER-gl5"/>
                                 <exclude reference="6fA-Qk-hXm"/>
                                 <exclude reference="B6s-a2-Oxa"/>
                                 <exclude reference="Thh-De-KOP"/>
                                 <exclude reference="Vrd-Ld-89S"/>
-                                <exclude reference="CPJ-su-tBk"/>
-                                <exclude reference="zQ5-BZ-Mvc"/>
                                 <exclude reference="Dly-Z0-HXG"/>
                                 <exclude reference="rI7-MR-vdF"/>
-                                <exclude reference="3m9-Hm-yvr"/>
-                                <exclude reference="QA3-mV-9kG"/>
+                                <exclude reference="S0I-AL-uNt"/>
+                                <exclude reference="lIm-CU-2zK"/>
+                                <exclude reference="KD0-9I-ULX"/>
+                                <exclude reference="nm2-Ue-1cn"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -224,23 +224,23 @@
                                 <include reference="Shu-G5-ogO"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="L1b-ER-gl5"/>
-                                <include reference="S0I-AL-uNt"/>
-                                <include reference="lIm-CU-2zK"/>
-                                <include reference="KD0-9I-ULX"/>
-                                <include reference="nm2-Ue-1cn"/>
+                                <include reference="3m9-Hm-yvr"/>
+                                <include reference="QA3-mV-9kG"/>
                                 <include reference="L0a-gU-KSR"/>
                                 <include reference="cvY-dU-2B9"/>
+                                <include reference="CPJ-su-tBk"/>
+                                <include reference="zQ5-BZ-Mvc"/>
+                                <include reference="L1b-ER-gl5"/>
                                 <include reference="6fA-Qk-hXm"/>
                                 <include reference="B6s-a2-Oxa"/>
                                 <include reference="Thh-De-KOP"/>
                                 <include reference="Vrd-Ld-89S"/>
-                                <include reference="CPJ-su-tBk"/>
-                                <include reference="zQ5-BZ-Mvc"/>
                                 <include reference="Dly-Z0-HXG"/>
                                 <include reference="rI7-MR-vdF"/>
-                                <include reference="3m9-Hm-yvr"/>
-                                <include reference="QA3-mV-9kG"/>
+                                <include reference="S0I-AL-uNt"/>
+                                <include reference="lIm-CU-2zK"/>
+                                <include reference="KD0-9I-ULX"/>
+                                <include reference="nm2-Ue-1cn"/>
                             </mask>
                         </variation>
                     </view>

@@ -39,7 +39,7 @@ public class IronSourceAtomTracker {
     public init() {
         self.api_ = IronSourceAtom()
         database_ = DBAdapter()
-        database_.upgrade(1, newVersion: 2)
+        database_.create()
         
         isFlushRunned = Dictionary<String, Bool>()
         
