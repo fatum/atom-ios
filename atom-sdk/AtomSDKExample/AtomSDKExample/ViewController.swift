@@ -113,7 +113,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func buttonTackPressed(sender: UIButton) {
-        self.apiTracker_!.track("ibtest",
+        self.apiTracker_!.track("sdkdev_sdkdev.public.g8y3etest",
+                                data: "{\"strings\": \"data 42\"}")
+    }
+    @IBAction func buttonTrack2(sender: UIButton) {
+        self.apiTracker_!.track("sdkdev_sdkdev.public.g8y3etest",
                                 data: "{\"strings\": \"data 42\"}")
     }
     

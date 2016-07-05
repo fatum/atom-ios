@@ -154,13 +154,36 @@
                                         <exclude reference="zKs-Sy-5X9"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="212" y="128" width="160" height="30"/>
                                     <mask key="constraints">
                                         <include reference="zKs-Sy-5X9"/>
                                     </mask>
                                 </variation>
                                 <connections>
                                     <action selector="buttonFlushPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CSJ-ih-nAu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="00h-by-0EH">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.88235294119999996" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="fgP-7o-5sx"/>
+                                </constraints>
+                                <state key="normal" title="Track 2"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="fgP-7o-5sx"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="212" y="90" width="160" height="30"/>
+                                    <mask key="constraints">
+                                        <include reference="fgP-7o-5sx"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="buttonTrack2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jnc-bk-0bR"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -191,6 +214,7 @@
                                 <exclude reference="HuW-a1-3hm"/>
                                 <exclude reference="Dll-7z-oYh"/>
                                 <exclude reference="Shu-G5-ogO"/>
+                                <exclude reference="00h-by-0EH"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="3m9-Hm-yvr"/>
@@ -222,6 +246,7 @@
                                 <include reference="HuW-a1-3hm"/>
                                 <include reference="Dll-7z-oYh"/>
                                 <include reference="Shu-G5-ogO"/>
+                                <include reference="00h-by-0EH"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="3m9-Hm-yvr"/>
