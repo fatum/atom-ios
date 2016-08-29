@@ -11,8 +11,15 @@ atom-ios is the official [ironSource.atom](http://www.ironsrc.com/data-flow-mana
 - [Documentation](https://ironsource.github.io/atom-ios/)
 - [Sending an event](#Using-the-IronSource-API-to-send-events)
 
-#### Using the IronSource API to send events 
-##### Tracker usage
+## Installation
+### Installation from [CocoaPods](https://cocoapods.org/?q=atomsdk).
+Add dependency in your pod file
+```ruby
+pod 'AtomSDK'
+```
+
+## Using the IronSource API to send events 
+### Tracker usage
 Example of sending an event in Swift:
 ```swift
 class ViewController: UIViewController {
@@ -44,7 +51,7 @@ class ViewController: UIViewController {
     }
 
 ```
-##### Low level API usage
+### Low level API usage
 Example of sending an event in Swift:
 ```swift
 class ViewController: UIViewController {
@@ -110,11 +117,11 @@ class ViewController: UIViewController {
     }
 ```
 
-### Example 
+## Example 
 
 ![alt text][example]
 
-### License
+## License
 MIT
 
 [docs-image]: https://img.shields.io/badge/docs-latest-blue.svg
@@ -123,6 +130,6 @@ MIT
 [travis-url]: https://travis-ci.org/ironSource/atom-ios
 [coverage-image]: https://coveralls.io/repos/github/ironSource/atom-ios/badge.svg?branch=master
 [coverage-url]: https://coveralls.io/github/ironSource/atom-ios?branch=master
-[license-image]: https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square
+[license-image]: https://img.shields.io/badge/license-MIT-blue.svg
 [license-url]: LICENSE
 [example]: https://cloud.githubusercontent.com/assets/1713228/15971662/08129c62-2f43-11e6-980d-66d36a41f961.png "example"
