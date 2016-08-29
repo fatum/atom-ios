@@ -8,7 +8,7 @@
 
 import XCTest
 
-import CommonCrypto
+import Arcane
 @testable import AtomSDK
 
 class UtilsTests: XCTestCase {
