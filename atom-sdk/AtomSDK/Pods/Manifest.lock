@@ -1,17 +1,14 @@
 PODS:
-  - CommonCrypto (1.1)
   - sqlite3 (3.13.0):
     - sqlite3/common (= 3.13.0)
   - sqlite3/common (3.13.0)
 
 DEPENDENCIES:
-  - CommonCrypto
   - sqlite3
 
 SPEC CHECKSUMS:
-  CommonCrypto: e18c8416332cca5efe80c197f2a522d471c42626
   sqlite3: c8b1b937fe823ab46411e471cdc1aa92d1b106ce
 
-PODFILE CHECKSUM: 0fb3ee1421fce4c78163e3612e13c81d8820ea9b
+PODFILE CHECKSUM: 6d246d2f64541d085a1c1036478e0f8133ebe807
 
 COCOAPODS: 1.1.0.beta.1

@@ -25,12 +25,10 @@ Pod::Spec.new do |s|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = <<-DESC
-                  Atom Data Flow Management is a reliable data pipeline solution that handles all your data regardless of origin, all while giving you full control over your logs.
+   Atom Data Flow Management is a reliable data pipeline solution that handles all your data regardless of origin, all while giving you full control over your logs.
                    DESC
 
   s.homepage     = "http://www.ironsrc.com/data-flow-management/"
-  # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
-
 
   # ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -39,7 +37,7 @@ Pod::Spec.new do |s|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  #s.license      = "MIT (example)"
+  # s.license      = "MIT (example)"
   s.license      = { :type => "MIT", :file => "LICENSE" }
 
 
@@ -54,9 +52,6 @@ Pod::Spec.new do |s|
   #
 
   s.author             = { "g8y3e" => "valentine.pavchuk@ironsrc.com" }
-  # Or just: s.author    = "g8y3e"
-  # s.authors            = { "g8y3e" => "valentine.pavchuk@ironsrc.com" }
-  # s.social_media_url   = "http://twitter.com/g8y3e"
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -80,7 +75,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/ironSource/atom-ios.git", :tag => "master" }
+  s.source       = { :git => "https://github.com/ironSource/atom-ios.git", :tag => "feature/ISA-632" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -91,38 +86,7 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "atom-sdk/AtomSDK/AtomSDK/*.{h,swift}"
-  #s.exclude_files = "Classes/Exclude"
-
-  # s.public_header_files = "Classes/**/*.h"
-
-
-  # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  A list of resources included with the Pod. These are copied into the
-  #  target bundle with a build phase script. Anything else will be cleaned.
-  #  You can preserve files from being cleaned, please don't preserve
-  #  non-essential files like tests, examples and documentation.
-  #
-
-  # s.resource  = "icon.png"
-  # s.resources = "Resources/*.png"
-
-  # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
-
-
-  # ――― Project Linking ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  Link your library with frameworks, or libraries. Libraries do not include
-  #  the lib prefix of their name.
-  #
-
-  # s.framework  = "sqlite3"
-  # s.frameworks = "SomeFramework", "AnotherFramework"
-
-  #s.library   = "sqlite3"
-  # s.libraries = "iconv", "xml2"
-
+  s.source_files  = "atom-sdk/AtomSDK", "atom-sdk/AtomSDK/AtomSDK/*.{h,swift}"
 
   # ――― Project Settings ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -130,11 +94,17 @@ Pod::Spec.new do |s|
   #  where they will only apply to your library. If you depend on other Podspecs
   #  you can include multiple dependencies to ensure it works.
 
-  s.requires_arc = true
+  # s.requires_arc = true
 
-   s.xcconfig = { "CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES" => "YES" }
+  # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
+  # s.dependency "JSONKit", "~> 1.4"
+
   s.dependency "sqlite3", "~> 3"
 
-  s.module_map = 'atom-sdk/AtomSDK/module.modulemap'
+  s.framework = "CommonCrypto"
 
+  s.pod_target_xcconfig = { 'HEADER_SEARCH_PATHS' => 'atom-sdk/AtomSDK/CommonCrypto' }
+  s.xcconfig = { 'HEADER_SEARCH_PATHS' => 'atom-sdk/AtomSDK/CommonCrypto',
+                 'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES'
+                } 
 end
