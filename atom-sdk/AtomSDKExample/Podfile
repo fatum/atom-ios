@@ -6,7 +6,6 @@ target 'AtomSDKExample' do
   use_frameworks!
 
   # Pods for AtomSDKExample
-  pod 'sqlite3'
-  pod 'Arcane', git: 'https://github.com/onmyway133/Arcane'
+  pod 'AtomSDK'
 
 end

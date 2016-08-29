@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "AtomSDK"
-  s.version      = "1.1.0"
+  s.version      = "1.1.1"
   s.summary      = "AtomSDK is the official ironSource.atom SDK for the IOS platform."
 
   # This description is used to generate tags and improve search results.
@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
    Atom Data Flow Management is a reliable data pipeline solution that handles all your data regardless of origin, all while giving you full control over your logs.
                    DESC
 
-  s.homepage     = "http://www.ironsrc.com/data-flow-management/"
+  s.homepage     = "http://github.com/ironSource/atom-ios"
 
   # ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -37,7 +37,6 @@ Pod::Spec.new do |s|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  # s.license      = "MIT (example)"
   s.license      = { :type => "MIT", :file => "LICENSE" }
 
 
@@ -59,14 +58,10 @@ Pod::Spec.new do |s|
   #  the deployment target. You can optionally include the target after the platform.
   #
 
-  # s.platform     = :ios
   s.platform     = :ios, "9.0"
 
   #  When using multiple platforms
   s.ios.deployment_target = "9.0"
-  # s.osx.deployment_target = "10.7"
-  # s.watchos.deployment_target = "2.0"
-  # s.tvos.deployment_target = "9.0"
 
 
   # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -96,4 +91,6 @@ Pod::Spec.new do |s|
 
   s.dependency "sqlite3", "~> 3"
 
-  s.dependency 'Arcane'
+  s.dependency "Arcane", "~> 0"
+
+end

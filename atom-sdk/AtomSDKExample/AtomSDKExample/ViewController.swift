@@ -29,7 +29,7 @@ class ViewController: UIViewController {
         //Simple Atom SDK
         self.api_ = IronSourceAtom()
         self.api_!.enableDebug(true)
-        self.api_!.setAuth("<YOUR_AUTH_KEY>")
+        self.api_!.setAuth("I40iwPPOsG3dfWX30labriCg9HqMfL")
         
         // Atom Tracker SDK
         self.apiTracker_ = IronSourceAtomTracker()
@@ -64,7 +64,7 @@ class ViewController: UIViewController {
     }
    
     @IBAction func buttonPostPressed(sender: UIButton) {
-        self.api_!.putEvent("ibtest",
+        self.api_!.putEvent("sdkdev_sdkdev.public.g8y3etest",
                             data: "{\"strings\":\"data 42\"}",
                             method: HttpMethod.POST, callback: postCallback)
     }
