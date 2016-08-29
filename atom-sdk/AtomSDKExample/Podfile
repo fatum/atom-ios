@@ -7,5 +7,6 @@ target 'AtomSDKExample' do
 
   # Pods for AtomSDKExample
   pod 'sqlite3'
+  pod 'AtomSDK'
 
 end
