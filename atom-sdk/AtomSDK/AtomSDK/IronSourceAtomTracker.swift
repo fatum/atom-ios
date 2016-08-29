@@ -26,7 +26,7 @@ public class IronSourceAtomTracker {
     
     var flushSizedLock = 1
     var flushLock = 1
-    var isFlushSizedRunned: Bool = false
+    var isFlushSizedRunned: Dictionary<String, Bool>
     var isFlushRunned: Dictionary<String, Bool>
     
     var database_: DBAdapter
@@ -41,6 +41,7 @@ public class IronSourceAtomTracker {
         database_ = DBAdapter()
         database_.create()
         
+        isFlushSizedRunned = Dictionary<String, Bool>()
         isFlushRunned = Dictionary<String, Bool>()
         
        // initTimerFlush()
@@ -264,13 +265,14 @@ public class IronSourceAtomTracker {
         // check if flush runned
         if (checkSize) {
             objc_sync_enter(flushSizedLock)
-            if (isFlushSizedRunned) {
-                printLog("Flush sized runned")
+            if self.isFlushSizedRunned[streamName] != nil &&
+                self.isFlushSizedRunned[streamName] == true {
+                self.printLog("Flush sized runned \(streamName)")
                 objc_sync_exit(flushSizedLock)
                 return
             }
             
-            isFlushSizedRunned = true
+            isFlushSizedRunned[streamName] = true
             objc_sync_exit(flushSizedLock)
         }
         
@@ -282,7 +284,7 @@ public class IronSourceAtomTracker {
             
             if (checkSize) {
                 objc_sync_enter(self.flushSizedLock)
-                self.isFlushSizedRunned = false
+                self.isFlushSizedRunned[streamName] = false
                 objc_sync_exit(self.flushSizedLock)
                 
                 let eventCount = self.database_.count(streamName)
