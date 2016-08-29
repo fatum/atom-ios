@@ -8,18 +8,22 @@
 
 atom-ios is the official [ironSource.atom](http://www.ironsrc.com/data-flow-management) SDK for the IOS platform.
 
+- [Installation](#installation)
+- [Usage](#usage)
 - [Signup](https://atom.ironsrc.com/#/signup)
 - [Documentation](https://ironsource.github.io/atom-ios/)
-- [Sending an event](#Using-the-IronSource-API-to-send-events)
+- [Example](#example)
 
 ## Installation
+
 ### Installation from [CocoaPods](https://cocoapods.org/?q=atomsdk).
 Add dependency in your pod file
 ```ruby
 pod 'AtomSDK'
 ```
 
-## Using the IronSource API to send events 
+## Usage
+
 ### Tracker usage
 Example of sending an event in Swift:
 ```swift
@@ -52,7 +56,7 @@ class ViewController: UIViewController {
     }
 
 ```
-### Low level API usage
+### Low level API usage (putEvent and putEvents)
 Example of sending an event in Swift:
 ```swift
 class ViewController: UIViewController {
@@ -119,11 +123,12 @@ class ViewController: UIViewController {
 ```
 
 ## Example 
+You can use our [example][example-url] for sending data to Atom:
 
 ![alt text][example]
 
 ## License
-MIT
+[MIT](LICENSE)
 
 [docs-image]: https://img.shields.io/badge/docs-latest-blue.svg
 [docs-url]: https://ironsource.github.io/atom-ios/
@@ -137,3 +142,4 @@ MIT
 [license-image]: https://img.shields.io/badge/license-MIT-blue.svg
 [license-url]: LICENSE
 [example]: https://cloud.githubusercontent.com/assets/1713228/15971662/08129c62-2f43-11e6-980d-66d36a41f961.png "example"
+[example-url]: atom-sdk/AtomSDKExample
