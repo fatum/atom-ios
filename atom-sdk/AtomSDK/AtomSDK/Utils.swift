@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import CommonCrypto
+import Arcane
 
 /**
  Convert Object to Json string
@@ -52,27 +52,7 @@ func ListToJsonStr(data: [String]) -> String {
  */
 
 func EncodeHmac(input: String, key: String) -> String {
-    let str = input.cStringUsingEncoding(NSUTF8StringEncoding)
-    let strLen = Int(input.lengthOfBytesUsingEncoding(NSUTF8StringEncoding))
-    
-    let digestLen = Int(CC_SHA256_DIGEST_LENGTH)
-    
-    let result = UnsafeMutablePointer<CUnsignedChar>.alloc(digestLen)
-    
-    let keyStr = key.cStringUsingEncoding(NSUTF8StringEncoding)
-    let keyLen = Int(key.lengthOfBytesUsingEncoding(NSUTF8StringEncoding))
-    
-    CCHmac(CCHmacAlgorithm(kCCHmacAlgSHA256), keyStr!, keyLen, str!,
-           strLen, result)
-    
-    let digest = NSMutableString()
-    for i in 0..<digestLen {
-        digest.appendFormat("%02x", result[i])
-    }
-    
-    result.dealloc(digestLen)
-    
-    return digest as String
+    return HMAC.SHA256(input, key: key)!
 }
 
 /**

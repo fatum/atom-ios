@@ -1,17 +1,26 @@
 PODS:
-  - AtomSDK (1.1.0)
+  - Arcane (0.3.0)
   - sqlite3 (3.13.0):
     - sqlite3/common (= 3.13.0)
   - sqlite3/common (3.13.0)
 
 DEPENDENCIES:
-  - AtomSDK
+  - Arcane (from `https://github.com/onmyway133/Arcane`)
   - sqlite3
 
+EXTERNAL SOURCES:
+  Arcane:
+    :git: https://github.com/onmyway133/Arcane
+
+CHECKOUT OPTIONS:
+  Arcane:
+    :commit: 95a54a019a39f6da3528d13746b0e5ad51e9c8a7
+    :git: https://github.com/onmyway133/Arcane
+
 SPEC CHECKSUMS:
-  AtomSDK: 9d8af10d063a992b64d796b2c8b6051e5c050ed1
+  Arcane: 3f6203426ba2195f8ac9eb4c9508493f3a903ae6
   sqlite3: c8b1b937fe823ab46411e471cdc1aa92d1b106ce
 
-PODFILE CHECKSUM: c6a7b85ca5b09cab871f03287ce6f4a1c991b4c4
+PODFILE CHECKSUM: 73e16cb75ea4352498970da8da219887d598c86e
 
 COCOAPODS: 1.1.0.beta.1

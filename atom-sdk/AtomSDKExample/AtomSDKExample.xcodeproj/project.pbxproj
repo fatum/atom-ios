@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		025763E972A01931C6C822FD /* Pods_AtomSDKExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0249B38447F88F9A7D54511 /* Pods_AtomSDKExample.framework */; };
+		4256084A1D74550F00891533 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425608491D74550F00891533 /* AppDelegate.swift */; };
+		4256084E1D74561400891533 /* AtomSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4256084D1D74561400891533 /* AtomSDK.framework */; };
+		4256084F1D74561400891533 /* AtomSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4256084D1D74561400891533 /* AtomSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4277165A1D06C7220056B341 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427716591D06C7220056B341 /* ViewController.swift */; };
 		4277165D1D06C7220056B341 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4277165B1D06C7220056B341 /* Main.storyboard */; };
 		4277165F1D06C7220056B341 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4277165E1D06C7220056B341 /* Assets.xcassets */; };
@@ -14,12 +18,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		427716A21D06CCED0056B341 /* Embed Frameworks */ = {
+		425608501D74561400891533 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 12;
+			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				4256084F1D74561400891533 /* AtomSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -27,6 +32,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		425608291D74547F00891533 /* AtomSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AtomSDK.framework; path = Vendor/AtomSDK.framework; sourceTree = "<group>"; };
+		425608491D74550F00891533 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4256084D1D74561400891533 /* AtomSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AtomSDK.framework; path = Vendor/AtomSDK.framework; sourceTree = "<group>"; };
 		427716541D06C7220056B341 /* AtomSDKExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AtomSDKExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		427716591D06C7220056B341 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4277165C1D06C7220056B341 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -34,6 +42,7 @@
 		427716611D06C7220056B341 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		427716631D06C7220056B341 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42ECBD9D1D215BA300CD9A3C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		A0249B38447F88F9A7D54511 /* Pods_AtomSDKExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AtomSDKExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A64231D1792E109D92A4DD2A /* Pods-AtomSDKExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AtomSDKExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-AtomSDKExample/Pods-AtomSDKExample.release.xcconfig"; sourceTree = "<group>"; };
 		A6E1CD547C4ED1BF5B092978 /* Pods-AtomSDKExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AtomSDKExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AtomSDKExample/Pods-AtomSDKExample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -43,6 +52,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4256084E1D74561400891533 /* AtomSDK.framework in Frameworks */,
+				025763E972A01931C6C822FD /* Pods_AtomSDKExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +63,7 @@
 		4277164B1D06C7220056B341 = {
 			isa = PBXGroup;
 			children = (
+				4256084D1D74561400891533 /* AtomSDK.framework */,
 				427716561D06C7220056B341 /* AtomSDKExample */,
 				427716551D06C7220056B341 /* Products */,
 				A4B362701A0F5300F5E8681B /* Pods */,
@@ -70,6 +82,7 @@
 		427716561D06C7220056B341 /* AtomSDKExample */ = {
 			isa = PBXGroup;
 			children = (
+				425608491D74550F00891533 /* AppDelegate.swift */,
 				427716591D06C7220056B341 /* ViewController.swift */,
 				4277165B1D06C7220056B341 /* Main.storyboard */,
 				4277165E1D06C7220056B341 /* Assets.xcassets */,
@@ -91,6 +104,8 @@
 		AAFACC839DBBCFA01D7F9D75 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				425608291D74547F00891533 /* AtomSDK.framework */,
+				A0249B38447F88F9A7D54511 /* Pods_AtomSDKExample.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -106,9 +121,9 @@
 				427716501D06C7220056B341 /* Sources */,
 				427716511D06C7220056B341 /* Frameworks */,
 				427716521D06C7220056B341 /* Resources */,
-				427716A21D06CCED0056B341 /* Embed Frameworks */,
 				96CFEC2F2A8836ECC2068383 /* [CP] Embed Pods Frameworks */,
 				361EACDECCE461C4A2790EB0 /* [CP] Copy Pods Resources */,
+				425608501D74561400891533 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -218,6 +233,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4256084A1D74550F00891533 /* AppDelegate.swift in Sources */,
 				4277165A1D06C7220056B341 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -347,6 +363,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INCLUDE_PATHS = Sqlite3;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -367,6 +384,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INCLUDE_PATHS = Sqlite3;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

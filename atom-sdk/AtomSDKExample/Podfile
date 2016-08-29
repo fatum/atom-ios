@@ -7,6 +7,6 @@ target 'AtomSDKExample' do
 
   # Pods for AtomSDKExample
   pod 'sqlite3'
-  pod 'AtomSDK'
+  pod 'Arcane', git: 'https://github.com/onmyway133/Arcane'
 
 end
