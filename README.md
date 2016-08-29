@@ -2,6 +2,7 @@
 
 [![License][license-image]][license-url]
 [![Docs][docs-image]][docs-url]
+[![Pods][pod-image]][pod-url]
 [![Build status][travis-image]][travis-url]
 [![Coverage Status][coverage-image]][coverage-url]
 
@@ -126,6 +127,9 @@ MIT
 
 [docs-image]: https://img.shields.io/badge/docs-latest-blue.svg
 [docs-url]: https://ironsource.github.io/atom-ios/
+[pod-image]: https://img.shields.io/cocoapods/v/AtomSDK.svg
+[pod-url]: https://cocoapods.org/?q=AtomSDK
+
 [travis-image]: https://travis-ci.org/ironSource/atom-ios.svg?branch=master
 [travis-url]: https://travis-ci.org/ironSource/atom-ios
 [coverage-image]: https://coveralls.io/repos/github/ironSource/atom-ios/badge.svg?branch=master
