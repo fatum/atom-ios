@@ -1,4 +1,9 @@
-framework module CommonCrypto [system] {
+framework module AtomSDK {
+    umbrella header "../AtomSDK/AtomSDK.h"
+
+    // Load an SDK header, e.g. CommonCrypto.h
     header "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/usr/include/CommonCrypto/CommonCrypto.h"
+
     export *
+    module * { export * }
 }
