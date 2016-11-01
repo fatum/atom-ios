@@ -1,0 +1,461 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		427F77C51DC387B9006ECD64 /* ISAtom.m in Sources */ = {isa = PBXBuildFile; fileRef = 427F77C41DC387B9006ECD64 /* ISAtom.m */; };
+		42E46DAA1DC0BB5500EFB526 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E46DA91DC0BB5500EFB526 /* main.m */; };
+		42E46DAD1DC0BB5500EFB526 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E46DAC1DC0BB5500EFB526 /* AppDelegate.m */; };
+		42E46DB01DC0BB5500EFB526 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E46DAF1DC0BB5500EFB526 /* ViewController.m */; };
+		42E46DB31DC0BB5500EFB526 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42E46DB11DC0BB5500EFB526 /* Main.storyboard */; };
+		42E46DB51DC0BB5600EFB526 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42E46DB41DC0BB5600EFB526 /* Assets.xcassets */; };
+		42E46DB81DC0BB5600EFB526 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42E46DB61DC0BB5600EFB526 /* LaunchScreen.storyboard */; };
+		42E46DC31DC0BB5600EFB526 /* AtomSDKExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E46DC21DC0BB5600EFB526 /* AtomSDKExampleTests.m */; };
+		42FD14321DC899B500719B5E /* ISRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 42FD14311DC899B500719B5E /* ISRequest.m */; };
+		42FD14351DC899D200719B5E /* ISResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 42FD14341DC899D200719B5E /* ISResponse.m */; };
+		42FD14381DC899FC00719B5E /* ISUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 42FD14371DC899FC00719B5E /* ISUtils.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		42E46DBF1DC0BB5600EFB526 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 42E46D9D1DC0BB5500EFB526 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 42E46DA41DC0BB5500EFB526;
+			remoteInfo = AtomSDKExample;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		427F77C31DC387B9006ECD64 /* ISAtom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISAtom.h; sourceTree = "<group>"; };
+		427F77C41DC387B9006ECD64 /* ISAtom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISAtom.m; sourceTree = "<group>"; };
+		427F77C61DC76995006ECD64 /* ISHttpMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISHttpMethod.h; path = Assets.xcassets/ISHttpMethod.h; sourceTree = "<group>"; };
+		42E46DA51DC0BB5500EFB526 /* AtomSDKExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AtomSDKExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		42E46DA91DC0BB5500EFB526 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		42E46DAB1DC0BB5500EFB526 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		42E46DAC1DC0BB5500EFB526 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		42E46DAE1DC0BB5500EFB526 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		42E46DAF1DC0BB5500EFB526 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		42E46DB21DC0BB5500EFB526 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		42E46DB41DC0BB5600EFB526 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		42E46DB71DC0BB5600EFB526 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		42E46DB91DC0BB5600EFB526 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42E46DBE1DC0BB5600EFB526 /* AtomSDKExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AtomSDKExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		42E46DC21DC0BB5600EFB526 /* AtomSDKExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AtomSDKExampleTests.m; sourceTree = "<group>"; };
+		42E46DC41DC0BB5600EFB526 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42FD14301DC899B500719B5E /* ISRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISRequest.h; sourceTree = "<group>"; };
+		42FD14311DC899B500719B5E /* ISRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISRequest.m; sourceTree = "<group>"; };
+		42FD14331DC899D200719B5E /* ISResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISResponse.h; sourceTree = "<group>"; };
+		42FD14341DC899D200719B5E /* ISResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISResponse.m; sourceTree = "<group>"; };
+		42FD14361DC899FC00719B5E /* ISUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISUtils.h; sourceTree = "<group>"; };
+		42FD14371DC899FC00719B5E /* ISUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISUtils.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		42E46DA21DC0BB5500EFB526 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42E46DBB1DC0BB5600EFB526 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		42E46D9C1DC0BB5500EFB526 = {
+			isa = PBXGroup;
+			children = (
+				42E46DA71DC0BB5500EFB526 /* AtomSDKExample */,
+				42E46DC11DC0BB5600EFB526 /* AtomSDKExampleTests */,
+				42E46DA61DC0BB5500EFB526 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		42E46DA61DC0BB5500EFB526 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				42E46DA51DC0BB5500EFB526 /* AtomSDKExample.app */,
+				42E46DBE1DC0BB5600EFB526 /* AtomSDKExampleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		42E46DA71DC0BB5500EFB526 /* AtomSDKExample */ = {
+			isa = PBXGroup;
+			children = (
+				42E46DAB1DC0BB5500EFB526 /* AppDelegate.h */,
+				42E46DAC1DC0BB5500EFB526 /* AppDelegate.m */,
+				42E46DAE1DC0BB5500EFB526 /* ViewController.h */,
+				42E46DAF1DC0BB5500EFB526 /* ViewController.m */,
+				42E46DB11DC0BB5500EFB526 /* Main.storyboard */,
+				42E46DB41DC0BB5600EFB526 /* Assets.xcassets */,
+				42E46DB61DC0BB5600EFB526 /* LaunchScreen.storyboard */,
+				42E46DB91DC0BB5600EFB526 /* Info.plist */,
+				42E46DA81DC0BB5500EFB526 /* Supporting Files */,
+				427F77C31DC387B9006ECD64 /* ISAtom.h */,
+				427F77C41DC387B9006ECD64 /* ISAtom.m */,
+				427F77C61DC76995006ECD64 /* ISHttpMethod.h */,
+				42FD14301DC899B500719B5E /* ISRequest.h */,
+				42FD14311DC899B500719B5E /* ISRequest.m */,
+				42FD14331DC899D200719B5E /* ISResponse.h */,
+				42FD14341DC899D200719B5E /* ISResponse.m */,
+				42FD14361DC899FC00719B5E /* ISUtils.h */,
+				42FD14371DC899FC00719B5E /* ISUtils.m */,
+			);
+			path = AtomSDKExample;
+			sourceTree = "<group>";
+		};
+		42E46DA81DC0BB5500EFB526 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				42E46DA91DC0BB5500EFB526 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		42E46DC11DC0BB5600EFB526 /* AtomSDKExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				42E46DC21DC0BB5600EFB526 /* AtomSDKExampleTests.m */,
+				42E46DC41DC0BB5600EFB526 /* Info.plist */,
+			);
+			path = AtomSDKExampleTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		42E46DA41DC0BB5500EFB526 /* AtomSDKExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42E46DC71DC0BB5600EFB526 /* Build configuration list for PBXNativeTarget "AtomSDKExample" */;
+			buildPhases = (
+				42E46DA11DC0BB5500EFB526 /* Sources */,
+				42E46DA21DC0BB5500EFB526 /* Frameworks */,
+				42E46DA31DC0BB5500EFB526 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AtomSDKExample;
+			productName = AtomSDKExample;
+			productReference = 42E46DA51DC0BB5500EFB526 /* AtomSDKExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		42E46DBD1DC0BB5600EFB526 /* AtomSDKExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42E46DCA1DC0BB5600EFB526 /* Build configuration list for PBXNativeTarget "AtomSDKExampleTests" */;
+			buildPhases = (
+				42E46DBA1DC0BB5600EFB526 /* Sources */,
+				42E46DBB1DC0BB5600EFB526 /* Frameworks */,
+				42E46DBC1DC0BB5600EFB526 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				42E46DC01DC0BB5600EFB526 /* PBXTargetDependency */,
+			);
+			name = AtomSDKExampleTests;
+			productName = AtomSDKExampleTests;
+			productReference = 42E46DBE1DC0BB5600EFB526 /* AtomSDKExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		42E46D9D1DC0BB5500EFB526 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = IronSource;
+				TargetAttributes = {
+					42E46DA41DC0BB5500EFB526 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = SU67R6K2V3;
+						ProvisioningStyle = Automatic;
+					};
+					42E46DBD1DC0BB5600EFB526 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = HCA2DNW568;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 42E46DA41DC0BB5500EFB526;
+					};
+				};
+			};
+			buildConfigurationList = 42E46DA01DC0BB5500EFB526 /* Build configuration list for PBXProject "AtomSDKExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 42E46D9C1DC0BB5500EFB526;
+			productRefGroup = 42E46DA61DC0BB5500EFB526 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				42E46DA41DC0BB5500EFB526 /* AtomSDKExample */,
+				42E46DBD1DC0BB5600EFB526 /* AtomSDKExampleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		42E46DA31DC0BB5500EFB526 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42E46DB81DC0BB5600EFB526 /* LaunchScreen.storyboard in Resources */,
+				42E46DB51DC0BB5600EFB526 /* Assets.xcassets in Resources */,
+				42E46DB31DC0BB5500EFB526 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42E46DBC1DC0BB5600EFB526 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		42E46DA11DC0BB5500EFB526 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42FD14381DC899FC00719B5E /* ISUtils.m in Sources */,
+				42E46DB01DC0BB5500EFB526 /* ViewController.m in Sources */,
+				427F77C51DC387B9006ECD64 /* ISAtom.m in Sources */,
+				42E46DAD1DC0BB5500EFB526 /* AppDelegate.m in Sources */,
+				42FD14321DC899B500719B5E /* ISRequest.m in Sources */,
+				42FD14351DC899D200719B5E /* ISResponse.m in Sources */,
+				42E46DAA1DC0BB5500EFB526 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42E46DBA1DC0BB5600EFB526 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42E46DC31DC0BB5600EFB526 /* AtomSDKExampleTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		42E46DC01DC0BB5600EFB526 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 42E46DA41DC0BB5500EFB526 /* AtomSDKExample */;
+			targetProxy = 42E46DBF1DC0BB5600EFB526 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		42E46DB11DC0BB5500EFB526 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				42E46DB21DC0BB5500EFB526 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		42E46DB61DC0BB5600EFB526 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				42E46DB71DC0BB5600EFB526 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		42E46DC51DC0BB5600EFB526 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		42E46DC61DC0BB5600EFB526 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		42E46DC81DC0BB5600EFB526 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = SU67R6K2V3;
+				INFOPLIST_FILE = AtomSDKExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ironsrc.atom.AtomSDKExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		42E46DC91DC0BB5600EFB526 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = SU67R6K2V3;
+				INFOPLIST_FILE = AtomSDKExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ironsrc.atom.AtomSDKExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		42E46DCB1DC0BB5600EFB526 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = HCA2DNW568;
+				INFOPLIST_FILE = AtomSDKExampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ironsrc.atom.AtomSDKExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AtomSDKExample.app/AtomSDKExample";
+			};
+			name = Debug;
+		};
+		42E46DCC1DC0BB5600EFB526 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = HCA2DNW568;
+				INFOPLIST_FILE = AtomSDKExampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ironsrc.atom.AtomSDKExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AtomSDKExample.app/AtomSDKExample";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		42E46DA01DC0BB5500EFB526 /* Build configuration list for PBXProject "AtomSDKExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42E46DC51DC0BB5600EFB526 /* Debug */,
+				42E46DC61DC0BB5600EFB526 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		42E46DC71DC0BB5600EFB526 /* Build configuration list for PBXNativeTarget "AtomSDKExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42E46DC81DC0BB5600EFB526 /* Debug */,
+				42E46DC91DC0BB5600EFB526 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		42E46DCA1DC0BB5600EFB526 /* Build configuration list for PBXNativeTarget "AtomSDKExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42E46DCB1DC0BB5600EFB526 /* Debug */,
+				42E46DCC1DC0BB5600EFB526 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 42E46D9D1DC0BB5500EFB526 /* Project object */;
+}

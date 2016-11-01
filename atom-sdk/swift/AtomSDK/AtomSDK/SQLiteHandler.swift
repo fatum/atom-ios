@@ -30,7 +30,7 @@ public class SQLiteHandler {
             .DocumentDirectory, inDomain: .UserDomainMask,
             appropriateForURL: nil, create: false)
         let fileURL = documents.URLByAppendingPathComponent(name)
-        databasePath_ = fileURL.path!
+        databasePath_ = fileURL!.path!
         
         printLog("DB path: \(self.databasePath_)")
         
