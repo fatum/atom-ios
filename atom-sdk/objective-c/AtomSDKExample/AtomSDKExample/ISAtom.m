@@ -8,7 +8,10 @@
 
 #import "ISAtom.h"
 
+#import "ISRequest.h"
+
 @interface ISAtom()
+
 -(NSString*)getRequestDataWithStream: (NSString*)stream
                                 data: (NSString*)data
                               isBulk: (BOOL)isBulk;
@@ -19,16 +22,21 @@
 -(void)printLog: (NSString*)logData;
 @end
 
+static NSString* DEFAULT_ENDPOINT_ = @"http://track.atom-data.io/";
+static NSString* VERSION_ = @"V1.0.0";
+
 @implementation ISAtom
 
 -(id)init {
     self = [super init];
     
     if (self) {
+        self->endPoint_ = DEFAULT_ENDPOINT_;
+        
         headers_ = [[NSMutableDictionary alloc] init];
         
         [headers_ setObject:@"ios" forKey:@"x-ironsource-atom-sdk-type"];
-        [headers_ setObject:@"V1.0.0" forKey:@"x-ironsource-atom-sdk-version"];
+        [headers_ setObject:VERSION_ forKey:@"x-ironsource-atom-sdk-version"];
         [headers_ setObject:@"application/json" forKey:@"Content-type"];
     }
     
@@ -124,6 +132,21 @@
     [self printLog:[NSString stringWithFormat:@"Request json: %@", jsonStr]];
     
     return jsonStr;
+}
+
+-(void)sendRequestWithUrl: (NSString*)url data:(NSString*)data
+                   method:(ISHttpMethod)method
+                 callback:(ISRequestCallback)callback {
+    ISRequest* request = [[ISRequest alloc] initWithUrl:url data:data
+                                                headers:self->headers_
+                                               callback:callback
+                                                isDebug:self->isDebug_];
+    
+    if (method == IS_GET) {
+        [request get];
+    } else {
+        [request post];
+    }
 }
 
 -(void)printLog: (NSString*)logData {

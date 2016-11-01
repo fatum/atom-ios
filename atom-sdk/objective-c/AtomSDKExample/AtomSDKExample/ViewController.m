@@ -27,6 +27,12 @@
     [atomSDK enableDebug:true];
     [atomSDK putEventWithStream:@"test" data:@"data" method:IS_GET];
     
+    ISRequestCallback callback = ^(ISResponse* response) {
+        NSLog(@"%@", [response data]);
+    };
+    
+    [atomSDK healthWithCallback:callback];
+    
     NSMutableDictionary* headers_ = [[NSMutableDictionary alloc] init];
     
     [headers_ setObject:@"ios" forKey:@"x-ironsource-atom-sdk-type"];

@@ -96,7 +96,7 @@
                 NSString* errorStr = @"";
                 NSString* dataStr = @"";
             
-                if (error == nil) {
+                if (error != nil) {
                     errorStr = [error localizedDescription];
                 } else {
                     dataStr = [[NSString alloc] initWithData:data
