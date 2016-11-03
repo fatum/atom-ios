@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42098CF81DCB34AF00617DDB /* ISAtomTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 42098CF71DCB34AF00617DDB /* ISAtomTracker.m */; };
+		4265BE751DC9DF1D00520436 /* ISBatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 4265BE741DC9DF1D00520436 /* ISBatch.m */; };
+		4265BE781DC9E02A00520436 /* ISStreamData.m in Sources */ = {isa = PBXBuildFile; fileRef = 4265BE771DC9E02A00520436 /* ISStreamData.m */; };
+		4265BE7B1DC9E24900520436 /* ISSQLiteHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 4265BE7A1DC9E24900520436 /* ISSQLiteHandler.m */; };
+		4265BE7E1DCA17CC00520436 /* ISDatabaseAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4265BE7D1DCA17CC00520436 /* ISDatabaseAdapter.m */; };
 		427F77C51DC387B9006ECD64 /* ISAtom.m in Sources */ = {isa = PBXBuildFile; fileRef = 427F77C41DC387B9006ECD64 /* ISAtom.m */; };
 		42E46DAA1DC0BB5500EFB526 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E46DA91DC0BB5500EFB526 /* main.m */; };
 		42E46DAD1DC0BB5500EFB526 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E46DAC1DC0BB5500EFB526 /* AppDelegate.m */; };
@@ -18,6 +23,8 @@
 		42FD14321DC899B500719B5E /* ISRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 42FD14311DC899B500719B5E /* ISRequest.m */; };
 		42FD14351DC899D200719B5E /* ISResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 42FD14341DC899D200719B5E /* ISResponse.m */; };
 		42FD14381DC899FC00719B5E /* ISUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 42FD14371DC899FC00719B5E /* ISUtils.m */; };
+		6B5C8E461729D72FB55B841D /* libPods-AtomSDKExampleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D33BCF742F8FFD3226053B09 /* libPods-AtomSDKExampleTests.a */; };
+		A4E398908C3F175F23744BAF /* libPods-AtomSDKExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FB42A88B82A0A5EBE9383030 /* libPods-AtomSDKExample.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +38,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3B939EA06C17B6E5DE6AE05F /* Pods-AtomSDKExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AtomSDKExampleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AtomSDKExampleTests/Pods-AtomSDKExampleTests.release.xcconfig"; sourceTree = "<group>"; };
+		42098CF61DCB34AF00617DDB /* ISAtomTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISAtomTracker.h; sourceTree = "<group>"; };
+		42098CF71DCB34AF00617DDB /* ISAtomTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISAtomTracker.m; sourceTree = "<group>"; };
+		4265BE731DC9DF1D00520436 /* ISBatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISBatch.h; sourceTree = "<group>"; };
+		4265BE741DC9DF1D00520436 /* ISBatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISBatch.m; sourceTree = "<group>"; };
+		4265BE761DC9E02A00520436 /* ISStreamData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISStreamData.h; sourceTree = "<group>"; };
+		4265BE771DC9E02A00520436 /* ISStreamData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISStreamData.m; sourceTree = "<group>"; };
+		4265BE791DC9E24900520436 /* ISSQLiteHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISSQLiteHandler.h; sourceTree = "<group>"; };
+		4265BE7A1DC9E24900520436 /* ISSQLiteHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISSQLiteHandler.m; sourceTree = "<group>"; };
+		4265BE7C1DCA17CC00520436 /* ISDatabaseAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISDatabaseAdapter.h; sourceTree = "<group>"; };
+		4265BE7D1DCA17CC00520436 /* ISDatabaseAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISDatabaseAdapter.m; sourceTree = "<group>"; };
 		427F77C31DC387B9006ECD64 /* ISAtom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISAtom.h; sourceTree = "<group>"; };
 		427F77C41DC387B9006ECD64 /* ISAtom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISAtom.m; sourceTree = "<group>"; };
 		427F77C61DC76995006ECD64 /* ISHttpMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISHttpMethod.h; path = Assets.xcassets/ISHttpMethod.h; sourceTree = "<group>"; };
@@ -53,6 +71,11 @@
 		42FD14341DC899D200719B5E /* ISResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISResponse.m; sourceTree = "<group>"; };
 		42FD14361DC899FC00719B5E /* ISUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISUtils.h; sourceTree = "<group>"; };
 		42FD14371DC899FC00719B5E /* ISUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISUtils.m; sourceTree = "<group>"; };
+		78CCA7AB8AD6A9856DDCBEC6 /* Pods-AtomSDKExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AtomSDKExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AtomSDKExample/Pods-AtomSDKExample.debug.xcconfig"; sourceTree = "<group>"; };
+		B83A9EC417F3E14ADC160135 /* Pods-AtomSDKExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AtomSDKExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-AtomSDKExample/Pods-AtomSDKExample.release.xcconfig"; sourceTree = "<group>"; };
+		CA70A20460CF5D3CD158A955 /* Pods-AtomSDKExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AtomSDKExampleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AtomSDKExampleTests/Pods-AtomSDKExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D33BCF742F8FFD3226053B09 /* libPods-AtomSDKExampleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AtomSDKExampleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB42A88B82A0A5EBE9383030 /* libPods-AtomSDKExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AtomSDKExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4E398908C3F175F23744BAF /* libPods-AtomSDKExample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B5C8E461729D72FB55B841D /* libPods-AtomSDKExampleTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +104,8 @@
 				42E46DA71DC0BB5500EFB526 /* AtomSDKExample */,
 				42E46DC11DC0BB5600EFB526 /* AtomSDKExampleTests */,
 				42E46DA61DC0BB5500EFB526 /* Products */,
+				E89461B88EC83FD94A853E11 /* Pods */,
+				A32DAA61242A926EDB056546 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,6 +139,16 @@
 				42FD14341DC899D200719B5E /* ISResponse.m */,
 				42FD14361DC899FC00719B5E /* ISUtils.h */,
 				42FD14371DC899FC00719B5E /* ISUtils.m */,
+				4265BE731DC9DF1D00520436 /* ISBatch.h */,
+				4265BE741DC9DF1D00520436 /* ISBatch.m */,
+				4265BE761DC9E02A00520436 /* ISStreamData.h */,
+				4265BE771DC9E02A00520436 /* ISStreamData.m */,
+				4265BE791DC9E24900520436 /* ISSQLiteHandler.h */,
+				4265BE7A1DC9E24900520436 /* ISSQLiteHandler.m */,
+				4265BE7C1DCA17CC00520436 /* ISDatabaseAdapter.h */,
+				4265BE7D1DCA17CC00520436 /* ISDatabaseAdapter.m */,
+				42098CF61DCB34AF00617DDB /* ISAtomTracker.h */,
+				42098CF71DCB34AF00617DDB /* ISAtomTracker.m */,
 			);
 			path = AtomSDKExample;
 			sourceTree = "<group>";
@@ -133,6 +170,26 @@
 			path = AtomSDKExampleTests;
 			sourceTree = "<group>";
 		};
+		A32DAA61242A926EDB056546 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FB42A88B82A0A5EBE9383030 /* libPods-AtomSDKExample.a */,
+				D33BCF742F8FFD3226053B09 /* libPods-AtomSDKExampleTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E89461B88EC83FD94A853E11 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				78CCA7AB8AD6A9856DDCBEC6 /* Pods-AtomSDKExample.debug.xcconfig */,
+				B83A9EC417F3E14ADC160135 /* Pods-AtomSDKExample.release.xcconfig */,
+				CA70A20460CF5D3CD158A955 /* Pods-AtomSDKExampleTests.debug.xcconfig */,
+				3B939EA06C17B6E5DE6AE05F /* Pods-AtomSDKExampleTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -140,9 +197,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 42E46DC71DC0BB5600EFB526 /* Build configuration list for PBXNativeTarget "AtomSDKExample" */;
 			buildPhases = (
+				CD51D4754811062A6A5154B8 /* [CP] Check Pods Manifest.lock */,
 				42E46DA11DC0BB5500EFB526 /* Sources */,
 				42E46DA21DC0BB5500EFB526 /* Frameworks */,
 				42E46DA31DC0BB5500EFB526 /* Resources */,
+				CCE4653771E098F833032533 /* [CP] Embed Pods Frameworks */,
+				215AB774923A2BE29F5F1F28 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -157,9 +217,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 42E46DCA1DC0BB5600EFB526 /* Build configuration list for PBXNativeTarget "AtomSDKExampleTests" */;
 			buildPhases = (
+				54E2C238DCAD7C4F24AE943B /* [CP] Check Pods Manifest.lock */,
 				42E46DBA1DC0BB5600EFB526 /* Sources */,
 				42E46DBB1DC0BB5600EFB526 /* Frameworks */,
 				42E46DBC1DC0BB5600EFB526 /* Resources */,
+				0E7B744955344B61717D6617 /* [CP] Embed Pods Frameworks */,
+				0D6ED6D5B7D9C443E6C03E84 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -232,6 +295,99 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0D6ED6D5B7D9C443E6C03E84 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AtomSDKExampleTests/Pods-AtomSDKExampleTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0E7B744955344B61717D6617 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AtomSDKExampleTests/Pods-AtomSDKExampleTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		215AB774923A2BE29F5F1F28 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AtomSDKExample/Pods-AtomSDKExample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		54E2C238DCAD7C4F24AE943B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CCE4653771E098F833032533 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AtomSDKExample/Pods-AtomSDKExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CD51D4754811062A6A5154B8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		42E46DA11DC0BB5500EFB526 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -241,9 +397,14 @@
 				42E46DB01DC0BB5500EFB526 /* ViewController.m in Sources */,
 				427F77C51DC387B9006ECD64 /* ISAtom.m in Sources */,
 				42E46DAD1DC0BB5500EFB526 /* AppDelegate.m in Sources */,
+				4265BE751DC9DF1D00520436 /* ISBatch.m in Sources */,
+				4265BE781DC9E02A00520436 /* ISStreamData.m in Sources */,
 				42FD14321DC899B500719B5E /* ISRequest.m in Sources */,
 				42FD14351DC899D200719B5E /* ISResponse.m in Sources */,
+				4265BE7E1DCA17CC00520436 /* ISDatabaseAdapter.m in Sources */,
+				4265BE7B1DC9E24900520436 /* ISSQLiteHandler.m in Sources */,
 				42E46DAA1DC0BB5500EFB526 /* main.m in Sources */,
+				42098CF81DCB34AF00617DDB /* ISAtomTracker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,6 +538,7 @@
 		};
 		42E46DC81DC0BB5600EFB526 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78CCA7AB8AD6A9856DDCBEC6 /* Pods-AtomSDKExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = SU67R6K2V3;
@@ -389,6 +551,7 @@
 		};
 		42E46DC91DC0BB5600EFB526 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B83A9EC417F3E14ADC160135 /* Pods-AtomSDKExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = SU67R6K2V3;
@@ -401,6 +564,7 @@
 		};
 		42E46DCB1DC0BB5600EFB526 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA70A20460CF5D3CD158A955 /* Pods-AtomSDKExampleTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = HCA2DNW568;
@@ -414,6 +578,7 @@
 		};
 		42E46DCC1DC0BB5600EFB526 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B939EA06C17B6E5DE6AE05F /* Pods-AtomSDKExampleTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = HCA2DNW568;

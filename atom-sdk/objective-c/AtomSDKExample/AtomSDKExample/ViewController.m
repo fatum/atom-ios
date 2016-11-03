@@ -9,8 +9,8 @@
 #import "ViewController.h"
 
 #import "ISAtom.h"
-
 #import "ISRequest.h"
+#import "ISSQLiteHandler.h"
 
 @interface ViewController ()
 
@@ -22,6 +22,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    // test db
+    ISSQLiteHandler* sqlHandler = [[ISSQLiteHandler alloc] initWithName:@"test"];
+    
+    unsigned long long size = [sqlHandler getDBSize];
+    
+    //test sdk
     ISAtom* atomSDK = [[ISAtom alloc] init];
     
     [atomSDK enableDebug:true];
@@ -33,6 +39,7 @@
     
     [atomSDK healthWithCallback:callback];
     
+    // test request
     NSMutableDictionary* headers_ = [[NSMutableDictionary alloc] init];
     
     [headers_ setObject:@"ios" forKey:@"x-ironsource-atom-sdk-type"];
