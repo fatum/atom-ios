@@ -33,6 +33,8 @@
 
 -(BOOL)bindInt32WithIndex: (int)index data: (int32_t)data;
 
+-(BOOL)bindTextWithIndex: (int) index data: (NSString*)data;
+
 -(BOOL)execStatement;
 
 -(BOOL)execNextStatement;

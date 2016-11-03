@@ -103,6 +103,18 @@
     return true;
 }
 
+-(BOOL)bindTextWithIndex: (int)index data: (NSString*)data {
+    int result = sqlite3_bind_text(self->sqlStatement_, (int)index,
+                                   [data UTF8String], -1, nil);
+    
+    if (result != SQLITE_OK) {
+        [self printLog:[NSString stringWithFormat:@"SQL Error: %@",
+                        [self getSQLError]]];
+        return false;
+    }
+    return true;
+}
+
 -(BOOL)execStatement {
     int result = sqlite3_step(self->sqlStatement_);
     
