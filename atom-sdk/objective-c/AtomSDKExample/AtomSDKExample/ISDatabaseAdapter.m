@@ -338,4 +338,10 @@ static int MAX_DATABASE_SIZE = 1024 * 1024 * 10;
     return [self countWithStreamName:@""];
 }
 
+-(void)printLog: (NSString*)logData {
+    if (self->isDebug_) {
+        NSLog(@"%@: %@",  NSStringFromClass([self class]), logData);
+    }
+}
+
 @end

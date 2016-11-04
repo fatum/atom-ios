@@ -22,7 +22,7 @@
     NSString* endPoint_;
 }
 
-@property (strong) NSString* authKey;
+@property NSString* authKey;
 
 /**
  *  API Constructor

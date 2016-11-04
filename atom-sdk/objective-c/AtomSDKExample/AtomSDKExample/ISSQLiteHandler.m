@@ -172,7 +172,7 @@
                               encoding:NSUTF8StringEncoding];
 }
 
--(void) printLog: (NSString*)logData {
+-(void)printLog: (NSString*)logData {
     if (self->isDebug_) {
         NSLog(@"%@: %@",  NSStringFromClass([self class]), logData);
     }
