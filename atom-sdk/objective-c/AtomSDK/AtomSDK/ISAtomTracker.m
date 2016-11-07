@@ -149,6 +149,10 @@ static int DEFAULT_BULK_BYTES_SIZE = 64 * 1024;
     });
 }
 
+-(void)trackWithStream: (NSString*)stream data: (NSString*)data {
+    [self trackWithStream:stream data:data token:@""];
+}
+
 -(void)flushWithStream: (NSString*)stream {
     [self flushAsyncWithStream:stream checkSize:false];
 }
