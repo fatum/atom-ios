@@ -7,13 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D877D036EC93FDD9D1EC157 /* Pods_AtomSDKExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0249B38447F88F9A7D54511 /* Pods_AtomSDKExample.framework */; };
 		4277165D1D06C7220056B341 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4277165B1D06C7220056B341 /* Main.storyboard */; };
 		4277165F1D06C7220056B341 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4277165E1D06C7220056B341 /* Assets.xcassets */; };
 		427716621D06C7220056B341 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 427716601D06C7220056B341 /* LaunchScreen.storyboard */; };
 		42C31FEB1DD0C0830089FAC6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C31FE81DD0C0830089FAC6 /* ViewController.swift */; };
 		42C31FEC1DD0C0830089FAC6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C31FEA1DD0C0830089FAC6 /* AppDelegate.swift */; };
-		42C31FF41DD0C4EB0089FAC6 /* AtomSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42C31FF31DD0C4EB0089FAC6 /* AtomSDK.framework */; };
-		42C31FF51DD0C4EB0089FAC6 /* AtomSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 42C31FF31DD0C4EB0089FAC6 /* AtomSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,7 +22,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				42C31FF51DD0C4EB0089FAC6 /* AtomSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -38,7 +36,6 @@
 		427716631D06C7220056B341 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42C31FE81DD0C0830089FAC6 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		42C31FEA1DD0C0830089FAC6 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		42C31FF31DD0C4EB0089FAC6 /* AtomSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AtomSDK.framework; path = libs/AtomSDK.framework; sourceTree = "<group>"; };
 		42ECBD9D1D215BA300CD9A3C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		A0249B38447F88F9A7D54511 /* Pods_AtomSDKExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AtomSDKExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A64231D1792E109D92A4DD2A /* Pods-AtomSDKExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AtomSDKExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-AtomSDKExample/Pods-AtomSDKExample.release.xcconfig"; sourceTree = "<group>"; };
@@ -50,7 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42C31FF41DD0C4EB0089FAC6 /* AtomSDK.framework in Frameworks */,
+				0D877D036EC93FDD9D1EC157 /* Pods_AtomSDKExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,7 +57,6 @@
 		4277164B1D06C7220056B341 = {
 			isa = PBXGroup;
 			children = (
-				42C31FF31DD0C4EB0089FAC6 /* AtomSDK.framework */,
 				427716561D06C7220056B341 /* AtomSDKExample */,
 				427716551D06C7220056B341 /* Products */,
 				A4B362701A0F5300F5E8681B /* Pods */,
@@ -113,10 +109,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 427716661D06C7220056B341 /* Build configuration list for PBXNativeTarget "AtomSDKExample" */;
 			buildPhases = (
+				1BD9AE23083C74FECB3CFF0A /* [CP] Check Pods Manifest.lock */,
 				427716501D06C7220056B341 /* Sources */,
 				427716511D06C7220056B341 /* Frameworks */,
 				427716521D06C7220056B341 /* Resources */,
 				425608501D74561400891533 /* Embed Frameworks */,
+				E017E982EE7DCD323E74200F /* [CP] Embed Pods Frameworks */,
+				2C94D87830BE9C6B7190F3CD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -134,7 +133,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = IronSource;
 				TargetAttributes = {
 					427716531D06C7220056B341 = {
@@ -174,6 +173,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1BD9AE23083C74FECB3CFF0A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		2C94D87830BE9C6B7190F3CD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AtomSDKExample/Pods-AtomSDKExample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E017E982EE7DCD323E74200F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AtomSDKExample/Pods-AtomSDKExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		427716501D06C7220056B341 /* Sources */ = {
@@ -222,8 +269,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -268,8 +317,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -288,6 +339,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -295,6 +347,7 @@
 		};
 		427716671D06C7220056B341 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A6E1CD547C4ED1BF5B092978 /* Pods-AtomSDKExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
@@ -318,6 +371,7 @@
 		};
 		427716681D06C7220056B341 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A64231D1792E109D92A4DD2A /* Pods-AtomSDKExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
