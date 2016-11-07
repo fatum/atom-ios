@@ -103,10 +103,22 @@
     return true;
 }
 
+-(BOOL)bindTextWithIndex: (int)index data: (NSString*)data {
+    int result = sqlite3_bind_text(self->sqlStatement_, (int)index,
+                                   [data UTF8String], -1, nil);
+    
+    if (result != SQLITE_OK) {
+        [self printLog:[NSString stringWithFormat:@"SQL Error: %@",
+                        [self getSQLError]]];
+        return false;
+    }
+    return true;
+}
+
 -(BOOL)execStatement {
     int result = sqlite3_step(self->sqlStatement_);
     
-    if (result != SQLITE_OK) {
+    if (result != SQLITE_DONE) {
         [self printLog:[NSString stringWithFormat:@"SQL Error: %@",
                         [self getSQLError]]];
         return false;
@@ -121,8 +133,8 @@
         if (result != SQLITE_DONE) {
             [self printLog:[NSString stringWithFormat:@"SQL Error: %@",
                             [self getSQLError]]];
-            return false;
         }
+        return false;
     }
     return true;
 }
@@ -160,7 +172,7 @@
                               encoding:NSUTF8StringEncoding];
 }
 
--(void) printLog: (NSString*)logData {
+-(void)printLog: (NSString*)logData {
     if (self->isDebug_) {
         NSLog(@"%@: %@",  NSStringFromClass([self class]), logData);
     }

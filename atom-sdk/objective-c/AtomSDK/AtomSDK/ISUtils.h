@@ -20,4 +20,6 @@ typedef void (^ISRequestCallback)(ISResponse*);
 
 +(NSString*)listToJsonStr: (NSArray*)data;
 
++(int64_t)currentTimeMillis;
+
 @end

@@ -2,7 +2,7 @@
 //  AtomSDKTests.m
 //  AtomSDKTests
 //
-//  Created by Valentine.Pavchuk on 11/3/16.
+//  Created by Valentine.Pavchuk on 11/7/16.
 //  Copyright © 2016 IronSource. All rights reserved.
 //
 

@@ -31,7 +31,9 @@ static NSString* VERSION_ = @"V1.0.0";
     self = [super init];
     
     if (self) {
-        self->endPoint_ = DEFAULT_ENDPOINT_;
+        self->endPoint_ = [NSMutableString stringWithString: DEFAULT_ENDPOINT_];
+        
+        self->authKey_ = [NSMutableString stringWithString:@""];
         
         headers_ = [[NSMutableDictionary alloc] init];
         
@@ -44,31 +46,29 @@ static NSString* VERSION_ = @"V1.0.0";
 }
 
 -(void)enableDebug: (BOOL)isDebug {
-    isDebug_ = isDebug;
+    self->isDebug_ = isDebug;
 }
 
 -(void)setAuth: (NSString*)authKey {
-    authKey_ = authKey;
+    self->authKey_ = [authKey mutableCopy];
 }
 
 -(void)setEndPoint: (NSString*)endPoint {
-    endPoint_ = endPoint;
+    self->endPoint_ = [endPoint mutableCopy];
 }
 
 -(void)putEventWithStream: (NSString*)stream data: (NSString*)data
-                   method: (ISHttpMethod)method
                  callback: (ISRequestCallback) callback {
     [self printLog:@"Run put event!"];
     NSString* jsonData = [self getRequestDataWithStream:stream data: data
                                                  isBulk:false];
     
-    [self sendRequestWithUrl:self->endPoint_ data:jsonData method:method
+    [self sendRequestWithUrl:self->endPoint_ data:jsonData method:IS_POST
                     callback:callback];
 }
 
--(void)putEventWithStream: (NSString*)stream data: (NSString*)data
-                   method: (ISHttpMethod)method {
-    [self putEventWithStream:stream data:data method:method callback:nil];
+-(void)putEventWithStream: (NSString*)stream data: (NSString*)data {
+    [self putEventWithStream:stream data:data callback:nil];
 }
 
 -(void)putEventsWithStream: (NSString*)stream arrayData: (NSArray*)data
@@ -114,7 +114,7 @@ static NSString* VERSION_ = @"V1.0.0";
 -(NSString*)getRequestDataWithStream: (NSString*)stream data: (NSString*)data
                               isBulk: (BOOL)isBulk {
     NSString* hash = ([self->authKey_ length] == 0) ? @"" :
-            [ISUtils encodeHMACWithInput:data key:self->_authKey];
+                [ISUtils encodeHMACWithInput:data key:self->_authKey];
     
     NSMutableDictionary* eventObject = [[NSMutableDictionary<NSString*, NSObject*>
                                          alloc] init];

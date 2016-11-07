@@ -7,202 +7,116 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		42098CF81DCB34AF00617DDB /* ISAtomTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 42098CF71DCB34AF00617DDB /* ISAtomTracker.m */; };
-		4265BE751DC9DF1D00520436 /* ISBatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 4265BE741DC9DF1D00520436 /* ISBatch.m */; };
-		4265BE781DC9E02A00520436 /* ISStreamData.m in Sources */ = {isa = PBXBuildFile; fileRef = 4265BE771DC9E02A00520436 /* ISStreamData.m */; };
-		4265BE7B1DC9E24900520436 /* ISSQLiteHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 4265BE7A1DC9E24900520436 /* ISSQLiteHandler.m */; };
-		4265BE7E1DCA17CC00520436 /* ISDatabaseAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4265BE7D1DCA17CC00520436 /* ISDatabaseAdapter.m */; };
-		427F77C51DC387B9006ECD64 /* ISAtom.m in Sources */ = {isa = PBXBuildFile; fileRef = 427F77C41DC387B9006ECD64 /* ISAtom.m */; };
-		42E46DAA1DC0BB5500EFB526 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E46DA91DC0BB5500EFB526 /* main.m */; };
-		42E46DAD1DC0BB5500EFB526 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E46DAC1DC0BB5500EFB526 /* AppDelegate.m */; };
-		42E46DB01DC0BB5500EFB526 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E46DAF1DC0BB5500EFB526 /* ViewController.m */; };
-		42E46DB31DC0BB5500EFB526 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42E46DB11DC0BB5500EFB526 /* Main.storyboard */; };
-		42E46DB51DC0BB5600EFB526 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42E46DB41DC0BB5600EFB526 /* Assets.xcassets */; };
-		42E46DB81DC0BB5600EFB526 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42E46DB61DC0BB5600EFB526 /* LaunchScreen.storyboard */; };
-		42E46DC31DC0BB5600EFB526 /* AtomSDKExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E46DC21DC0BB5600EFB526 /* AtomSDKExampleTests.m */; };
-		42FD14321DC899B500719B5E /* ISRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 42FD14311DC899B500719B5E /* ISRequest.m */; };
-		42FD14351DC899D200719B5E /* ISResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 42FD14341DC899D200719B5E /* ISResponse.m */; };
-		42FD14381DC899FC00719B5E /* ISUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 42FD14371DC899FC00719B5E /* ISUtils.m */; };
-		6B5C8E461729D72FB55B841D /* libPods-AtomSDKExampleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D33BCF742F8FFD3226053B09 /* libPods-AtomSDKExampleTests.a */; };
-		A4E398908C3F175F23744BAF /* libPods-AtomSDKExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FB42A88B82A0A5EBE9383030 /* libPods-AtomSDKExample.a */; };
+		4277165D1D06C7220056B341 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4277165B1D06C7220056B341 /* Main.storyboard */; };
+		4277165F1D06C7220056B341 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4277165E1D06C7220056B341 /* Assets.xcassets */; };
+		427716621D06C7220056B341 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 427716601D06C7220056B341 /* LaunchScreen.storyboard */; };
+		42C31FEB1DD0C0830089FAC6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C31FE81DD0C0830089FAC6 /* ViewController.swift */; };
+		42C31FEC1DD0C0830089FAC6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C31FEA1DD0C0830089FAC6 /* AppDelegate.swift */; };
+		42C31FF41DD0C4EB0089FAC6 /* AtomSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42C31FF31DD0C4EB0089FAC6 /* AtomSDK.framework */; };
+		42C31FF51DD0C4EB0089FAC6 /* AtomSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 42C31FF31DD0C4EB0089FAC6 /* AtomSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		42E46DBF1DC0BB5600EFB526 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 42E46D9D1DC0BB5500EFB526 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 42E46DA41DC0BB5500EFB526;
-			remoteInfo = AtomSDKExample;
+/* Begin PBXCopyFilesBuildPhase section */
+		425608501D74561400891533 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				42C31FF51DD0C4EB0089FAC6 /* AtomSDK.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
 		};
-/* End PBXContainerItemProxy section */
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3B939EA06C17B6E5DE6AE05F /* Pods-AtomSDKExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AtomSDKExampleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AtomSDKExampleTests/Pods-AtomSDKExampleTests.release.xcconfig"; sourceTree = "<group>"; };
-		42098CF61DCB34AF00617DDB /* ISAtomTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISAtomTracker.h; sourceTree = "<group>"; };
-		42098CF71DCB34AF00617DDB /* ISAtomTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISAtomTracker.m; sourceTree = "<group>"; };
-		4265BE731DC9DF1D00520436 /* ISBatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISBatch.h; sourceTree = "<group>"; };
-		4265BE741DC9DF1D00520436 /* ISBatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISBatch.m; sourceTree = "<group>"; };
-		4265BE761DC9E02A00520436 /* ISStreamData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISStreamData.h; sourceTree = "<group>"; };
-		4265BE771DC9E02A00520436 /* ISStreamData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISStreamData.m; sourceTree = "<group>"; };
-		4265BE791DC9E24900520436 /* ISSQLiteHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISSQLiteHandler.h; sourceTree = "<group>"; };
-		4265BE7A1DC9E24900520436 /* ISSQLiteHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISSQLiteHandler.m; sourceTree = "<group>"; };
-		4265BE7C1DCA17CC00520436 /* ISDatabaseAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISDatabaseAdapter.h; sourceTree = "<group>"; };
-		4265BE7D1DCA17CC00520436 /* ISDatabaseAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISDatabaseAdapter.m; sourceTree = "<group>"; };
-		427F77C31DC387B9006ECD64 /* ISAtom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISAtom.h; sourceTree = "<group>"; };
-		427F77C41DC387B9006ECD64 /* ISAtom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISAtom.m; sourceTree = "<group>"; };
-		427F77C61DC76995006ECD64 /* ISHttpMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISHttpMethod.h; path = Assets.xcassets/ISHttpMethod.h; sourceTree = "<group>"; };
-		42E46DA51DC0BB5500EFB526 /* AtomSDKExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AtomSDKExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		42E46DA91DC0BB5500EFB526 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		42E46DAB1DC0BB5500EFB526 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		42E46DAC1DC0BB5500EFB526 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		42E46DAE1DC0BB5500EFB526 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		42E46DAF1DC0BB5500EFB526 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		42E46DB21DC0BB5500EFB526 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		42E46DB41DC0BB5600EFB526 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		42E46DB71DC0BB5600EFB526 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		42E46DB91DC0BB5600EFB526 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		42E46DBE1DC0BB5600EFB526 /* AtomSDKExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AtomSDKExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		42E46DC21DC0BB5600EFB526 /* AtomSDKExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AtomSDKExampleTests.m; sourceTree = "<group>"; };
-		42E46DC41DC0BB5600EFB526 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		42FD14301DC899B500719B5E /* ISRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISRequest.h; sourceTree = "<group>"; };
-		42FD14311DC899B500719B5E /* ISRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISRequest.m; sourceTree = "<group>"; };
-		42FD14331DC899D200719B5E /* ISResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISResponse.h; sourceTree = "<group>"; };
-		42FD14341DC899D200719B5E /* ISResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISResponse.m; sourceTree = "<group>"; };
-		42FD14361DC899FC00719B5E /* ISUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISUtils.h; sourceTree = "<group>"; };
-		42FD14371DC899FC00719B5E /* ISUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISUtils.m; sourceTree = "<group>"; };
-		78CCA7AB8AD6A9856DDCBEC6 /* Pods-AtomSDKExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AtomSDKExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AtomSDKExample/Pods-AtomSDKExample.debug.xcconfig"; sourceTree = "<group>"; };
-		B83A9EC417F3E14ADC160135 /* Pods-AtomSDKExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AtomSDKExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-AtomSDKExample/Pods-AtomSDKExample.release.xcconfig"; sourceTree = "<group>"; };
-		CA70A20460CF5D3CD158A955 /* Pods-AtomSDKExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AtomSDKExampleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AtomSDKExampleTests/Pods-AtomSDKExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
-		D33BCF742F8FFD3226053B09 /* libPods-AtomSDKExampleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AtomSDKExampleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FB42A88B82A0A5EBE9383030 /* libPods-AtomSDKExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AtomSDKExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		427716541D06C7220056B341 /* AtomSDKExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AtomSDKExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4277165C1D06C7220056B341 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4277165E1D06C7220056B341 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		427716611D06C7220056B341 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		427716631D06C7220056B341 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42C31FE81DD0C0830089FAC6 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		42C31FEA1DD0C0830089FAC6 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		42C31FF31DD0C4EB0089FAC6 /* AtomSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AtomSDK.framework; path = libs/AtomSDK.framework; sourceTree = "<group>"; };
+		42ECBD9D1D215BA300CD9A3C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		A0249B38447F88F9A7D54511 /* Pods_AtomSDKExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AtomSDKExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A64231D1792E109D92A4DD2A /* Pods-AtomSDKExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AtomSDKExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-AtomSDKExample/Pods-AtomSDKExample.release.xcconfig"; sourceTree = "<group>"; };
+		A6E1CD547C4ED1BF5B092978 /* Pods-AtomSDKExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AtomSDKExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AtomSDKExample/Pods-AtomSDKExample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		42E46DA21DC0BB5500EFB526 /* Frameworks */ = {
+		427716511D06C7220056B341 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4E398908C3F175F23744BAF /* libPods-AtomSDKExample.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		42E46DBB1DC0BB5600EFB526 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6B5C8E461729D72FB55B841D /* libPods-AtomSDKExampleTests.a in Frameworks */,
+				42C31FF41DD0C4EB0089FAC6 /* AtomSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		42E46D9C1DC0BB5500EFB526 = {
+		4277164B1D06C7220056B341 = {
 			isa = PBXGroup;
 			children = (
-				42E46DA71DC0BB5500EFB526 /* AtomSDKExample */,
-				42E46DC11DC0BB5600EFB526 /* AtomSDKExampleTests */,
-				42E46DA61DC0BB5500EFB526 /* Products */,
-				E89461B88EC83FD94A853E11 /* Pods */,
-				A32DAA61242A926EDB056546 /* Frameworks */,
+				42C31FF31DD0C4EB0089FAC6 /* AtomSDK.framework */,
+				427716561D06C7220056B341 /* AtomSDKExample */,
+				427716551D06C7220056B341 /* Products */,
+				A4B362701A0F5300F5E8681B /* Pods */,
+				AAFACC839DBBCFA01D7F9D75 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		42E46DA61DC0BB5500EFB526 /* Products */ = {
+		427716551D06C7220056B341 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				42E46DA51DC0BB5500EFB526 /* AtomSDKExample.app */,
-				42E46DBE1DC0BB5600EFB526 /* AtomSDKExampleTests.xctest */,
+				427716541D06C7220056B341 /* AtomSDKExample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		42E46DA71DC0BB5500EFB526 /* AtomSDKExample */ = {
+		427716561D06C7220056B341 /* AtomSDKExample */ = {
 			isa = PBXGroup;
 			children = (
-				42E46DAB1DC0BB5500EFB526 /* AppDelegate.h */,
-				42E46DAC1DC0BB5500EFB526 /* AppDelegate.m */,
-				42E46DAE1DC0BB5500EFB526 /* ViewController.h */,
-				42E46DAF1DC0BB5500EFB526 /* ViewController.m */,
-				42E46DB11DC0BB5500EFB526 /* Main.storyboard */,
-				42E46DB41DC0BB5600EFB526 /* Assets.xcassets */,
-				42E46DB61DC0BB5600EFB526 /* LaunchScreen.storyboard */,
-				42E46DB91DC0BB5600EFB526 /* Info.plist */,
-				42E46DA81DC0BB5500EFB526 /* Supporting Files */,
-				427F77C31DC387B9006ECD64 /* ISAtom.h */,
-				427F77C41DC387B9006ECD64 /* ISAtom.m */,
-				427F77C61DC76995006ECD64 /* ISHttpMethod.h */,
-				42FD14301DC899B500719B5E /* ISRequest.h */,
-				42FD14311DC899B500719B5E /* ISRequest.m */,
-				42FD14331DC899D200719B5E /* ISResponse.h */,
-				42FD14341DC899D200719B5E /* ISResponse.m */,
-				42FD14361DC899FC00719B5E /* ISUtils.h */,
-				42FD14371DC899FC00719B5E /* ISUtils.m */,
-				4265BE731DC9DF1D00520436 /* ISBatch.h */,
-				4265BE741DC9DF1D00520436 /* ISBatch.m */,
-				4265BE761DC9E02A00520436 /* ISStreamData.h */,
-				4265BE771DC9E02A00520436 /* ISStreamData.m */,
-				4265BE791DC9E24900520436 /* ISSQLiteHandler.h */,
-				4265BE7A1DC9E24900520436 /* ISSQLiteHandler.m */,
-				4265BE7C1DCA17CC00520436 /* ISDatabaseAdapter.h */,
-				4265BE7D1DCA17CC00520436 /* ISDatabaseAdapter.m */,
-				42098CF61DCB34AF00617DDB /* ISAtomTracker.h */,
-				42098CF71DCB34AF00617DDB /* ISAtomTracker.m */,
+				42C31FE81DD0C0830089FAC6 /* ViewController.swift */,
+				42C31FEA1DD0C0830089FAC6 /* AppDelegate.swift */,
+				4277165B1D06C7220056B341 /* Main.storyboard */,
+				4277165E1D06C7220056B341 /* Assets.xcassets */,
+				427716601D06C7220056B341 /* LaunchScreen.storyboard */,
+				427716631D06C7220056B341 /* Info.plist */,
 			);
 			path = AtomSDKExample;
 			sourceTree = "<group>";
 		};
-		42E46DA81DC0BB5500EFB526 /* Supporting Files */ = {
+		A4B362701A0F5300F5E8681B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				42E46DA91DC0BB5500EFB526 /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		42E46DC11DC0BB5600EFB526 /* AtomSDKExampleTests */ = {
-			isa = PBXGroup;
-			children = (
-				42E46DC21DC0BB5600EFB526 /* AtomSDKExampleTests.m */,
-				42E46DC41DC0BB5600EFB526 /* Info.plist */,
-			);
-			path = AtomSDKExampleTests;
-			sourceTree = "<group>";
-		};
-		A32DAA61242A926EDB056546 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				FB42A88B82A0A5EBE9383030 /* libPods-AtomSDKExample.a */,
-				D33BCF742F8FFD3226053B09 /* libPods-AtomSDKExampleTests.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		E89461B88EC83FD94A853E11 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				78CCA7AB8AD6A9856DDCBEC6 /* Pods-AtomSDKExample.debug.xcconfig */,
-				B83A9EC417F3E14ADC160135 /* Pods-AtomSDKExample.release.xcconfig */,
-				CA70A20460CF5D3CD158A955 /* Pods-AtomSDKExampleTests.debug.xcconfig */,
-				3B939EA06C17B6E5DE6AE05F /* Pods-AtomSDKExampleTests.release.xcconfig */,
+				A6E1CD547C4ED1BF5B092978 /* Pods-AtomSDKExample.debug.xcconfig */,
+				A64231D1792E109D92A4DD2A /* Pods-AtomSDKExample.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		AAFACC839DBBCFA01D7F9D75 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A0249B38447F88F9A7D54511 /* Pods_AtomSDKExample.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		42E46DA41DC0BB5500EFB526 /* AtomSDKExample */ = {
+		427716531D06C7220056B341 /* AtomSDKExample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 42E46DC71DC0BB5600EFB526 /* Build configuration list for PBXNativeTarget "AtomSDKExample" */;
+			buildConfigurationList = 427716661D06C7220056B341 /* Build configuration list for PBXNativeTarget "AtomSDKExample" */;
 			buildPhases = (
-				CD51D4754811062A6A5154B8 /* [CP] Check Pods Manifest.lock */,
-				42E46DA11DC0BB5500EFB526 /* Sources */,
-				42E46DA21DC0BB5500EFB526 /* Frameworks */,
-				42E46DA31DC0BB5500EFB526 /* Resources */,
-				CCE4653771E098F833032533 /* [CP] Embed Pods Frameworks */,
-				215AB774923A2BE29F5F1F28 /* [CP] Copy Pods Resources */,
+				427716501D06C7220056B341 /* Sources */,
+				427716511D06C7220056B341 /* Frameworks */,
+				427716521D06C7220056B341 /* Resources */,
+				425608501D74561400891533 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -210,53 +124,27 @@
 			);
 			name = AtomSDKExample;
 			productName = AtomSDKExample;
-			productReference = 42E46DA51DC0BB5500EFB526 /* AtomSDKExample.app */;
+			productReference = 427716541D06C7220056B341 /* AtomSDKExample.app */;
 			productType = "com.apple.product-type.application";
-		};
-		42E46DBD1DC0BB5600EFB526 /* AtomSDKExampleTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 42E46DCA1DC0BB5600EFB526 /* Build configuration list for PBXNativeTarget "AtomSDKExampleTests" */;
-			buildPhases = (
-				54E2C238DCAD7C4F24AE943B /* [CP] Check Pods Manifest.lock */,
-				42E46DBA1DC0BB5600EFB526 /* Sources */,
-				42E46DBB1DC0BB5600EFB526 /* Frameworks */,
-				42E46DBC1DC0BB5600EFB526 /* Resources */,
-				0E7B744955344B61717D6617 /* [CP] Embed Pods Frameworks */,
-				0D6ED6D5B7D9C443E6C03E84 /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				42E46DC01DC0BB5600EFB526 /* PBXTargetDependency */,
-			);
-			name = AtomSDKExampleTests;
-			productName = AtomSDKExampleTests;
-			productReference = 42E46DBE1DC0BB5600EFB526 /* AtomSDKExampleTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		42E46D9D1DC0BB5500EFB526 /* Project object */ = {
+		4277164C1D06C7220056B341 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0800;
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = IronSource;
 				TargetAttributes = {
-					42E46DA41DC0BB5500EFB526 = {
-						CreatedOnToolsVersion = 8.0;
+					427716531D06C7220056B341 = {
+						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = SU67R6K2V3;
-						ProvisioningStyle = Automatic;
-					};
-					42E46DBD1DC0BB5600EFB526 = {
-						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = HCA2DNW568;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 42E46DA41DC0BB5500EFB526;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
-			buildConfigurationList = 42E46DA01DC0BB5500EFB526 /* Build configuration list for PBXProject "AtomSDKExample" */;
+			buildConfigurationList = 4277164F1D06C7220056B341 /* Build configuration list for PBXProject "AtomSDKExample" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -264,181 +152,55 @@
 				en,
 				Base,
 			);
-			mainGroup = 42E46D9C1DC0BB5500EFB526;
-			productRefGroup = 42E46DA61DC0BB5500EFB526 /* Products */;
+			mainGroup = 4277164B1D06C7220056B341;
+			productRefGroup = 427716551D06C7220056B341 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				42E46DA41DC0BB5500EFB526 /* AtomSDKExample */,
-				42E46DBD1DC0BB5600EFB526 /* AtomSDKExampleTests */,
+				427716531D06C7220056B341 /* AtomSDKExample */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		42E46DA31DC0BB5500EFB526 /* Resources */ = {
+		427716521D06C7220056B341 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42E46DB81DC0BB5600EFB526 /* LaunchScreen.storyboard in Resources */,
-				42E46DB51DC0BB5600EFB526 /* Assets.xcassets in Resources */,
-				42E46DB31DC0BB5500EFB526 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		42E46DBC1DC0BB5600EFB526 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				427716621D06C7220056B341 /* LaunchScreen.storyboard in Resources */,
+				4277165F1D06C7220056B341 /* Assets.xcassets in Resources */,
+				4277165D1D06C7220056B341 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		0D6ED6D5B7D9C443E6C03E84 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AtomSDKExampleTests/Pods-AtomSDKExampleTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		0E7B744955344B61717D6617 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AtomSDKExampleTests/Pods-AtomSDKExampleTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		215AB774923A2BE29F5F1F28 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AtomSDKExample/Pods-AtomSDKExample-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		54E2C238DCAD7C4F24AE943B /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		CCE4653771E098F833032533 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AtomSDKExample/Pods-AtomSDKExample-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CD51D4754811062A6A5154B8 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		42E46DA11DC0BB5500EFB526 /* Sources */ = {
+		427716501D06C7220056B341 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42FD14381DC899FC00719B5E /* ISUtils.m in Sources */,
-				42E46DB01DC0BB5500EFB526 /* ViewController.m in Sources */,
-				427F77C51DC387B9006ECD64 /* ISAtom.m in Sources */,
-				42E46DAD1DC0BB5500EFB526 /* AppDelegate.m in Sources */,
-				4265BE751DC9DF1D00520436 /* ISBatch.m in Sources */,
-				4265BE781DC9E02A00520436 /* ISStreamData.m in Sources */,
-				42FD14321DC899B500719B5E /* ISRequest.m in Sources */,
-				42FD14351DC899D200719B5E /* ISResponse.m in Sources */,
-				4265BE7E1DCA17CC00520436 /* ISDatabaseAdapter.m in Sources */,
-				4265BE7B1DC9E24900520436 /* ISSQLiteHandler.m in Sources */,
-				42E46DAA1DC0BB5500EFB526 /* main.m in Sources */,
-				42098CF81DCB34AF00617DDB /* ISAtomTracker.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		42E46DBA1DC0BB5600EFB526 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				42E46DC31DC0BB5600EFB526 /* AtomSDKExampleTests.m in Sources */,
+				42C31FEC1DD0C0830089FAC6 /* AppDelegate.swift in Sources */,
+				42C31FEB1DD0C0830089FAC6 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		42E46DC01DC0BB5600EFB526 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 42E46DA41DC0BB5500EFB526 /* AtomSDKExample */;
-			targetProxy = 42E46DBF1DC0BB5600EFB526 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
-		42E46DB11DC0BB5500EFB526 /* Main.storyboard */ = {
+		4277165B1D06C7220056B341 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				42E46DB21DC0BB5500EFB526 /* Base */,
+				4277165C1D06C7220056B341 /* Base */,
+				42ECBD9D1D215BA300CD9A3C /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		42E46DB61DC0BB5600EFB526 /* LaunchScreen.storyboard */ = {
+		427716601D06C7220056B341 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				42E46DB71DC0BB5600EFB526 /* Base */,
+				427716611D06C7220056B341 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -446,7 +208,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		42E46DC51DC0BB5600EFB526 /* Debug */ = {
+		427716641D06C7220056B341 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -458,13 +220,10 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -486,15 +245,16 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		42E46DC61DC0BB5600EFB526 /* Release */ = {
+		427716651D06C7220056B341 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -506,13 +266,10 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -528,7 +285,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -536,91 +293,74 @@
 			};
 			name = Release;
 		};
-		42E46DC81DC0BB5600EFB526 /* Debug */ = {
+		427716671D06C7220056B341 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 78CCA7AB8AD6A9856DDCBEC6 /* Pods-AtomSDKExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				DEVELOPMENT_TEAM = SU67R6K2V3;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/libs",
+				);
 				INFOPLIST_FILE = AtomSDKExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ironsrc.atom.AtomSDKExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = Sqlite3;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 2.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		42E46DC91DC0BB5600EFB526 /* Release */ = {
+		427716681D06C7220056B341 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B83A9EC417F3E14ADC160135 /* Pods-AtomSDKExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				DEVELOPMENT_TEAM = SU67R6K2V3;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/libs",
+				);
 				INFOPLIST_FILE = AtomSDKExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ironsrc.atom.AtomSDKExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		42E46DCB1DC0BB5600EFB526 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = CA70A20460CF5D3CD158A955 /* Pods-AtomSDKExampleTests.debug.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = HCA2DNW568;
-				INFOPLIST_FILE = AtomSDKExampleTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ironsrc.atom.AtomSDKExampleTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AtomSDKExample.app/AtomSDKExample";
-			};
-			name = Debug;
-		};
-		42E46DCC1DC0BB5600EFB526 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B939EA06C17B6E5DE6AE05F /* Pods-AtomSDKExampleTests.release.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = HCA2DNW568;
-				INFOPLIST_FILE = AtomSDKExampleTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ironsrc.atom.AtomSDKExampleTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AtomSDKExample.app/AtomSDKExample";
+				SWIFT_INCLUDE_PATHS = Sqlite3;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 2.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		42E46DA01DC0BB5500EFB526 /* Build configuration list for PBXProject "AtomSDKExample" */ = {
+		4277164F1D06C7220056B341 /* Build configuration list for PBXProject "AtomSDKExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				42E46DC51DC0BB5600EFB526 /* Debug */,
-				42E46DC61DC0BB5600EFB526 /* Release */,
+				427716641D06C7220056B341 /* Debug */,
+				427716651D06C7220056B341 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		42E46DC71DC0BB5600EFB526 /* Build configuration list for PBXNativeTarget "AtomSDKExample" */ = {
+		427716661D06C7220056B341 /* Build configuration list for PBXNativeTarget "AtomSDKExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				42E46DC81DC0BB5600EFB526 /* Debug */,
-				42E46DC91DC0BB5600EFB526 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		42E46DCA1DC0BB5600EFB526 /* Build configuration list for PBXNativeTarget "AtomSDKExampleTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				42E46DCB1DC0BB5600EFB526 /* Debug */,
-				42E46DCC1DC0BB5600EFB526 /* Release */,
+				427716671D06C7220056B341 /* Debug */,
+				427716681D06C7220056B341 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 42E46D9D1DC0BB5500EFB526 /* Project object */;
+	rootObject = 4277164C1D06C7220056B341 /* Project object */;
 }

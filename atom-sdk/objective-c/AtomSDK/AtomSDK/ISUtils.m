@@ -33,4 +33,8 @@
     return [NSString stringWithFormat:@"[%@]",
             [data componentsJoinedByString:@","]];
 }
+
++(int64_t)currentTimeMillis {
+    return (int64_t)([[NSDate date] timeIntervalSince1970] * 1000.0);
+}
 @end
