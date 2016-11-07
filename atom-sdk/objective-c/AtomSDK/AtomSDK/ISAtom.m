@@ -62,7 +62,7 @@ static NSString* VERSION_ = @"V1.0.0";
     NSString* jsonData = [self getRequestDataWithStream:stream data: data
                                                  isBulk:false];
     
-    [self sendRequestWithUrl:self->endPoint_ data:jsonData method:IS_POST
+    [self sendRequestWithUrl:self->endPoint_ data:jsonData
                     callback:callback];
 }
 
@@ -80,7 +80,7 @@ static NSString* VERSION_ = @"V1.0.0";
                                                  isBulk:true];
 
     [self sendRequestWithUrl:[NSString stringWithFormat:@"%@bulk", self->endPoint_]
-                        data:jsonData method:IS_POST callback:callback];
+                        data:jsonData callback:callback];
 }
 
 -(void)putEventsWithStream: (NSString*)stream arrayData: (NSArray*)data {
@@ -93,7 +93,7 @@ static NSString* VERSION_ = @"V1.0.0";
                                                  isBulk:true];
     
     [self sendRequestWithUrl:[NSString stringWithFormat:@"%@bulk", self->endPoint_]
-                        data:jsonData method:IS_POST callback:callback];
+                        data:jsonData callback:callback];
     
 }
 
@@ -103,7 +103,7 @@ static NSString* VERSION_ = @"V1.0.0";
 
 -(void)healthWithCallback: (ISRequestCallback)callback {
     [self sendRequestWithUrl:[NSString stringWithFormat:@"%@health", self->endPoint_]
-                        data:@"" method:IS_GET callback:callback];
+                        data:@"" callback:callback];
 }
 
 -(void)health {
