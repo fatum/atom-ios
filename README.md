@@ -43,7 +43,7 @@ apiTracker_!.trackWithStream("<YOUR_STREAM_NAME>",
 apiTracker_!.flush()
 
 ```
-
+Example of sending an event in Objective-C:
 ```objc
 // initialize atom-sdk api object
 ISAtomTracker* apiTracker_ = [[ISAtomTracker alloc] init];
@@ -97,7 +97,7 @@ Example of sending an event in Swift:
     // check health of server
     api_!.health()
 ```
-
+Example of sending an event in Objective-C:
 ```objc
 // initialize atom-sdk api object
 ISAtom* api_ = [[ISAtom alloc] init];
