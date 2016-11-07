@@ -18,4 +18,5 @@ FOUNDATION_EXPORT const unsigned char AtomSDKVersionString[];
 #import <AtomSDK/ISAtom.h>
 #import <AtomSDK/ISAtomTracker.h>
 #import <AtomSDK/ISResponse.h>
+#import <AtomSDK/ISHttpMethod.h>
 #import <AtomSDK/ISUtils.h>
