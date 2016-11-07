@@ -16,7 +16,6 @@
                                 data: (NSString*)data
                               isBulk: (BOOL)isBulk;
 -(void)sendRequestWithUrl: (NSString*)url data: (NSString*)data
-                   method: (ISHttpMethod)method
                  callback: (ISRequestCallback) callback;
 
 -(void)printLog: (NSString*)logData;
@@ -135,18 +134,12 @@ static NSString* VERSION_ = @"V1.0.0";
 }
 
 -(void)sendRequestWithUrl: (NSString*)url data:(NSString*)data
-                   method:(ISHttpMethod)method
                  callback:(ISRequestCallback)callback {
     ISRequest* request = [[ISRequest alloc] initWithUrl:url data:data
                                                 headers:self->headers_
                                                callback:callback
                                                 isDebug:self->isDebug_];
-    
-    if (method == IS_GET) {
-        [request get];
-    } else {
-        [request post];
-    }
+    [request post];
 }
 
 -(void)printLog: (NSString*)logData {

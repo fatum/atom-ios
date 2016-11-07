@@ -27,7 +27,6 @@
 		42C31FDA1DD09E3A0089FAC6 /* ISRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 42C31FC81DD09E3A0089FAC6 /* ISRequest.h */; };
 		42C31FDB1DD09E3A0089FAC6 /* ISResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C31FC91DD09E3A0089FAC6 /* ISResponse.m */; };
 		42C31FDC1DD09E3A0089FAC6 /* ISResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 42C31FCA1DD09E3A0089FAC6 /* ISResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		42C31FDE1DD09E850089FAC6 /* ISHttpMethod.h in Headers */ = {isa = PBXBuildFile; fileRef = 42C31FDD1DD09E850089FAC6 /* ISHttpMethod.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		42C31FE61DD0AFF50089FAC6 /* ISAtomTracker.m in Headers */ = {isa = PBXBuildFile; fileRef = 42C31FBA1DD09E3A0089FAC6 /* ISAtomTracker.m */; };
 		42C31FE71DD0AFF50089FAC6 /* ISAtom.m in Headers */ = {isa = PBXBuildFile; fileRef = 42C31FBB1DD09E3A0089FAC6 /* ISAtom.m */; };
 		4724B63F3360D3BEB3A11777 /* libPods-AtomSDKTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63694098A8EA28AE9D503B8B /* libPods-AtomSDKTests.a */; };
@@ -82,7 +81,6 @@
 		42C31FC81DD09E3A0089FAC6 /* ISRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISRequest.h; sourceTree = "<group>"; };
 		42C31FC91DD09E3A0089FAC6 /* ISResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISResponse.m; sourceTree = "<group>"; };
 		42C31FCA1DD09E3A0089FAC6 /* ISResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISResponse.h; sourceTree = "<group>"; };
-		42C31FDD1DD09E850089FAC6 /* ISHttpMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISHttpMethod.h; sourceTree = "<group>"; };
 		4C1CB2D52F579FFB5BAED153 /* Pods-AtomSDKTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AtomSDKTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AtomSDKTests/Pods-AtomSDKTests.release.xcconfig"; sourceTree = "<group>"; };
 		5E88EF52E222025C96CC03FD /* libPods-AtomSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AtomSDK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63694098A8EA28AE9D503B8B /* libPods-AtomSDKTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AtomSDKTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,7 +131,6 @@
 		42C31FA11DD09DAF0089FAC6 /* AtomSDK */ = {
 			isa = PBXGroup;
 			children = (
-				42C31FDD1DD09E850089FAC6 /* ISHttpMethod.h */,
 				42C31FB91DD09E3A0089FAC6 /* ISSQLiteHandler.m */,
 				42C31FBA1DD09E3A0089FAC6 /* ISAtomTracker.m */,
 				42C31FBB1DD09E3A0089FAC6 /* ISAtom.m */,
@@ -198,7 +195,6 @@
 				42C31FD01DD09E3A0089FAC6 /* ISAtom.h in Headers */,
 				42C31FD21DD09E3A0089FAC6 /* ISUtils.h in Headers */,
 				42C31FDC1DD09E3A0089FAC6 /* ISResponse.h in Headers */,
-				42C31FDE1DD09E850089FAC6 /* ISHttpMethod.h in Headers */,
 				42C31FE61DD0AFF50089FAC6 /* ISAtomTracker.m in Headers */,
 				42C31FE71DD0AFF50089FAC6 /* ISAtom.m in Headers */,
 				42C31FD41DD09E3A0089FAC6 /* ISSQLiteHandler.h in Headers */,

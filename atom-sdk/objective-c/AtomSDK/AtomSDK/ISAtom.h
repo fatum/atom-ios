@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-#import "ISHttpMethod.h"
 #import "ISUtils.h"
 
 /// Atom simple SDK
