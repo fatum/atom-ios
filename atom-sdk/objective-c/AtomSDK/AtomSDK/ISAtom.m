@@ -113,7 +113,7 @@ static NSString* VERSION_ = @"V1.0.0";
 -(NSString*)getRequestDataWithStream: (NSString*)stream data: (NSString*)data
                               isBulk: (BOOL)isBulk {
     NSString* hash = ([self->authKey_ length] == 0) ? @"" :
-                [ISUtils encodeHMACWithInput:data key:self->_authKey];
+                [ISUtils encodeHMACWithInput:data key:self->authKey_];
     
     NSMutableDictionary* eventObject = [[NSMutableDictionary<NSString*, NSObject*>
                                          alloc] init];

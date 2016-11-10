@@ -12,13 +12,20 @@
 
 @implementation ISUtils
 +(NSString*)encodeHMACWithInput: (NSString*)input key: (NSString*)key {
-    const char *cKey  = [key cStringUsingEncoding:NSASCIIStringEncoding];
-    const char *cData = [input cStringUsingEncoding:NSASCIIStringEncoding];
-    unsigned char cHMAC[CC_SHA256_DIGEST_LENGTH];
-    CCHmac(kCCHmacAlgSHA256, cKey, strlen(cKey), cData, strlen(cData), cHMAC);
+    const char *cKey  = [key cStringUsingEncoding:NSUTF8StringEncoding];
+    const char *cData = [input cStringUsingEncoding:NSUTF8StringEncoding];
     
-    NSData* result = [[NSData alloc] initWithBytes:cHMAC length:sizeof(cHMAC)];
-    return [[NSString alloc] initWithData:result encoding:NSASCIIStringEncoding];
+    unsigned char cHMAC[CC_SHA256_DIGEST_LENGTH];
+    
+    CCHmac (kCCHmacAlgSHA256, cKey, strlen(cKey), cData, strlen(cData), cHMAC);
+    NSMutableString *output = [NSMutableString stringWithCapacity:
+                               (CC_SHA256_DIGEST_LENGTH * 2)];
+    
+    for (int index = 0; index < CC_SHA256_DIGEST_LENGTH; index++) {
+        [output appendFormat:@"%02x", cHMAC[index]];
+    }
+    
+    return output;
 }
 
 +(NSString*)objectToJsonStr: (NSObject*)data {
