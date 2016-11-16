@@ -190,6 +190,7 @@ static int DEFAULT_BULK_BYTES_SIZE = 64 * 1024;
             [self printLog:[NSString stringWithFormat:
                             @"Flush size runned for %@!", stream]];
             [self->flushSizedLock_ unlock];
+            return;
         }
         
         [self->isFlushSizedRunned_ setObject:[NSNumber numberWithBool:true]
