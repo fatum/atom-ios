@@ -67,6 +67,11 @@ $(function() {
 <div class="title">ISBatch Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Holder of events data.  
+ <a href="interface_i_s_batch.html#details">More...</a></p>
+
+<p><code>#import &lt;<a class="el" href="_i_s_batch_8h_source.html">ISBatch.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for ISBatch:</div>
 <div class="dyncontent">
@@ -78,8 +83,7 @@ Inheritance diagram for ISBatch:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Instance Methods</h2></td></tr>
-<tr class="memitem:a400987564cb00c461b6a03cc5c3944fd"><td class="memItemLeft" align="right" valign="top"><a id="a400987564cb00c461b6a03cc5c3944fd"></a>
-(id)&#160;</td><td class="memItemRight" valign="bottom">- <b>initWithEvents:lastID:</b></td></tr>
+<tr class="memitem:a400987564cb00c461b6a03cc5c3944fd"><td class="memItemLeft" align="right" valign="top">(id)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_i_s_batch.html#a400987564cb00c461b6a03cc5c3944fd">initWithEvents:lastID:</a></td></tr>
 <tr class="separator:a400987564cb00c461b6a03cc5c3944fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
@@ -94,12 +98,51 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>lastID_</b></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:aea082d1a9f40b552d0a1e050986a608b"><td class="memItemLeft" align="right" valign="top"><a id="aea082d1a9f40b552d0a1e050986a608b"></a>
-NSArray *&#160;</td><td class="memItemRight" valign="bottom"><b>events</b></td></tr>
+NSArray *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_i_s_batch.html#aea082d1a9f40b552d0a1e050986a608b">events</a></td></tr>
+<tr class="memdesc:aea082d1a9f40b552d0a1e050986a608b"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of events. <br /></td></tr>
 <tr class="separator:aea082d1a9f40b552d0a1e050986a608b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a664eeed0b7dccafa8e7af47b7318ed29"><td class="memItemLeft" align="right" valign="top"><a id="a664eeed0b7dccafa8e7af47b7318ed29"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>lastID</b></td></tr>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_i_s_batch.html#a664eeed0b7dccafa8e7af47b7318ed29">lastID</a></td></tr>
+<tr class="memdesc:a664eeed0b7dccafa8e7af47b7318ed29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Last Id getted from DB. <br /></td></tr>
 <tr class="separator:a664eeed0b7dccafa8e7af47b7318ed29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Holder of events data. </p>
+</div><h2 class="groupheader">Method Documentation</h2>
+<a id="a400987564cb00c461b6a03cc5c3944fd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (id) initWithEvents: </td>
+          <td></td>
+          <td class="paramtype">(NSArray*)&#160;</td>
+          <td class="paramname"><em>events</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">lastID:</td>
+          <td></td>
+          <td class="paramtype">(int)&#160;</td>
+          <td class="paramname"><em>lastID</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Batch contructor</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">events</td><td>List of events </td></tr>
+    <tr><td class="paramname">lastID</td><td>List of events </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>atom-sdk/AtomSDK/AtomSDK/<a class="el" href="_i_s_batch_8h_source.html">ISBatch.h</a></li>
 <li>atom-sdk/AtomSDK/AtomSDK/ISBatch.m</li>
