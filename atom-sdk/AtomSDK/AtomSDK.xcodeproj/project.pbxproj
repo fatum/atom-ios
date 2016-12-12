@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		420E2A971DFEF10A00BF6383 /* BatchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 420E2A961DFEF10A00BF6383 /* BatchTests.m */; };
+		420E2A971DFEF10A00BF6383 /* ISBatchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 420E2A961DFEF10A00BF6383 /* ISBatchTests.m */; };
+		420E2A981DFF0CDC00BF6383 /* AtomSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42C31F9F1DD09DAF0089FAC6 /* AtomSDK.framework */; };
+		420E2A9A1DFF0DD700BF6383 /* ISResponseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 420E2A991DFF0DD700BF6383 /* ISResponseTests.m */; };
+		420E2A9C1DFF0EF900BF6383 /* ISStreamDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 420E2A9B1DFF0EF900BF6383 /* ISStreamDataTests.m */; };
+		420E2A9E1DFF124600BF6383 /* ISUtilsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 420E2A9D1DFF124600BF6383 /* ISUtilsTests.m */; };
 		42C31FAE1DD09DB00089FAC6 /* AtomSDKTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C31FAD1DD09DB00089FAC6 /* AtomSDKTests.m */; };
 		42C31FB01DD09DB00089FAC6 /* AtomSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 42C31FA21DD09DAF0089FAC6 /* AtomSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		42C31FCB1DD09E3A0089FAC6 /* ISSQLiteHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C31FB91DD09E3A0089FAC6 /* ISSQLiteHandler.m */; };
@@ -58,7 +62,10 @@
 
 /* Begin PBXFileReference section */
 		30A8A320E10C40F8A3AE6968 /* Pods-AtomSDKTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AtomSDKTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AtomSDKTests/Pods-AtomSDKTests.debug.xcconfig"; sourceTree = "<group>"; };
-		420E2A961DFEF10A00BF6383 /* BatchTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BatchTests.m; sourceTree = "<group>"; };
+		420E2A961DFEF10A00BF6383 /* ISBatchTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISBatchTests.m; sourceTree = "<group>"; };
+		420E2A991DFF0DD700BF6383 /* ISResponseTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISResponseTests.m; sourceTree = "<group>"; };
+		420E2A9B1DFF0EF900BF6383 /* ISStreamDataTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISStreamDataTests.m; sourceTree = "<group>"; };
+		420E2A9D1DFF124600BF6383 /* ISUtilsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISUtilsTests.m; sourceTree = "<group>"; };
 		42C31F9F1DD09DAF0089FAC6 /* AtomSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AtomSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		42C31FA21DD09DAF0089FAC6 /* AtomSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AtomSDK.h; sourceTree = "<group>"; };
 		42C31FA31DD09DAF0089FAC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -103,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				420E2A981DFF0CDC00BF6383 /* AtomSDK.framework in Frameworks */,
 				4724B63F3360D3BEB3A11777 /* libPods-AtomSDKTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -162,7 +170,10 @@
 			children = (
 				42C31FAD1DD09DB00089FAC6 /* AtomSDKTests.m */,
 				42C31FAF1DD09DB00089FAC6 /* Info.plist */,
-				420E2A961DFEF10A00BF6383 /* BatchTests.m */,
+				420E2A961DFEF10A00BF6383 /* ISBatchTests.m */,
+				420E2A991DFF0DD700BF6383 /* ISResponseTests.m */,
+				420E2A9B1DFF0EF900BF6383 /* ISStreamDataTests.m */,
+				420E2A9D1DFF124600BF6383 /* ISUtilsTests.m */,
 			);
 			path = AtomSDKTests;
 			sourceTree = "<group>";
@@ -409,8 +420,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				420E2A971DFEF10A00BF6383 /* BatchTests.m in Sources */,
+				420E2A971DFEF10A00BF6383 /* ISBatchTests.m in Sources */,
+				420E2A9E1DFF124600BF6383 /* ISUtilsTests.m in Sources */,
+				420E2A9A1DFF0DD700BF6383 /* ISResponseTests.m in Sources */,
 				42C31FAE1DD09DB00089FAC6 /* AtomSDKTests.m in Sources */,
+				420E2A9C1DFF0EF900BF6383 /* ISStreamDataTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
