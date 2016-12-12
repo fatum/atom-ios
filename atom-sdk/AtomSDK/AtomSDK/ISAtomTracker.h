@@ -1,6 +1,6 @@
 //
 //  ISAtomTracker.h
-//  AtomSDKExample
+//  AtomSDK
 //
 //  Created by g8y3e on 11/3/16.
 //  Copyright © 2016 IronSource. All rights reserved.
@@ -10,8 +10,8 @@
 
 #import "ISAtom.h"
 
-/**
- *  API Tracker class - for flush data in intervals
+/*!
+ * @brief API Tracker class - for flush data in intervals
  */
 @interface ISAtomTracker : NSObject
 {

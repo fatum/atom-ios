@@ -1,6 +1,6 @@
 //
 //  ISResponse.h
-//  AtomSDKExample
+//  AtomSDK
 //
 //  Created by g8y3e on 11/1/16.
 //  Copyright © 2016 IronSource. All rights reserved.
@@ -8,12 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+/*!
+ * @brief Response data from server
+ */
 @interface ISResponse : NSObject
 {
     NSString* error_;
     NSString* data_;
     long status_;
 }
+
 /**
  *  Description of error
  */

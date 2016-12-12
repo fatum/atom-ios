@@ -1,6 +1,6 @@
 //
 //  ISStreamData.m
-//  AtomSDKExample
+//  AtomSDK
 //
 //  Created by Valentine.Pavchuk on 11/2/16.
 //  Copyright © 2016 IronSource. All rights reserved.

@@ -1,6 +1,6 @@
 //
 //  IronSourceAtom.h
-//  AtomSDKExample
+//  AtomSDK
 //
 //  Created by g8y3e on 10/28/16.
 //  Copyright © 2016 IronSource. All rights reserved.
@@ -11,7 +11,7 @@
 #import "ISUtils.h"
 
 /*!
- * @brief The ISAtom class' car object.
+ * @brief Atom simple SDK
  */
 @interface ISAtom : NSObject
 {
@@ -23,6 +23,9 @@
     NSMutableString* endPoint_;
 }
 
+/*!
+ * @brief Secret Auth key
+ */
 @property NSString* authKey;
 
 /**

@@ -1,6 +1,6 @@
 //
 //  ISBatch.m
-//  AtomSDKExample
+//  AtomSDK
 //
 //  Created by g8y3e on 11/2/16.
 //  Copyright © 2016 IronSource. All rights reserved.

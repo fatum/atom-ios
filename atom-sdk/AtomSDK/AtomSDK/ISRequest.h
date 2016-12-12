@@ -1,6 +1,6 @@
 //
 //  ISRequest.h
-//  AtomSDKExample
+//  AtomSDK
 //
 //  Created by g8y3e on 11/1/16.
 //  Copyright © 2016 IronSource. All rights reserved.
@@ -12,6 +12,9 @@
 
 #import "ISUtils.h"
 
+/*!
+ * @brief For make async HTTP requests to server
+ */
 @interface ISRequest : NSObject <NSURLSessionDelegate>
 {
     NSString* url_;

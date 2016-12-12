@@ -1,6 +1,6 @@
 //
 //  ISUtils.m
-//  AtomSDKExample
+//  AtomSDK
 //
 //  Created by g8y3e on 11/1/16.
 //  Copyright © 2016 IronSource. All rights reserved.
