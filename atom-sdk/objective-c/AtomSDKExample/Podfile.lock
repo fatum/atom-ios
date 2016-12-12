@@ -1,0 +1,17 @@
+PODS:
+  - AtomSDK (1.1.4):
+    - sqlite3 (~> 3)
+  - sqlite3 (3.15.1):
+    - sqlite3/common (= 3.15.1)
+  - sqlite3/common (3.15.1)
+
+DEPENDENCIES:
+  - AtomSDK (= 1.1.4)
+
+SPEC CHECKSUMS:
+  AtomSDK: 1989e9db3c068f641db937e13a297aa4cb85bac5
+  sqlite3: e7580c6346dc1e53c6415692fefbb8ba450f13dc
+
+PODFILE CHECKSUM: 062ddd4f675350e8ed8dcafdc47ad17e7900f2d8
+
+COCOAPODS: 1.2.0.beta.1
