@@ -65,6 +65,11 @@ $(function() {
 <div class="title">ISUtils Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Util methods for Atom SDK.  
+ <a href="interface_i_s_utils.html#details">More...</a></p>
+
+<p><code>#import &lt;<a class="el" href="_i_s_utils_8h_source.html">ISUtils.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for ISUtils:</div>
 <div class="dyncontent">
@@ -76,19 +81,118 @@ Inheritance diagram for ISUtils:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Class Methods</h2></td></tr>
-<tr class="memitem:a4c1ddeff642e95c6c675c55bd16ba34b"><td class="memItemLeft" align="right" valign="top"><a id="a4c1ddeff642e95c6c675c55bd16ba34b"></a>
-(NSString *)&#160;</td><td class="memItemRight" valign="bottom">+ <b>encodeHMACWithInput:key:</b></td></tr>
+<tr class="memitem:a4c1ddeff642e95c6c675c55bd16ba34b"><td class="memItemLeft" align="right" valign="top">(NSString *)&#160;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_i_s_utils.html#a4c1ddeff642e95c6c675c55bd16ba34b">encodeHMACWithInput:key:</a></td></tr>
 <tr class="separator:a4c1ddeff642e95c6c675c55bd16ba34b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6991d78c9e84ec187af0ea686f8a18b9"><td class="memItemLeft" align="right" valign="top"><a id="a6991d78c9e84ec187af0ea686f8a18b9"></a>
-(NSString *)&#160;</td><td class="memItemRight" valign="bottom">+ <b>objectToJsonStr:</b></td></tr>
+<tr class="memitem:a6991d78c9e84ec187af0ea686f8a18b9"><td class="memItemLeft" align="right" valign="top">(NSString *)&#160;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_i_s_utils.html#a6991d78c9e84ec187af0ea686f8a18b9">objectToJsonStr:</a></td></tr>
 <tr class="separator:a6991d78c9e84ec187af0ea686f8a18b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a95d65b0c7969fa26880b343709f82193"><td class="memItemLeft" align="right" valign="top"><a id="a95d65b0c7969fa26880b343709f82193"></a>
-(NSString *)&#160;</td><td class="memItemRight" valign="bottom">+ <b>listToJsonStr:</b></td></tr>
+<tr class="memitem:a95d65b0c7969fa26880b343709f82193"><td class="memItemLeft" align="right" valign="top">(NSString *)&#160;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_i_s_utils.html#a95d65b0c7969fa26880b343709f82193">listToJsonStr:</a></td></tr>
 <tr class="separator:a95d65b0c7969fa26880b343709f82193"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a78e8002c6655b5d8d91510426ceadeb0"><td class="memItemLeft" align="right" valign="top"><a id="a78e8002c6655b5d8d91510426ceadeb0"></a>
-(int64_t)&#160;</td><td class="memItemRight" valign="bottom">+ <b>currentTimeMillis</b></td></tr>
+<tr class="memitem:a78e8002c6655b5d8d91510426ceadeb0"><td class="memItemLeft" align="right" valign="top">(int64_t)&#160;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_i_s_utils.html#a78e8002c6655b5d8d91510426ceadeb0">currentTimeMillis</a></td></tr>
 <tr class="separator:a78e8002c6655b5d8d91510426ceadeb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Util methods for Atom SDK. </p>
+</div><h2 class="groupheader">Method Documentation</h2>
+<a id="a78e8002c6655b5d8d91510426ceadeb0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">+ (int64_t) currentTimeMillis </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get current milliseconds</p>
+<dl class="section return"><dt>Returns</dt><dd>Current time in int64 </dd></dl>
+
+</div>
+</div>
+<a id="a4c1ddeff642e95c6c675c55bd16ba34b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">+ (NSString *) encodeHMACWithInput: </td>
+          <td></td>
+          <td class="paramtype">(NSString*)&#160;</td>
+          <td class="paramname"><em>input</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">key:</td>
+          <td></td>
+          <td class="paramtype">(NSString*)&#160;</td>
+          <td class="paramname"><em>key</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Encode data to SHA256</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input</td><td>Data to encode </td></tr>
+    <tr><td class="paramname">key</td><td>For endcoding data</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Encoded string </dd></dl>
+
+</div>
+</div>
+<a id="a95d65b0c7969fa26880b343709f82193"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">+ (NSString *) listToJsonStr: </td>
+          <td></td>
+          <td class="paramtype">(NSArray*)&#160;</td>
+          <td class="paramname"><em>data</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Convert List to Json Str</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>List of json data str</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Json string </dd></dl>
+
+</div>
+</div>
+<a id="a6991d78c9e84ec187af0ea686f8a18b9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">+ (NSString *) objectToJsonStr: </td>
+          <td></td>
+          <td class="paramtype">(NSObject*)&#160;</td>
+          <td class="paramname"><em>data</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Convert Object to Json string</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>Data to encode</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Json string </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>atom-sdk/AtomSDK/AtomSDK/<a class="el" href="_i_s_utils_8h_source.html">ISUtils.h</a></li>
 <li>atom-sdk/AtomSDK/AtomSDK/ISUtils.m</li>

@@ -1,9 +1,8 @@
 var searchData=
 [
-  ['setauth_3a',['setAuth:',['../interface_i_s_atom.html#ad11aca5c8983eb0e7129fb96634d7592',1,'ISAtom::setAuth:()'],['../interface_i_s_atom_tracker.html#a4dfbfffa8f8f90352a3df37c0b44142e',1,'ISAtomTracker::setAuth:()']]],
-  ['setbulkbytessize_3a',['setBulkBytesSize:',['../interface_i_s_atom_tracker.html#a10ac27c1f7769f3416253d0047d9b761',1,'ISAtomTracker']]],
-  ['setbulksize_3a',['setBulkSize:',['../interface_i_s_atom_tracker.html#a332e45a3835df0ba97627ea87c41b6d4',1,'ISAtomTracker']]],
-  ['setendpoint_3a',['setEndPoint:',['../interface_i_s_atom.html#a49ccf15cd8957f9b13cf2ba7daa1a4cc',1,'ISAtom::setEndPoint:()'],['../interface_i_s_atom_tracker.html#a9922f53ee428d68d250636ae94c577fa',1,'ISAtomTracker::setEndPoint:()']]],
-  ['setflushinterval_3a',['setFlushInterval:',['../interface_i_s_atom_tracker.html#a11097bdf57dcfbd68ab001495469d002',1,'ISAtomTracker']]],
-  ['status',['status',['../interface_i_s_response.html#a459950c9c0b313a76f60d797a271e0f6',1,'ISResponse']]]
+  ['post',['post',['../interface_i_s_request.html#acd60097414b77d2237664f6eb8afba9d',1,'ISRequest']]],
+  ['preparesql_3a',['prepareSQL:',['../interface_i_s_s_q_lite_handler.html#a4244b4c4361300be604f51d2b19d1b31',1,'ISSQLiteHandler']]],
+  ['puteventswithstream_3aarraydata_3acallback_3a',['putEventsWithStream:arrayData:callback:',['../interface_i_s_atom.html#ad7cefe4e511f5329ae23d7e62820aba9',1,'ISAtom']]],
+  ['puteventswithstream_3astringdata_3acallback_3a',['putEventsWithStream:stringData:callback:',['../interface_i_s_atom.html#a2e338e216551cbb8893841a41f1445e4',1,'ISAtom']]],
+  ['puteventwithstream_3adata_3acallback_3a',['putEventWithStream:data:callback:',['../interface_i_s_atom.html#ae2461e34a5fa88922df27a50a8af5a99',1,'ISAtom']]]
 ];
