@@ -10,7 +10,9 @@
 
 #import "ISUtils.h"
 
-/// Atom simple SDK
+/*!
+ * @brief The ISAtom class' car object.
+ */
 @interface ISAtom : NSObject
 {
     NSMutableDictionary<NSString*, NSString*>* headers_;
@@ -33,7 +35,7 @@
 /**
  *  Enabling print debug information
  *
- *  @param isDebug if set to <c>true</c> is debug.
+ *  @param isDebug if set to true is debug.
  */
 -(void)enableDebug: (BOOL)isDebug;
 

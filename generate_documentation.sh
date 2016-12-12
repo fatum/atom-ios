@@ -1,8 +1,5 @@
-cd atom-sdk/AtomSDK 
-jazzy \
-	--author IronSource.Atom \
-	--author_url http://www.ironsrc.com/data-flow-management/ \
-
+doxygen doxyfile
+    
 TARGET_BRANCH="gh-pages"
 mkdir $TARGET_BRANCH
 cd $TARGET_BRANCH
