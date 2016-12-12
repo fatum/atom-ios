@@ -32,15 +32,6 @@
     
     NSArray* expectedEvents = [NSArray arrayWithObjects: @"test 1", @"test 2", nil];
     int expectedId = 42;
-    
-    let batchObject = IS(events: expectedEvents, lastId: expectedId)
-    
-    XCTAssertEqual(expectedId, batchObject.lastId)
-    XCTAssertEqual(expectedEvents.count, batchObject.events.count)
-    
-    for i in 0...(expectedEvents.count - 1) {
-        XCTAssertEqual(expectedEvents[i], batchObject.events[i])
-    }
 }
 
 @end
