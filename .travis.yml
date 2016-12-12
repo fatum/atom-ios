@@ -20,7 +20,7 @@ script:
 
   - cd atom-sdk/AtomSDK/  
   - pod install
-  - cd ../../..
+  - cd ../..
   
   - xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" ONLY_ACTIVE_ARCH=YES test | xcpretty -c
 
