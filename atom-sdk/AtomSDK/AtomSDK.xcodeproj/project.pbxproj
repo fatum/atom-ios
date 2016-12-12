@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		420E2A971DFEF10A00BF6383 /* BatchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 420E2A961DFEF10A00BF6383 /* BatchTests.m */; };
 		42C31FAE1DD09DB00089FAC6 /* AtomSDKTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C31FAD1DD09DB00089FAC6 /* AtomSDKTests.m */; };
 		42C31FB01DD09DB00089FAC6 /* AtomSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 42C31FA21DD09DAF0089FAC6 /* AtomSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		42C31FCB1DD09E3A0089FAC6 /* ISSQLiteHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C31FB91DD09E3A0089FAC6 /* ISSQLiteHandler.m */; };
@@ -57,6 +58,7 @@
 
 /* Begin PBXFileReference section */
 		30A8A320E10C40F8A3AE6968 /* Pods-AtomSDKTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AtomSDKTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AtomSDKTests/Pods-AtomSDKTests.debug.xcconfig"; sourceTree = "<group>"; };
+		420E2A961DFEF10A00BF6383 /* BatchTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BatchTests.m; sourceTree = "<group>"; };
 		42C31F9F1DD09DAF0089FAC6 /* AtomSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AtomSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		42C31FA21DD09DAF0089FAC6 /* AtomSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AtomSDK.h; sourceTree = "<group>"; };
 		42C31FA31DD09DAF0089FAC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 			children = (
 				42C31FAD1DD09DB00089FAC6 /* AtomSDKTests.m */,
 				42C31FAF1DD09DB00089FAC6 /* Info.plist */,
+				420E2A961DFEF10A00BF6383 /* BatchTests.m */,
 			);
 			path = AtomSDKTests;
 			sourceTree = "<group>";
@@ -406,6 +409,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				420E2A971DFEF10A00BF6383 /* BatchTests.m in Sources */,
 				42C31FAE1DD09DB00089FAC6 /* AtomSDKTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
