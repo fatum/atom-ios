@@ -18,7 +18,7 @@ script:
   - xcodebuild -version
   - xcodebuild -showsdks
 
-  - cd atom-sdk/swift/AtomSDK/  
+  - cd atom-sdk/AtomSDK/  
   - pod install
   - cd ../../..
   
