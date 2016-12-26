@@ -125,6 +125,9 @@ NSArray* data = [NSArray arrayWithObjects:@"{\"test\":\"test\"}", @"{\"test\":\"
 [api_ health];         
 ```
 
+## Swift version
+Also we have written on [swift](https://github.com/ironSource/atom-ios/tree/swift) version of SDK, but currently not supported.
+
 ## Example 
 You can use our [example][example-url] for sending data to Atom:
 
