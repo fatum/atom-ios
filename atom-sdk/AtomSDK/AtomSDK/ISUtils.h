@@ -18,35 +18,35 @@ typedef void (^ISRequestCallback)(ISResponse*);
 @interface ISUtils : NSObject
 
 /**
- *  Encode data to SHA256
+ *  Encrypt data with SHA256
  *
- *  @param input Data to encode
- *  @param key For endcoding data
+ *  @param input Data to encrypt
+ *  @param key Encryption key
  *
- *  @return Encoded string
+ *  @return Encrypted string
  */
 +(NSString*)encodeHMACWithInput: (NSString*)input key: (NSString*)key;
 
 /**
- *  Convert Object to Json string
+ *  Convert Object to JSON string
  *
  *  @param data Data to encode
  *
- *  @return Json string
+ *  @return JSON String
  */
 +(NSString*)objectToJsonStr: (NSObject*)data;
 
 /**
- *  Convert List to Json Str
+ *  Convert List to JSON String
  *
- *  @param data List of json data str
+ *  @param data List to convert
  *
- *  @return Json string
+ *  @return JSON String
  */
 +(NSString*)listToJsonStr: (NSArray*)data;
 
 /**
- *  Get current milliseconds
+ *  Get current time in milliseconds
  *
  *  @return Current time in int64
  */

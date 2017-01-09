@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 /*!
- * @brief Holder of events data
+ * @brief Holds batch events
  */
 @interface ISBatch : NSObject {
     NSArray* events_;
@@ -22,15 +22,15 @@
 @property NSArray* events;
 
 /*!
- * @brief Last Id getted from DB
+ * @brief Last ID received from DB
  */
 @property int lastID;
 
 /**
- *  Batch contructor
+ *  Batch constructor
  *
  *  @param events List of events
- *  @param lastID List of events
+ *  @param lastID Last ID received from DB
  */
 -(id)initWithEvents: (NSArray*)events lastID: (int)lastID;
 

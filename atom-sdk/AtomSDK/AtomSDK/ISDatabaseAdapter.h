@@ -24,23 +24,23 @@
 }
 
 /**
- *  Database Adatapter constructor
+ *  Database Adapter constructor
  *
  *  @return ISDatabaseAdapter
  */
 -(id)init;
 
 /**
- *  Database Adatapter constructor
+ *  Database Adapter constructor
  *
- *  @param isDebug Is print debug info in console
+ *  @param isDebug Enable debug printing
  */
 -(void)enableDebug: (BOOL)isDebug;
 
 /**
- *  Upgrade databese
+ *  Upgrade database
  *
- *  @param oldVersion Previous version od DB
+ *  @param oldVersion Previous version of DB
  *  @param newVersion New version of DB
  */
 -(void)upgradeWithOldVersion: (int)oldVersion newVersion: (int)newVersion;
@@ -51,10 +51,10 @@
 -(void)create;
 
 /**
- *  Upgrade databese
+ *  Add event to DB
  *
- *  @param streamData Previous version od DB
- *  @param data String data for inserting to DB
+ *  @param streamData Atom Stream object
+ *  @param data String with data to be inserted
  *
  *  @return Inserted rows count
  */
@@ -63,66 +63,66 @@
 /**
  *  Add stream to Streams table
  *
- *  @param streamData Data of the stream
+ *  @param streamData Atom Stream object
  */
 -(void)addStreamWithStreamData: (ISStreamData*)streamData;
 
 /**
- *  Add stream to Streams table
+ *  Get events based on Stream data
  *
- *  @param streamData Data of the stream
- *  @param limit Max event count
+ *  @param streamData Atom Stream object
+ *  @param limit max events to get
  *
- *  @return Batch with event information
+ *  @return Batch of events
  */
 -(ISBatch*)getEventsWithStreamData: (ISStreamData*)streamData limit: (int)limit;
 
 /**
  *  Get stream information by name
  *
- *  @param name String stream name
+ *  @param name Atom Stream name
  *
- *  @return Data of the stream
+ *  @return StreamData related to the given stream
  */
 -(ISStreamData*)getStreamWithName: (NSString*)name;
 
 /**
- *  Get all stream information
+ *  Get all streams information
  *
- *  @return List data of streams
+ *  @return List with streams data.
  */
 -(NSArray<ISStreamData*>*)getStreams;
 
 /**
  *  Deleting events from Database
  *
- *  @param streamData Data of the stream
- *  @param lastID Id of last event from DB
+ *  @param streamData Atom Stream object
+ *  @param lastID ID of last event in DB
  *
- *  @return Count of removed elements
+ *  @return Number of removed elements
  */
 -(int)deleteEventsWithStreamData: (ISStreamData*)streamData lastID: (int)lastID;
 
 /**
  *  Delete stream from Streams table
  *
- *  @param streamData String stream name
+ *  @param streamData Atom Stream object
  */
 -(void)deleteStreamWithStreamData: (ISStreamData*)streamData;
 
 /**
- *  Delete old rows and make Vacuum
+ *  Delete old rows and do Vacuum
  *
- *  @return Count of deleted rows
+ *  @return Number of deleted rows
  */
 -(int)vacuum;
 
 /**
- *  Get count of events from specific stream
+ *  Return count of events for a specific Atom Stream
  *
- *  @param name Data of the stream
+ *  @param name Atom Stream name
  *
- *  @return Count of events
+ *  @return Number of events for the given Stream
  */
 -(int)countWithStreamName: (NSString*)name;
 -(int)count;

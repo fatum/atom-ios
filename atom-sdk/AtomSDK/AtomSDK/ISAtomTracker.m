@@ -11,7 +11,7 @@
 #import "ISDatabaseAdapter.h"
 
 static double DEFAULT_FLUSH_INTERVAL = 10;
-static int DEFAULT_BULK_SIZE = 1000;
+static int DEFAULT_BULK_SIZE = 50;
 static int DEFAULT_BULK_BYTES_SIZE = 64 * 1024;
 
 @interface ISAtomTracker()

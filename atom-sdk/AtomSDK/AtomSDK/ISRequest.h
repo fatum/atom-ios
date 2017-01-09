@@ -13,7 +13,7 @@
 #import "ISUtils.h"
 
 /*!
- * @brief For make async HTTP requests to server
+ * @brief Wrapper to basic http for sending HTTP requests to server
  */
 @interface ISRequest : NSObject <NSURLSessionDelegate>
 {
@@ -30,11 +30,11 @@
 /**
  *  Constructor for Request
  *
- *  @param url      For server address.
- *  @param data     For sending data.
- *  @param headers  For sending headers.
- *  @param callback For get response data.
- *  @param isDebug  For print debug info.
+ *  @param url      Atom API address
+ *  @param data     Data to send
+ *  @param headers  Headers to send
+ *  @param callback Call with response data
+ *  @param isDebug  For printing debug info.
  *
  *  @return ISRequest
  */
@@ -46,10 +46,10 @@
 /**
  *  Constructor for Request
  *
- *  @param url     For server address.
- *  @param data    For sending data.
- *  @param headers For sending headers.
- *  @param isDebug For print debug info.
+ *  @param url      Atom API address
+ *  @param data     Data to send
+ *  @param headers  Headers to send
+ *  @param isDebug  For printing debug info.
  *
  *  @return ISRequest
  */
@@ -57,12 +57,12 @@
          headers:(NSMutableDictionary<NSString *,NSString *> *)headers
          isDebug:(BOOL)isDebug;
 /**
- *  GET request to server
+ *  HTTP GET request to server
  */
 -(void)get;
 
 /**
- *  POST request to server
+ *  HTTP POST request to server
  */
 -(void)post;
 

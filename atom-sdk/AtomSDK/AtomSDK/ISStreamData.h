@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 /*!
- * @brief Holder of stream data
+ * @brief Holds Atom Stream data: name & auth token.
  */
 @interface ISStreamData : NSObject
 {
@@ -18,20 +18,20 @@
 }
 
 /*!
- * @brief Stream name
+ * @brief Atom Stream name
  */
 @property NSString* name;
 
 /*!
- * @brief Stream Auth key
+ * @brief Atom Stream Auth key
  */
 @property NSString* token;
 
 /**
- *  Stream Data contructor
+ *  Stream Data constructor
  *
- *  @param name      Stream name
- *  @param token     Stream Auth key
+ *  @param name      Atom Stream name
+ *  @param token     Atom Stream Auth key
  *
  *  @return ISStreamData
  */

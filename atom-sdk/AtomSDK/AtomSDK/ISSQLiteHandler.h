@@ -11,7 +11,7 @@
 #import <sqlite3.h>
 
 /*!
- * @brief SQL helper class
+ * @brief SQLite helper class
  */
 @interface ISSQLiteHandler : NSObject
 {
@@ -23,7 +23,7 @@
 }
 
 /**
- *  SQL Handler contructor
+ *  SQL Handler constructor
  *
  *  @param name Database name
  */
@@ -35,9 +35,9 @@
 -(void)dealloc;
 
 /**
- *  Enable print logs
+ *  Enable debug printing
  *
- *  @param isDebug Is print log to console
+ *  @param isDebug Toggle debug printing
  */
 -(void)enableDebug: (BOOL)isDebug;
 
@@ -51,7 +51,7 @@
 /**
  *  Prepare sql string for request
  *
- *  @param sql Request in string
+ *  @param sql Request in string format
  *
  *  @return Execute status
  */
@@ -60,7 +60,7 @@
 /**
  *  Bind Int64 to SQL statement
  *
- *  @param index Request in string
+ *  @param index Request in string format
  *  @param data Data for binding
  */
 -(BOOL)bindInt64WithIndex: (int)index data: (int64_t)data;
@@ -68,7 +68,7 @@
 /**
  *  Bind Int32 to SQL statement
  *
- *  @param index Request in string
+ *  @param index Request in string format
  *  @param data Data for binding
  */
 -(BOOL)bindInt32WithIndex: (int)index data: (int32_t)data;

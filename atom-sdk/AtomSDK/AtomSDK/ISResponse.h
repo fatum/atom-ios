@@ -36,9 +36,9 @@
 /**
  *  Response constructor
  *
- *  @param data   Description of error
- *  @param error  Response data from server
- *  @param status Code from server
+ *  @param data   Response data
+ *  @param error  Error description
+ *  @param status HTTP status code
  *
  *  @return ISResponse
  */

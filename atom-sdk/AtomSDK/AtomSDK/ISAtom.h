@@ -50,17 +50,17 @@
 -(void)setAuth: (NSString*)authKey;
 
 /**
- *  Set endpoint for send data
+ *  Set endpoint for sending data
  *
  *  @param endPoint Address of server
  */
 -(void)setEndPoint: (NSString*)endPoint;
 
 /**
- *  Send single data to Atom server.
+ *  Send a single event to Atom server.
  *
  *  @param stream     Stream name for saving data in db table
- *  @param data       User data to send
+ *  @param data       Data to send
  *  @param callback   Get response data
  */
 -(void)putEventWithStream: (NSString*)stream data: (NSString*)data
@@ -68,10 +68,10 @@
 -(void)putEventWithStream: (NSString*)stream data: (NSString*)NSData;
 
 /**
- *  Send multiple events data to Atom server.
+ *  Send multiple events (bulk) to Atom server.
  *
  *  @param stream     Stream name for saving data in db table
- *  @param data       User data to send
+ *  @param data       bulk of data to send
  *  @param callback   Get response data
  */
 -(void)putEventsWithStream: (NSString*)stream arrayData: (NSArray*)data
@@ -79,10 +79,10 @@
 -(void)putEventsWithStream: (NSString*)stream arrayData: (NSArray*)data;
 
 /**
- *  Send multiple events data to Atom server.
+ *  Send multiple events (bulk) to Atom server.
  *
  *  @param stream     Stream name for saving data in db table
- *  @param data       User data to send
+ *  @param data       bulk of data to send
  *  @param callback   Get response data
  */
 -(void)putEventsWithStream: (NSString*)stream stringData: (NSString*)data
@@ -90,9 +90,9 @@
 -(void)putEventsWithStream: (NSString*)stream stringData: (NSString*)data;
 
 /**
- *  Check health of server
+ *  Health Check
  *
- *  @param callback For receive response from server
+ *  @param callback Response from server
  */
 -(void)healthWithCallback: (ISRequestCallback) callback;
 -(void)health;

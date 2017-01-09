@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "AtomSDK"
-  s.version      = "1.1.2"
+  s.version      = "1.2.0"
   s.summary      = "AtomSDK is the official ironSource.atom SDK for the IOS platform."
 
   # This description is used to generate tags and improve search results.
