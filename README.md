@@ -2,16 +2,17 @@
 
 [![License][license-image]][license-url]
 [![Docs][docs-image]][docs-url]
-[![Pods][pod-image]][pod-url]
 [![Build status][travis-image]][travis-url]
 [![Coverage Status][coverage-image]][coverage-url]
+[![Pods][pod-image]][pod-url]
 
 atom-ios is the official [ironSource.atom](http://www.ironsrc.com/data-flow-management) SDK for the IOS platform.
 
-- [Installation](#installation)
-- [Usage](#usage)
 - [Signup](https://atom.ironsrc.com/#/signup)
 - [Documentation](https://ironsource.github.io/atom-ios/)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Change Log](#change-log)
 - [Example](#example)
 
 ## Installation
@@ -24,7 +25,14 @@ pod 'AtomSDK'
 
 ## Usage
 
-### Tracker usage
+### High Level SDK - "Tracker"
+The Tracker is used for sending events to Atom based on several conditions
+- Every 10 seconds (default)
+- Number of accumulated events has reached 50 (default)
+- Size of accumulated events has reached 64KB (default)  
+Case of server side failure (500) the tracker uses an exponential back off mechanism with jitter.  
+To see the full code check the [example section](#example)  
+
 Example of sending an event in Swift:
 ```swift
 // initialize atom-sdk api object
@@ -60,7 +68,11 @@ ISAtomTracker* apiTracker_ = [[ISAtomTracker alloc] init];
 [apiTracker_ flush];
 ```
 
-### Low level API usage (putEvent and putEvents)
+### Low Level (Basic) SDK
+The Low Level SDK has 2 methods:  
+- putEvent - Sends a single event to Atom  
+- putEvents - Sends a bulk (batch) of events to Atom
+
 Example of sending an event in Swift:
 ```swift
 // initialize atom-sdk api object
@@ -126,7 +138,22 @@ NSArray* data = [NSArray arrayWithObjects:@"{\"test\":\"test\"}", @"{\"test\":\"
 ```
 
 ## Swift version
-Also we have written on [swift](https://github.com/ironSource/atom-ios/tree/swift) version of SDK, but currently not supported.
+There is a [legacy swift version](https://github.com/ironSource/atom-ios/tree/swift) of the sdk.  
+**it is considered beta and it is not officially supported.**
+
+
+## Change Log
+
+### v1.2.0 - Rewrite to Objective C
+- Full re-write to Objective C
+
+### v1.0.1 - Bug fixes
+- Bugfix - fixing the case when there are multiple streams that need to be flushed    
+while there is a bad response from server (retry Qs).
+
+### v1.0.0 - Base Swift version
+- Basic features: putEvent, putEvents and Tracker
+
 
 ## Example 
 You can use our [example][example-url] for sending data to Atom:
@@ -140,7 +167,6 @@ You can use our [example][example-url] for sending data to Atom:
 [docs-url]: https://ironsource.github.io/atom-ios/
 [pod-image]: https://img.shields.io/cocoapods/v/AtomSDK.svg
 [pod-url]: https://cocoapods.org/?q=AtomSDK
-
 [travis-image]: https://travis-ci.org/ironSource/atom-ios.svg?branch=master
 [travis-url]: https://travis-ci.org/ironSource/atom-ios
 [coverage-image]: https://coveralls.io/repos/github/ironSource/atom-ios/badge.svg?branch=master
