@@ -224,9 +224,11 @@
 				TargetAttributes = {
 					4277162E1D06C5760056B341 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 					};
 					42ECBD731D1AB9B200CD9A3C = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -497,6 +499,7 @@
 				SWIFT_INCLUDE_PATHS = CommonCrypto;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -520,6 +523,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_INCLUDE_PATHS = CommonCrypto;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
@@ -532,6 +536,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ironsrc.atom.AtomSDKTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INCLUDE_PATHS = CommonCrypto;
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -545,6 +550,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ironsrc.atom.AtomSDKTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INCLUDE_PATHS = CommonCrypto;
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};

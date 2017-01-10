@@ -15,7 +15,7 @@ public typealias AtomCallback = (Response) -> Void
 /// Atom simple SDK
 public class IronSourceAtom {
     let TAG = "IronSourceAtom"
-    let API_VERSION_ = "V1.0.1"
+    let API_VERSION_ = "V1.1.0"
     
     var endpoint_ = "http://track.atom-data.io/"
     var authKey_ = ""
