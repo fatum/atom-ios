@@ -4,6 +4,8 @@
 build/
 DerivedData/
 atom-sdk/AtomSDk/docs/
+Podfile.lock
+Pods
 
 # ================ #
 # Various settings #

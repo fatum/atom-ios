@@ -70,7 +70,7 @@ SOFTWARE.</string>
 			<key>License</key>
 			<string>MIT</string>
 			<key>Title</key>
-			<string>AtomSDK</string>
+			<string>AtomSDKSwift</string>
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 		</dict>

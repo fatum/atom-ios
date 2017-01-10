@@ -1,20 +1,20 @@
 PODS:
   - Arcane (0.3.0)
-  - AtomSDK (1.1.1):
-    - Arcane (~> 0)
+  - AtomSDKSwift (1.1.0):
+    - Arcane (~> 0.3)
     - sqlite3 (~> 3)
-  - sqlite3 (3.14.1):
-    - sqlite3/common (= 3.14.1)
-  - sqlite3/common (3.14.1)
+  - sqlite3 (3.16.2):
+    - sqlite3/common (= 3.16.2)
+  - sqlite3/common (3.16.2)
 
 DEPENDENCIES:
-  - AtomSDK
+  - AtomSDKSwift
 
 SPEC CHECKSUMS:
   Arcane: 3f6203426ba2195f8ac9eb4c9508493f3a903ae6
-  AtomSDK: 354e11009e205257afc87fc0f9f0f6bbc391fc89
-  sqlite3: fa06185267585e2995e3325dd817e4141203e81b
+  AtomSDKSwift: 843633feefe3668deae59a7b27e887ca22b7559f
+  sqlite3: 9357a4911ebdaed4ad3f384181bf5ca5722ce5fc
 
-PODFILE CHECKSUM: a4b3e8b909a9047bf57dad7fa71ba0ab213f3d18
+PODFILE CHECKSUM: a9c340a2684883684ff44e3b9ded7df7cc6f50e6
 
-COCOAPODS: 1.1.0.beta.1
+COCOAPODS: 1.2.0.beta.1

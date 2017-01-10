@@ -27,7 +27,7 @@ Licensed under the **MIT** license
 > SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
-## AtomSDK
+## AtomSDKSwift
 
 The MIT License (MIT)
 

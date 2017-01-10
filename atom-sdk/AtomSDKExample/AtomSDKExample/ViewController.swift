@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import AtomSDK
+import AtomSDKSwift
 import Foundation
 
 class ViewController: UIViewController {
