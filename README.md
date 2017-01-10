@@ -1,10 +1,11 @@
-# ironSource.atom SDK for IOS - Beta Version
+# ironSource.atom SDK for IOS - Legacy Swift Version  
+**Note: This version is not officially supported, use version 1.2.0+**
 
 [![License][license-image]][license-url]
 [![Docs][docs-image]][docs-url]
-[![Pods][pod-image]][pod-url]
 [![Build status][travis-image]][travis-url]
 [![Coverage Status][coverage-image]][coverage-url]
+[![Pods][pod-image]][pod-url]
 
 atom-ios is the official [ironSource.atom](http://www.ironsrc.com/data-flow-management) SDK for the IOS platform.
 
@@ -19,7 +20,7 @@ atom-ios is the official [ironSource.atom](http://www.ironsrc.com/data-flow-mana
 ### Installation from [CocoaPods](https://cocoapods.org/?q=atomsdk).
 Add dependency in your pod file
 ```ruby
-pod 'AtomSDK'
+pod 'AtomSDKSwift'
 ```
 
 ## Usage
@@ -132,9 +133,8 @@ You can use our [example][example-url] for sending data to Atom:
 
 [docs-image]: https://img.shields.io/badge/docs-latest-blue.svg
 [docs-url]: https://ironsource.github.io/atom-ios/
-[pod-image]: https://img.shields.io/cocoapods/v/AtomSDK.svg
-[pod-url]: https://cocoapods.org/?q=AtomSDK
-
+[pod-image]: https://img.shields.io/cocoapods/v/AtomSDKSwift.svg
+[pod-url]: https://cocoapods.org/?q=AtomSDKSwift
 [travis-image]: https://travis-ci.org/ironSource/atom-ios.svg?branch=master
 [travis-url]: https://travis-ci.org/ironSource/atom-ios
 [coverage-image]: https://coveralls.io/repos/github/ironSource/atom-ios/badge.svg?branch=master
