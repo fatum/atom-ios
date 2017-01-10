@@ -6,8 +6,8 @@ env:
   - LANG=en_US.UTF-8
   - WORKSPACE=atom-sdk/AtomSDK/AtomSDK.xcworkspace
   - SCHEME=AtomSDK
-  - SDK=iphonesimulator9.3
-  - DESTINATION="OS=9.3,name=iPhone 6S"
+  - SDK=iphonesimulator8.0
+  - DESTINATION="OS=8.0,name=iPhone 6S"
 
 before_install:
   - gem install xcpretty -N
