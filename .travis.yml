@@ -7,6 +7,7 @@ env:
   - WORKSPACE=atom-sdk/AtomSDK/AtomSDK.xcworkspace
   - SCHEME=AtomSDK
   - SDK=iphonesimulator10.0
+  - DESTINATION="OS=10.0,name=iPhone 6S"
 
 before_install:
   - gem install xcpretty -N
@@ -21,7 +22,7 @@ script:
   - pod install
   - cd ../..
   
-  - xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$SDK" ONLY_ACTIVE_ARCH=YES test | xcpretty -c
+  - xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" ONLY_ACTIVE_ARCH=YES test | xcpretty -c
 
 after_success:
   - slather
