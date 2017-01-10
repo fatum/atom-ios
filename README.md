@@ -1,4 +1,4 @@
-# ironSource.atom SDK for IOS - Beta Version
+# ironSource.atom SDK for IOS
 
 [![License][license-image]][license-url]
 [![Docs][docs-image]][docs-url]
@@ -147,9 +147,12 @@ There is a [legacy swift version](https://github.com/ironSource/atom-ios/tree/sw
 ### v1.2.0 - Rewrite to Objective C
 - Full re-write to Objective C
 
-### v1.0.1 - Bug fixes
+### v1.1.2
+- Adding Cococapods release
+- Changing CommonCrypto to Arcane
 - Bugfix - fixing the case when there are multiple streams that need to be flushed    
 while there is a bad response from server (retry Qs).
+- Increased coverage
 
 ### v1.0.0 - Base Swift version
 - Basic features: putEvent, putEvents and Tracker
